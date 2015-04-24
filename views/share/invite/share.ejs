@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-cn">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta content="
+        width=device-width,
+        initial-scale=1.0,
+        minimum-scale=1.0,
+        maximum-scale=1.0,user-scalable=no" name="viewport" id="viewport">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="renderer" content="webkit">
+    <title>知了-理解源自沟通</title>
+
+    <!-- mobile 头部模板 -->
+    <%- include  ../../template/header/header-mobile-share.ejs %>
+
+    <!-- share 相关业务 -->
+    <link rel="stylesheet" href="/share/invite/css/share.css?v=108">
+    <link rel="stylesheet" href="/lib/wave/waves.css"/>
+
+    <!--微信 -->
+    <script type="text/javascript" src="/template/js/wx.js"></script>
+
+
+
+</head>
+<body>
+<div class="message-alert-top" id="message-alert-top">
+    <div class="img-top ib"><i class="img-top-arrow"></i></div>
+    <span class="text-center share-text">点这里分享给好友吧</span>
+</div>
+<div class="mask" id="mask"></div>
+<div class="warp">
+    <div class="row">
+        <img id="head" src="" class="avatar" style="border-radius: 0;"/>
+    </div>
+    <div class="alert-info row">
+        <span class="mr">您已领取过注册奖励<br/>可以进入个人详情中查看哦~</span>
+
+        <p>使用知了获取更多活跃值</p>
+
+        <p>众多精美礼品等您兑换</p>
+    </div>
+    <div class="row dowhat">
+        <div style="margin-top: 65px;">
+            <span class="waves-effect waves-button mb20">
+                <a id="openBtn" href="javascript:void(0);" class="btn btn-blue">打开知了</a>
+            </span>
+        </div>
+        <div>
+            <span class="waves-effect waves-button">
+                <a  id="shareBtn"  href="javascript:void(0);" class="btn btn-red" id="share">我也要分享赢取邀请奖励</a>
+            </span>
+        </div>
+    </div>
+</div>
+<div class="warp-bottom"></div>
+<script type="text/javascript"  src="/lib/wave/waves.min.js"></script>
+<script type="text/javascript"  src="/template/js/template.js"></script>
+<script type="text/javascript"  src="/share/invite/js/share.js?v=108"></script>
+</body>
+</html>

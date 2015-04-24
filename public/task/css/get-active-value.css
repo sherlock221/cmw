@@ -1,0 +1,92 @@
+@charset "UTF-8";
+/**
+ * sherlock221b
+ * rem常用设计函数
+ */
+/**
+ * sherlock221b
+ * 动画部分常用
+ */
+.navbar {
+  height: 43px;
+  line-height: 43px;
+  background-color: #405d9e;
+  text-align: center;
+  font-size: 17px;
+  color: #fff;
+  position: relative; }
+
+.btn {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 14px;
+  line-height: 22.5px;
+  color: #fff;
+  background-color: #658ad6;
+  text-align: center;
+  border-radius: 4px; }
+  .btn:active {
+    background-color: #5977b9; }
+
+.icon {
+  width: 44.5px;
+  background-size: 44.5px 212px;
+  background-image: url("/imgs/task/icon.png"); }
+
+.icon-pencil {
+  background-position: 0 0;
+  height: 36px; }
+
+.icon-calendar {
+  background-position: 0 -37px;
+  height: 43px; }
+
+.icon-teacher {
+  background-position: 0 -81px;
+  height: 46px; }
+
+.icon-parent {
+  background-position: 0 -128px;
+  height: 46.5px; }
+
+.l-arrow {
+  height: 15px;
+  background-position: 0 -174.5px;
+  position: absolute;
+  top: 14px;
+  left: 10px; }
+
+body, html {
+  background-color: #f6f6f6; }
+
+.itme {
+  margin-bottom: 30px; }
+
+.section {
+  padding: 12.5px 9px;
+  border-bottom: 1px solid #cecece;
+  box-sizing: border-box;
+  background-color: #fff; }
+  .section .left i {
+    display: block;
+    margin-right: 9px; }
+  .section h3 {
+    font-size: 17px;
+    font-weight: normal; }
+  .section p {
+    color: #c3c3c3;
+    font-size: 13px;
+    margin: 5px 0; }
+  .section span {
+    display: block;
+    color: #f69e47;
+    font-size: 13px; }
+
+.active {
+  background-color: #ececec; }
+
+.btn-goto {
+  width: 56px;
+  display: block; }
+
+/*# sourceMappingURL=get-active-value.css.map */

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-cn">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta content="
+        width=device-width,
+        initial-scale=1.0,
+        minimum-scale=1.0,
+        maximum-scale=1.0,user-scalable=no" name="viewport" id="viewport">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="renderer" content="webkit">
+
+    <link rel="stylesheet" href="/lib/cicada/dist/css/module.css"/>
+    <link rel="stylesheet" href="/task/css/get-active-value.css" />
+
+    <title>获取活跃值</title>
+
+    <script src="/lib/core/jquery/jquery-2.1.3.min.js"></script>
+    <script src="/lib/art-template/dist/template-native.js"></script>
+
+    <script src="/config.js"></script>
+    <script src="/template/js/template.js?v=107"></script>
+    <script src="/template/js/util.js?v=107"></script>
+
+
+</head>
+<body>
+<!--<div class="navbar">-->
+    <!--<a href="javascript:goBack()"><i class="icon l-arrow ib"></i></a>-->
+    <!--<span>获取活跃值</span>-->
+<!--</div>-->
+<div id="content"></div>
+<script id="task-tem" type="text/html">
+    <@for (var i=0;i
+    <bizData.length;i++) {@>
+
+
+    <div class="section  <@if(bizData[i].maxNum == bizData[i].completedNum && bizData[i].maxNum != 0 ){@>active<@}@>  fx-row fx-row-center">
+        <div class="left ">
+            <i class="icon <@=bizData[i].image @>"></i>
+        </div>
+        <div class="fx-col-1 ">
+            <h3><@=bizData[i].title @></h3>
+            <p class="text-ellipsis"><@=bizData[i].ruleDesc @></p>
+            <span><@=bizData[i].rewardDesc @></span>
+        </div>
+        <div class="right">
+            <@if(bizData[i].url) {@>
+
+                <@if(bizData[i].maxNum == bizData[i].completedNum  && bizData[i].maxNum != 0) {@>
+
+                <@}else{@>
+                        <a href="javascript:goPage('<@=bizData[i].url @>')" class="btn btn-goto ntp">前往</a>
+                <@}@>
+
+            <@}else{@>
+
+            <@}@>
+
+        </div>
+    </div>
+    <@}@>
+</script>
+
+</body>
+<script src="/task/js/task-list.js?v=107"></script>
