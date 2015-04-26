@@ -46,8 +46,6 @@ function getSignature (){
             });
         }
     })
-
-
 }
 
 

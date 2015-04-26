@@ -1,71 +1,106 @@
-var Ajax = {
-    getTaskList: function (token, queryTime, callback) {
-        jQuery.support.cors = true;
-        $.ajax({
-            type: "post",
-            url: CONSTANT_ENV.credit + '/task/getTaskList',
-            dataType: 'json',
-            data: {
-                "token": token,
-                "queryTime": queryTime
-            },
-            crossDomain: true,
-            success: callback
-        });
-    }
-};
 
 
-var UI = {
-    content: $("#content")
-};
 
-var  h5_share =  CONSTANT_RES.invite +"?targetUserType=0";
-
-//处理button
-var  goPage = function(url){
-     console.log(url);
-    switch (url){
-        case CONSTANT_TASK.cicada_url.inverte_publish  :
-            Util.platform.goPage(window.clientType,"publish");
-            break;
-        case CONSTANT_TASK.cicada_url.inverte_teacher  :
-            Util.platform.sharePgaeByUserId(window.clientType,h5_share,window.shareJson);
-
-            break;
-        case CONSTANT_TASK.cicada_url.inverte_parent  :
-            Util.platform.sharePgaeByUserId(window.clientType,h5_share,window.shareJson);
-            break;
-    }
-};
-var goBack =function(){
-    Util.platform.back(window.clientType);
-};
+define(function(require,exports,module){
 
 
-$(function () {
-    //获得share
-    window.shareJson = TemplateAjax.getShareData();
-    //解析地址
-    var params= Util.location.getParams();
-    var token = params['token'];
+    var Util = require("cicada");
+    var template = require("artTemplate");
 
-    window.clientType  = params['clientType'];
-    if(!token){
-        alert('token不能为空！');
-        return;
-    }
-    var queryTime = 0;
 
-    //获取任务列表
-    Ajax.getTaskList(token, queryTime, function (res) {
-        if (res.rtnCode == '0000000') {
-            var html = template('task-tem', res);
-            UI.content.html(html);
-        } else {
-            alert(res.msg);
+    var Ajax = {
+        getShareData : function(){
+            var result  ="";
+            $.ajax({
+                type: "get",
+                url: "/task/json/share.json",
+                async : false,
+                success : function(res){
+                    result  = res;
+                }
+            });
+            return result;
+        },
+        getTaskList: function (token, queryTime, callback) {
+            $.ajax({
+                type: "post",
+                url: CONSTANT_ENV.credit + '/task/getTaskList',
+                dataType: 'json',
+                data: {
+                    "token": token,
+                    "queryTime": queryTime
+                },
+                crossDomain: true,
+                success: callback
+            });
         }
+    };
+
+
+    var UI;
+
+    var  h5_share =  CONSTANT_RES.invite +"?targetUserType=0";
+
+    //处理button
+    window.goPage = function(url){
+        console.log(url);
+        switch (url){
+            case CONSTANT_TASK.cicada_url.inverte_publish  :
+                Util.other.goPage(window.clientType,"publish");
+                break;
+            case CONSTANT_TASK.cicada_url.inverte_teacher  :
+                Util.other.sharePgaeByUserId(window.clientType,h5_share,window.shareJson);
+
+                break;
+            case CONSTANT_TASK.cicada_url.inverte_parent  :
+                Util.other.sharePgaeByUserId(window.clientType,h5_share,window.shareJson);
+                break;
+        }
+    };
+    window.goBack =function(){
+        Util.other.back(window.clientType);
+    };
+
+
+
+    $(function () {
+
+        UI = {
+            content: $("#content")
+        };
+
+
+        //获得share
+        window.shareJson = Ajax.getShareData();
+        //解析地址
+        var params= Util.web.getParams();
+        var token = params['token'];
+
+        //window.clientType  = params['clientType'];
+        window.clientType  = Util.os.checkMobile().type;
+
+
+        if(!token){
+            alert('token不能为空！');
+            return;
+        }
+        var queryTime = 0;
+
+        //获取任务列表
+        Ajax.getTaskList(token, queryTime, function (res) {
+            if (res.rtnCode == '0000000') {
+                var html = template('task-tem', res);
+                UI.content.html(html);
+            } else {
+                alert(res.msg);
+            }
+        });
+
     });
 
+
+
 });
+
+
 

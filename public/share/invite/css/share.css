@@ -140,9 +140,9 @@ b {
     color: #fff;
     font-size: 16px !important;
     border-radius: 4px; }
-    .share-input button:hover {
-      color: #fff;
-      background-color: #af353f; }
+    /*.share-input button:hover {*/
+      /*color: #fff;*/
+      /*background-color: #af353f; }*/
 
 .warp-bottom {
   background: url("../images/bottom-img.png") no-repeat;

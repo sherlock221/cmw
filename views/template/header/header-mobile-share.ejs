@@ -1,11 +1,12 @@
 <!-- common -->
-<link rel="stylesheet" href="/lib/animation/animate.css"/>
-<link rel="stylesheet" href="/lib/cicada/dist/css/module.css"/>
+<link rel="stylesheet" href="/lib/css/base/module.css"/>
 
 
-<!-- 模板 -->
-<script type="text/javascript"  src="/lib/core/zepto/zepto-1.1.6.js"></script>
-<script type="text/javascript"  src="/lib/core/hammer/hammer.zp.js"></script>
-<script type="text/javascript" src="/lib/market/jweixin-1.0.0.js"></script>
-<!-- 工具 -->
-<script type="text/javascript" src="/template/js/util.js"></script>
+<!-- 引入seajs -->
+<script type="text/javascript" src="/lib/js/seajs/sea.js" id="seajsnode"></script>
+<script type="text/javascript" src="/lib/seajs_config.js"></script>
+
+<!-- base -->
+<script type="text/javascript" src="/dist/template/mb_base.min.js"></script>
+<script type="text/javascript">seajs.use(["$_zepto","$_hammer"],function($,$_hammer){  $_hammer($); window.$ = $; });
+</script>

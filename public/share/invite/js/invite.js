@@ -2,6 +2,14 @@
 //路径   user/checkUserExist      参数  String  phone    返回值  boolean  isExist   true：已注册
 //路径  relation/inviteRecord  参数   long userId,String phone,int type  0:邀请注册  1：邀请加班    返回值   int credit
 
+
+define(function(require,exports,module){
+
+
+    var Util = require("cicada");
+    var Waves = require("ui_waveButton");
+
+
 var Ajax = {
 
     //检测用户是否存在
@@ -88,15 +96,18 @@ Ajax.getUserInfo(userId, function (res) {
         UI.teacherCount.html(res.bizData.teacherCount);
 
         //存入storage
-        Util.storage.setLgObj("user",res.bizData);
-        Util.storage.setLg("shareUrl",window.location.href);
+        Util.lg.setLgObj("user",res.bizData);
+        Util.lg.setLg("shareUrl",window.location.href);
     }
 
 });
 
 
 $(function () {
-    //按钮跳转
+
+    Waves.attach('.button');
+
+        //按钮跳转
     UI.getValueBtn.hammer({}).bind("tap",function () {
         var phone = UI.phone.val();
         var re = /^1\d{10}$/;
@@ -134,6 +145,8 @@ $(function () {
 
 
     });
+
+});
 
 });
 
