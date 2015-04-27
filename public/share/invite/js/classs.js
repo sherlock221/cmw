@@ -4,6 +4,7 @@
 define(function (require, exports, module) {
 
 
+
     var tp = require("artTemplate");
 
     tp.helper('$head', function (head) {
@@ -14,6 +15,63 @@ define(function (require, exports, module) {
             return  "/imgs/share/head.png";
         }
     });
+
+
+    var Ajax = {
+
+        //检测用户是否存在
+        checkUserExist: function (phone, callback) {
+            $.ajax({
+                type: "post",
+                url: CONSTANT_ENV.local + '/user/checkUserExist',
+                dataType: 'json',
+                data: {
+                    phone: phone
+                },
+                success: callback,
+                error: function () {
+                    alert("服务器内部错误！");
+                }
+            });
+        },
+
+        //同步拉取用户信息
+        getUserInfo: function (userId, callback) {
+            $.ajax({
+                async: false,
+                type: "post",
+                url: CONSTANT_ENV.local + '/relation/queryUserInfoAndUserCount',
+                dataType: 'json',
+                data: {
+                    userId: userId
+                },
+                success: callback,
+                error: function () {
+                    alert("服务器内部错误！");
+                }
+            })
+        },
+
+        //邀请用户
+        inviteRecord: function (userId,phone,callback) {
+            userId = parseInt(userId);
+            $.ajax({
+                type: "post",
+                url: CONSTANT_ENV.local + '/relation/inviteRecord',
+                dataType: 'json',
+                data: {
+                    userId: userId,
+                    type : 0,
+                    phone : phone,
+                    classCode : ""
+                },
+                success: callback,
+                error: function () {
+                    alert("服务器内部错误！");
+                }
+            });
+        }
+    };
 
     //var $name = "$";
     //if(navigator.appName == "Microsoft Internet Explorer"){
@@ -39,7 +97,12 @@ define(function (require, exports, module) {
         mask: $("#mask"),
         listTem: $("#listTemplate"),
         list: $("#list")
+
     }
+
+
+    //获取uid
+    var userId = parseInt($("#uId").val());
 
 
     var refreshList = function (data, listTem, append) {
@@ -138,7 +201,6 @@ define(function (require, exports, module) {
 
 
 
-
             $downList.find("button").hammer({}).on("tap",function(){
                 window.location.href =  $(this).attr("url");
             });
@@ -151,6 +213,8 @@ define(function (require, exports, module) {
             UI.copyCode = $("#copyCode");
             UI.addClass = $("#addClass");
             UI.topDom = $("#topDom");
+            UI.takeGift = UI.alert.find("#takeGift");
+            UI.phone   =  $("#mobileNum");
 
 
             //css hack
@@ -181,7 +245,6 @@ define(function (require, exports, module) {
                     return false;
                 }
 
-
                 if (isMobile.iOS()) {
                     window.location.href = iosUrl;
                 } else {
@@ -203,6 +266,45 @@ define(function (require, exports, module) {
 
             UI.addClass.hammer({}).on("tap", function () {
                 toggleLayer(true);
+            });
+
+            //点击领取奖励
+            UI.takeGift.hammer({}).on("tap",function () {
+                var phone = UI.phone.val();
+                var re = /^1\d{10}$/;
+                if (!re.test(phone)) {
+                    alert('请输入正确的电话号码');
+                } else {
+
+                    Ajax.checkUserExist(phone,function (res) {
+                        if (res.rtnCode == '0000000') {
+                            if (res.bizData.isExist) {
+                                //已注册
+                                console.log('ok,已注册');
+                                window.location.href = '/share/invite/register';
+                            } else {
+
+                                //未注册
+                                console.log('error,未注册');
+                                //邀请
+                                Ajax.inviteRecord(userId,UI.phone.val(),function(res){
+                                    if (res.rtnCode == '0000000') {
+                                        window.location.href = '/share/invite/download?phone='+phone+"&uId="+userId;
+                                    }
+                                    else{
+                                        alert(res.msg);
+                                    }
+                                });
+                            }
+                        } else {
+                            console.log(res.msg)
+                        }
+                    });
+
+                }
+
+
+
             });
 
 

@@ -41,6 +41,7 @@
 
 
 <input type="hidden"  id="classId" value="<%=classId %>" />
+<input type="hidden"  id="uId" value="<%=uId %>" />
 
 <header class="header-top">
     <div class="w1000 block-center">
@@ -48,6 +49,8 @@
         <span class="cicada-logo-text font-black">知了</span>
     </div>
 </header>
+
+
 
 
 
@@ -105,11 +108,12 @@
         <!--</div>-->
 
         <div>
-            <input type="tel"  placeholder="请输入手机号码"  class="input-default"   />
+            <input type="tel"  placeholder="请输入手机号码"  id="mobileNum" class="input-default"   />
         </div>
 
         <div class="button-group">
-            <button class="ib btn inverse btn-default  btn-big" id="dowload">下载知了</button>
+            <!--<button class="ib btn inverse btn-default  btn-big" id="dowload">下载知了</button>-->
+            <button class="ib btn inverse btn-default  btn-big" id="takeGift">领取奖励</button>
         </div>
 
     </div>

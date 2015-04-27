@@ -22,9 +22,10 @@ router.get("/product",function(req,res){
  */
 router.get("/class",function(req,res){
     var classId = req.query.classId;
-
+    var uId    = req.query.uId;
     res.render("share/invite/invite-class",{
-        classId : classId
+        classId : classId,
+        uId : uId
     });
 });
 
