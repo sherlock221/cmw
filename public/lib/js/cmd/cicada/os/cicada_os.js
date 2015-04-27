@@ -9,20 +9,28 @@ define(function (require, exports, module) {
     var OS = {
 
         checkMobile: function () {
+
             var ua = window.navigator.userAgent.toLowerCase();
+            //ios
             if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
                 return {"type": "iOS"};
             }
+            //第三方
             else if (ua.indexOf("qq/") > -1) {
-                return {"message": "qq下载请点击右上角在浏览器中打开", "type": "other"}
+                return {"message": "qq下载请点击右上角在浏览器中打开", "type": "third"}
             }
+            //第三方
             else if (ua.match(/MicroMessenger/i) == 'micromessenger') {
-                return {"message": "微信下载请点击右上角在浏览器中打开", "type": "other"}
+                return {"message": "微信下载请点击右上角在浏览器中打开", "type": "third"}
             }
+            //android手机
             else if (navigator.userAgent.match(/Android/i)) {
                 return {"type": "Android"};
             }
-
+            //其他手机
+            else{
+                return {"type": "other"};
+            }
         },
 
 

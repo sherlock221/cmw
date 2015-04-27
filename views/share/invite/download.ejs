@@ -13,17 +13,17 @@
     <meta name="renderer" content="webkit">
     <title>知了-理解源自沟通</title>
 
+
     <!-- mobile 头部模板 -->
     <%- include  ../../template/header/header-mobile-share.ejs %>
 
+
     <!-- share 相关业务 -->
     <link rel="stylesheet" href="/share/invite/css/share.css?v=108">
-    <link rel="stylesheet" href="/lib/wave/waves.css"/>
+    <link rel="stylesheet" href="/lib/css/ui/wave/waves.css"/>
 
-    <!--微信 配置 -->
-    <script type="text/javascript"  src="/config.js?v=108"></script>
-    <script type="text/javascript" src="/template/js/wx.js"></script>
-
+    <!-- 配置 -->
+    <script src="/config.js"></script>
 
 
 </head>
@@ -58,9 +58,9 @@
 
 <div class="warp-bottom"></div>
 
-<script type="text/javascript"  src="/lib/wave/waves.min.js"></script>
-<script type="text/javascript"  src="/template/js/template.js"></script>
-<script type="text/javascript"  src="/share/invite/js/dowload.js?v=108"></script>
+<script type="text/javascript">
+    seajs.use("/share/invite/js/dowload");
+</script>
 
 
 </body>

@@ -18,12 +18,10 @@
 
     <!-- share 相关业务 -->
     <link rel="stylesheet" href="/share/invite/css/share.css?v=108">
-    <link rel="stylesheet" href="/lib/wave/waves.css"/>
+    <link rel="stylesheet" href="/lib/css/ui/wave/waves.css"/>
 
-    <!--微信 -->
-    <script type="text/javascript" src="/template/js/wx.js"></script>
-
-
+    <!-- 配置 -->
+    <script src="/config.js"></script>
 
 </head>
 <body>
@@ -57,8 +55,11 @@
     </div>
 </div>
 <div class="warp-bottom"></div>
-<script type="text/javascript"  src="/lib/wave/waves.min.js"></script>
-<script type="text/javascript"  src="/template/js/template.js"></script>
-<script type="text/javascript"  src="/share/invite/js/share.js?v=108"></script>
+
+
+<script type="text/javascript">
+    seajs.use("/share/invite/js/share");
+</script>
+
 </body>
 </html>
