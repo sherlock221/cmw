@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh_cn">
+    <!-- 基本配置信息 -->
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+
+    <!-- seo 优化部分 -->
+    <meta name="title" content="分享h5 班级码"/>
+    <meta name="keywords" content="分享h5 班级码"/>
+    <meta name="author" content="sherlock"/>
+    <meta name="Description" content="分享h5 班级码"/>
+
+
+    <!-- mobile 头部模板 -->
+    <%- include  ../../template/header/header-mobile-share.ejs %>
+    <!-- 配置 -->
+    <script src="/config.js"></script>
+
+
+    <!-- mobile-->
+    <link rel="stylesheet" type="text/css" href="/share/invite/css/class.css"/>
+
+    <!-- 小于ie9 的文件 -->
+    <!--[if lt IE 9]>
+    <script src="/lib/js/other/ie9/html5shiv.min.js"></script>
+    <script src="/lib/js/other/ie9/respond.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/share/invite/css/class-pc.css"/>
+    <![endif]-->
+
+
+    <title>知了·分享班级</title>
+
+</head>
+<body>
+
+
+<input type="hidden"  id="classId" value="<%=classId %>" />
+
+<header class="header-top">
+    <div class="w1000 block-center">
+        <i class="ib all-img cicada-logo-small cicada-logo-small-pos"></i>
+        <span class="cicada-logo-text font-black">知了</span>
+    </div>
+</header>
+
+
+
+<div id="base" class="clearFix">
+
+    <div id="left-nav">
+        <div class="left-nav-bt " id="dowload_list">
+            <button class="dowload_btn ios"></button>
+            <button class="dowload_btn android"></button>
+            <div class="dowload_icon">
+                <i class="ib all-img cicada-ios" style="margin-right: 30px;"></i>
+                <i class="ib all-img cicada-android" ></i>
+
+            </div>
+            <div>
+                <i class="ib code"></i>
+            </div>
+        </div>
+
+
+    </div>
+    <div id="list">
+
+
+
+    </div>
+
+</div>
+
+
+
+
+
+<div class="mask" id="mask">
+
+</div>
+
+
+<div class="toplayer" id="topDom">
+    <i class="ib all-img cicada-arrow"></i>
+    点这里在浏览器中打开下载
+</div>
+
+
+<script type="text/html" id="listTemplate">
+
+    <div class="alert alert-default" id="alert">
+
+        <i class="ib top-head top-head-pos-top"></i>
+
+        <h3 class="title font-og text-center ">输入手机号,领取奖励</h3>
+        <!--<div class="copy-layer">-->
+        <!--<span class="ib font-black alertCode"><@=classCode @></span>-->
+        <!--<button class="ib btn btn-default btn-small" id="copyCode" data-clipboard-text="<@=classCode @>" >复制</button>-->
+        <!--</div>-->
+
+        <div>
+            <input type="tel"  placeholder="请输入手机号码"  class="input-default"   />
+        </div>
+
+        <div class="button-group">
+            <button class="ib btn inverse btn-default  btn-big" id="dowload">下载知了</button>
+        </div>
+
+    </div>
+
+
+
+    <div class="share">
+        <section class="tc pd-lr-10">
+            <div class="cicada-logo-pos">
+                <i class="all-img cicada-logo hidden-val ib">知了</i>
+            </div>
+
+            <div class="cicada-text-pos ">
+                <h3 class="cicada-text-title font-black cicada-text-01">知了</h3>
+                <p class="cicada-text-content font-gray cicada-text-02">理解源自沟通</p>
+            </div>
+
+            <div>
+                <button type="button" class="btn btn-default" id="addClass">加入班级</button>
+            </div>
+        </section>
+
+        <section class="tl pd-lr-10  middle-cicda">
+            <section class="mb15">
+                <div>
+                    <span class="ib font-gray-02">班级码</span>
+                </div>
+                <div>
+                    <span class="ib font-og class-code"><@=classCode @></span>
+                </div>
+            </section>
+
+            <section class="mb15">
+                <h3 class="font-black f16"><@=className @></h3>
+                <p class="font-gray-02 f14">
+                    <@=schoolName @>
+                </p>
+            </section>
+
+            <section class="float-box ovh">
+                <div class="f2 cicada-class-people">
+                    <h5 class="font-gray-02 f12">已有老师<@=teacherCount @>人</h5>
+
+                    <div class="cicada-class-hd">
+
+                        <@ for (i=0;i<teacherInfos.length;i++) { @>
+                        <@ if(i <= 4) { @>
+                        <a href="javascript:void(0);" class="ib cicada-head">
+                            <img src="<@=$head(teacherInfos[i].userIcon) @>" width="20" height="20">
+                        </a>
+                        <@ } @>
+                        <@ } @>
+
+                    </div>
+                </div>
+                <div class="f2 cicada-class-people">
+                    <h5 class="font-gray-02 f12">已有家长<@=parentCount @>人</h5>
+                    <div class="cicada-class-hd">
+
+                        <@ for (i=0;i<parentInfos.length;i++) { @>
+                        <@ if(i <= 4) { @>
+                        <a href="javascript:void(0);" class="ib cicada-head">
+                            <img src="<@=$head(parentInfos[i].userIcon) @>" width="20" height="20">
+                        </a>
+                        <@ } @>
+                        <@ } @>
+
+                    </div>
+                </div>
+
+            </section>
+        </section>
+
+        <section class="tc bg-info">
+            <div class="pd-lr-10 tc ">
+                <span class="ib all-img info-img hidden-val info-img-pos">也许不常见面。。。</span>
+            </div>
+        </section>
+
+    </div>
+
+
+</script>
+</body>
+
+
+<script type="text/javascript">
+    seajs.use("/share/invite/js/classs");
+</script>
+</html>

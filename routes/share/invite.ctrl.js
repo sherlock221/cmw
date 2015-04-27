@@ -21,7 +21,11 @@ router.get("/product",function(req,res){
  * 班级分享
  */
 router.get("/class",function(req,res){
-    res.render("share/invite/invite-class");
+    var classId = req.query.classId;
+
+    res.render("share/invite/invite-class",{
+        classId : classId
+    });
 });
 
 
