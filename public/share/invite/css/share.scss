@@ -140,7 +140,7 @@ b{
 }
 
 .warp-bottom {
-  background: url('../images/bottom-img.png') no-repeat;
+  background: url('../../../imgs/share/bottom-img.png') no-repeat;
   height: rem(145);
   width: 100%;
   background-size: 100%;
@@ -271,7 +271,7 @@ $btn-red: #e7505e;
 }
 .img-top-arrow{
   position: absolute;
-  background-image: url("/imgs/share/share-arrow.png");
+  background-image: url("../../../imgs/share/share-arrow.png");
   background-size: 100% 100%;
   width: 15px;
   height: 15px;

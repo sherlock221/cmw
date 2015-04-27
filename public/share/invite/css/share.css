@@ -142,7 +142,7 @@ b {
     border-radius: 4px; }
 
 .warp-bottom {
-  background: url("../images/bottom-img.png") no-repeat;
+  background: url("../../../imgs/share/bottom-img.png") no-repeat;
   height: 72.5px;
   width: 100%;
   background-size: 100%;
@@ -240,7 +240,7 @@ b {
 
 .img-top-arrow {
   position: absolute;
-  background-image: url("/imgs/share/share-arrow.png");
+  background-image: url("../../../imgs/share/share-arrow.png");
   background-size: 100% 100%;
   width: 15px;
   height: 15px; }
