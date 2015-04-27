@@ -4,7 +4,6 @@
 define(function (require, exports, module) {
 
 
-
     var tp = require("artTemplate");
 
     tp.helper('$head', function (head) {
@@ -15,7 +14,6 @@ define(function (require, exports, module) {
             return  "/imgs/share/head.png";
         }
     });
-
 
     var Ajax = {
 
@@ -117,7 +115,7 @@ define(function (require, exports, module) {
 
     var loadData = function (classId) {
         $.ajax({
-            url: "http://10.10.68.11:10000/uc" + "/school/getSharePageInfoByClassId",
+            url: CONSTANT_ENV.local+ "/school/getSharePageInfoByClassId",
             data: {classId: classId},
             dataType: "json",
             async: false,
