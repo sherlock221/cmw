@@ -33,9 +33,22 @@ http://10.10.68.11:3001/share/invite/product?uId=34504&version=1.3.1.65
 
 
 
-部署流程
+nginx 配置
 
-需要将测试库nginx的配置 放到 115上
-cmw 重新上传
-重启node服务
+
+ server {
+
+           listen  3000;
+           server_name  10.10.68.11;
+           location /cmw/ {
+                     #对接cicada客户端
+                     # proxy_pass http://10.10.68.11:3001;
+
+                }
+                location /wx/ {
+                        #微信服务
+                        proxy_pass http://10.10.68.11:3000;
+                }
+
+        }
 
