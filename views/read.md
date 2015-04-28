@@ -31,3 +31,11 @@ http://10.10.68.11:3001/share/invite/class?classId=14900&uId=34504&version=1.3.1
 //产品
 http://10.10.68.11:3001/share/invite/product?uId=34504&version=1.3.1.65
 
+
+
+部署流程
+
+需要将测试库nginx的配置 放到 115上
+cmw 重新上传
+重启node服务
+
