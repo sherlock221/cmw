@@ -5,7 +5,6 @@
 
 define(function(require,exports,module){
 
-
     var Util = require("cicada");
     var Waves = require("ui_waveButton");
 
@@ -75,6 +74,8 @@ var UI = {
     phone: $('.phone'),
     getValueBtn: $('.getValueBtn')
 };
+
+
 
 
 //获取uid

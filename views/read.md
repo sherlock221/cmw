@@ -4,10 +4,10 @@
 http://localhost:3001/task/list?token=50ff0a04-597a-4b27-9f08-8ff6321f74d5&version=1.3.1.65
 
 //测试班级
-http://172.16.140.163:3001/share/invite/class?classId=14900&version=1.3.1.65
+http://localhost:3001/share/invite/class?classId=14900&version=1.3.1.65
 
 //测试产品
-http://172.16.140.163:3001/share/invite/product?uId=34504&version=1.3.1.65
+http://localhost:3001/share/invite/product?uId=34504&version=1.3.1.65
 
 
 
