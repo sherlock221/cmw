@@ -188,6 +188,8 @@ define(function (require, exports, module) {
             var domHeight = $("body").height();
 
 
+            //存储本地分享地址
+            localStorage.setItem("shareUrl",window.location.href);
 
 
             var  iosUrl = "https://itunes.apple.com/cn/app/id948591472?mt=8";
