@@ -19,7 +19,7 @@ var SEAJS_CONSTANT  = {
 seajs.config({
 
     //顶级标识
-    base: "/lib",
+    base: "/cmw/lib",
     //设置别名
     alias: {
         //核心部分

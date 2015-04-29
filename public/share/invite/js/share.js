@@ -26,7 +26,7 @@ define(function(require,exports,module) {
 
     $(function () {
 //    var img =  " ../share/images/default_image_head.png";
-        var img = "/imgs/share/cicada-logo.png";
+        var img = "/cmw/imgs/share/cicada-logo.png";
 
 //    if(user.userIcon){
 //        img = user.userIcon;
@@ -47,6 +47,8 @@ define(function(require,exports,module) {
 
         //打开知了
         UI.openBtn.hammer({}).bind("tap", function () {
+
+
             //Util.platform.openCiacada();
             window.location.href = treasure;
         });

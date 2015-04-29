@@ -59,7 +59,7 @@ define(function(require,exports,module) {
         if (res.rtnCode == "0000000") {
 
 //        var img =  " ../share/images/default_image_head.png";
-            var img = "/imgs/share/cicada-logo.png";
+            var img = "/cmw/imgs/share/cicada-logo.png";
 
 //        if(res.bizData.userIcon){
 //            img = res.bizData.userIcon;

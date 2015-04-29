@@ -11,7 +11,7 @@ define(function (require, exports, module) {
             return  head;
         }
         else {
-            return  "/imgs/share/head.png";
+            return  "/cmw/imgs/share/head.png";
         }
     });
 
@@ -50,8 +50,8 @@ define(function (require, exports, module) {
             })
         },
 
-        //邀请用户
-        inviteRecord: function (userId,phone,callback) {
+        //邀请加班
+        inviteRecord: function (userId,classId,phone,callback) {
             userId = parseInt(userId);
             $.ajax({
                 type: "post",
@@ -59,9 +59,9 @@ define(function (require, exports, module) {
                 dataType: 'json',
                 data: {
                     userId: userId,
-                    type : 0,
+                    type : 1,
                     phone : phone,
-                    classCode : ""
+                    classCode : classId
                 },
                 success: callback,
                 error: function () {
@@ -101,6 +101,7 @@ define(function (require, exports, module) {
 
     //获取uid
     var userId = parseInt($("#uId").val());
+    var classId = parseInt($("#classId").val());
 
 
     var refreshList = function (data, listTem, append) {
@@ -281,15 +282,15 @@ define(function (require, exports, module) {
                             if (res.bizData.isExist) {
                                 //已注册
                                 console.log('ok,已注册');
-                                window.location.href = '/share/invite/register';
+                                window.location.href = '/cmw/share/invite/register';
                             } else {
 
                                 //未注册
                                 console.log('error,未注册');
                                 //邀请
-                                Ajax.inviteRecord(userId,UI.phone.val(),function(res){
+                                Ajax.inviteRecord(userId,classId,UI.phone.val(),function(res){
                                     if (res.rtnCode == '0000000') {
-                                        window.location.href = '/share/invite/download?phone='+phone+"&uId="+userId;
+                                        window.location.href = '/cmw/share/invite/download?phone='+phone+"&uId="+userId;
                                     }
                                     else{
                                         alert(res.msg);

@@ -23,9 +23,10 @@ var CONSTANT_TASK = {
 //测试
 var CONSTANT_ENV ={
         //node服务
-        RES : "http://10.10.68.11:3001",
+        RES : "http://10.10.68.11:3000",
         credit : "http://10.10.68.11:10000/credit",
         local:  "http://10.10.68.11:10000/uc"
+        //local:  "http://172.16.130.104:8080/uc"
 };
 
 //资源地址

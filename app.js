@@ -7,7 +7,14 @@ var bodyParser = require('body-parser');
 var route = require("./routes/route");
 var log4js = require('log4js');
 var log = require('./log');
+
+//设置根
 var app = express();
+//设置cmw项目
+var cmw = express();
+
+//添加全局
+app.use("/cmw",cmw);
 
 
 // view engine setup
@@ -20,7 +27,6 @@ app.set('view engine', 'ejs');
 
 
 
-
 //app.locals.__dirname = __dirname;
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
@@ -28,7 +34,14 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+
+
+//配置静态资源
+//app.use(express.static(path.join(__dirname, 'public')));
+//app.use(express.static("public"));
+app.use("/cmw",express.static("public"));
+//app.use('/cmw', express.static('/public') );
+
 
 //设置跨域访问
 app.all('*', function(req, res, next) {
@@ -44,7 +57,7 @@ app.all('*', function(req, res, next) {
 log.use(app);
 
 //路由配置
-route.init(app);
+route.init(cmw);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

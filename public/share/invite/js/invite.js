@@ -85,7 +85,7 @@ var userId = parseInt($("#uId").val());
 Ajax.getUserInfo(userId, function (res) {
     if(res.rtnCode == "0000000"){
 
-        var img =  "/imgs/share/default_image_head.png";
+        var img =  "/cmw/imgs/share/default_image_head.png";
         if(res.bizData.userIcon){
             img = res.bizData.userIcon;
         }
@@ -121,7 +121,7 @@ $(function () {
                     if (res.bizData.isExist) {
                         //已注册
                         console.log('ok,已注册');
-                        window.location.href = '/share/invite/register';
+                        window.location.href = '/cmw//share/invite/register';
                     } else {
 
                         //未注册
@@ -129,7 +129,7 @@ $(function () {
                         //邀请
                         Ajax.inviteRecord(userId,UI.phone.val(),function(res){
                             if (res.rtnCode == '0000000') {
-                                window.location.href = '/share/invite/download?phone='+phone+"&uId="+userId;
+                                window.location.href = '/cmw//share/invite/download?phone='+phone+"&uId="+userId;
                             }
                             else{
                                 alert(res.msg);

@@ -13,7 +13,7 @@ define(function(require,exports,module){
             var result  ="";
             $.ajax({
                 type: "get",
-                url: "/task/json/share.json",
+                url: "/cmw/task/json/share.json",
                 async : false,
                 success : function(res){
                     result  = res;

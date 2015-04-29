@@ -31,7 +31,7 @@
 .icon {
   width: 44.5px;
   background-size: 44.5px 212px;
-  background-image: url("/imgs/task/icon.png"); }
+  background-image: url("/cmw/imgs/task/icon.png"); }
 
 .icon-pencil {
   background-position: 0 0;
@@ -89,3 +89,4 @@ body, html {
   width: 56px;
   display: block; }
 
+/*# sourceMappingURL=get-active-value.css.map */
