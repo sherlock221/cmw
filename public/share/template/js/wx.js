@@ -8,7 +8,7 @@ function getSignature (sUrl){
     var shareUrl  =  sUrl || localStorage.getItem("shareUrl");
 
     //注册服务
-    $.post("http://imzhiliao.com:3000/signature",{
+    $.post("http://imzhiliao.com:3000/wx/signature",{
         url : location.href.split('#')[0],
         //c_no : "test-abjia"
         c_no : "cicada"

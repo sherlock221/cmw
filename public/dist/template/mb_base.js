@@ -2386,7 +2386,8 @@ define("js/cmd/cicada/os/cicada_os", [ "../storage/cicada_sg" ], function(requir
  * cicada client
  * @param key
  */
-define("js/cmd/cicada/other/cicada_client", [], function(require, exports, module) {
+define("js/cmd/cicada/other/cicada_client", [ "../web/cicada_location" ], function(require, exports, module) {
+    var Location = require("../web/cicada_location");
     var Client = {
         openCiacada: function() {
             //            var isrefresh =  Util.location.getParams().refresh;
@@ -2414,7 +2415,7 @@ define("js/cmd/cicada/other/cicada_client", [], function(require, exports, modul
                 value: viewName
             } ];
             if (type == "iOS") {
-                var params = Util.location.encodeParam(params);
+                var params = Location.encodeParam(params);
                 console.log("ios", "cicada://cicada/page/goPage" + params);
                 window.location.href = "cicada://cicada/page/goPage" + params;
             } else {

@@ -52,14 +52,19 @@ define(function (require, exports, module) {
 
         //邀请加班
         inviteRecord: function (userId,classId,phone,callback) {
+
+            var type =  1;
             userId = parseInt(userId);
+
+            //alert("classCode="+classId+"phone="+phone+"userId="+userId+"type="+type);
+
             $.ajax({
                 type: "post",
                 url: CONSTANT_ENV.local + '/relation/inviteRecord',
                 dataType: 'json',
                 data: {
                     userId: userId,
-                    type : 1,
+                    type : type,
                     phone : phone,
                     classCode : classId
                 },
@@ -256,7 +261,6 @@ define(function (require, exports, module) {
 
 
 
-
             UI.copyCode.hammer({}).on("tap", function (event) {
                 if (zcErro) {
                     alert("您的浏览器不支持自动复制,请手动复制左侧班级码.");
@@ -269,6 +273,18 @@ define(function (require, exports, module) {
                 toggleLayer(true);
             });
 
+
+            var invite = function(){
+                Ajax.inviteRecord(userId,classId,UI.phone.val(),function(res){
+                    if (res.rtnCode == '0000000') {
+                        window.location.href = '/cmw/share/invite/download?phone='+phone+"&uId="+userId;
+                    }
+                    else{
+                        alert(res.msg);
+                    }
+                });
+            }
+
             //点击领取奖励
             UI.takeGift.hammer({}).on("tap",function () {
                 var phone = UI.phone.val();
@@ -279,26 +295,25 @@ define(function (require, exports, module) {
 
                     Ajax.checkUserExist(phone,function (res) {
                         if (res.rtnCode == '0000000') {
-                            if (res.bizData.isExist) {
-                                //已注册
-                                console.log('ok,已注册');
-                                window.location.href = '/cmw/share/invite/register';
-                            } else {
-
+                            var isExist = res.bizData.isExist;
                                 //未注册
                                 console.log('error,未注册');
                                 //邀请
                                 Ajax.inviteRecord(userId,classId,UI.phone.val(),function(res){
                                     if (res.rtnCode == '0000000') {
-                                        window.location.href = '/cmw/share/invite/download?phone='+phone+"&uId="+userId;
+                                        if(isExist){
+                                            window.location.href = '/cmw/share/invite/register';
+                                        }
+                                        else{
+                                            window.location.href = '/cmw/share/invite/download?phone='+phone+"&uId="+userId;
+                                        }
                                     }
                                     else{
                                         alert(res.msg);
                                     }
                                 });
-                            }
                         } else {
-                            console.log(res.msg)
+                            alert(res.msg);
                         }
                     });
 

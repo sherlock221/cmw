@@ -4,9 +4,10 @@
 define(function(require,exports,module){
 
 
-    var Util = require("cicada");
     var template = require("artTemplate");
+    var Util = require("cicada");
 
+    var UI;
 
     var Ajax = {
         getShareData : function(){
@@ -35,9 +36,6 @@ define(function(require,exports,module){
             });
         }
     };
-
-
-    var UI;
 
     var  h5_share =  CONSTANT_RES.invite +"?targetUserType=0";
 

@@ -3,6 +3,7 @@
  * @param key
  */
 define(function(require,exports,module){
+    var Location = require("../web/cicada_location");
 
     var  Client = {
         openCiacada : function(){
@@ -43,7 +44,7 @@ define(function(require,exports,module){
                 }
             ];
             if (type == "iOS") {
-                var params = Util.location.encodeParam(params);
+                var params = Location.encodeParam(params);
                 console.log("ios", "cicada://cicada/page/goPage" + params);
                 window.location.href = "cicada://cicada/page/goPage" + params;
             }

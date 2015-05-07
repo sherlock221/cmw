@@ -11,15 +11,13 @@ define(function(require,exports,module) {
     var Waves = require("ui_waveButton");
 
 
-
     var UI = {
-
         head: $("#head"),
         openBtn: $("#openBtn"),
         shareBtn: $("#shareBtn")
     }
 
-//获取user
+    //获取user
     var user = Util.lg.getLgObj("user");
 
     var treasure = "http://a.app.qq.com/o/simple.jsp?pkgname=com.cicada.cicada";
@@ -47,10 +45,13 @@ define(function(require,exports,module) {
 
         //打开知了
         UI.openBtn.hammer({}).bind("tap", function () {
-
-
-            //Util.platform.openCiacada();
-            window.location.href = treasure;
+            if(Util.os.checkMobile().type="third"){
+                window.location.href = treasure;
+            }
+            else{
+                Util.other.openCiacada();
+            }
+            //window.location.href = treasure;
         });
     });
 

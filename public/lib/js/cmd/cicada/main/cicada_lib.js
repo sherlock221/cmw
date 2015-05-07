@@ -22,13 +22,17 @@ define(function(require,exports,module){
     //os系统
     Cicada.os  =  require("../os/cicada_os");
 
+
     //字符相关
     Cicada.val = {};
     Cicada.val.jstring =  require("../val/cicada_jstring");
     Cicada.val.jvalidate = require("../val/cicada_jvalidate");
 
+
     //cicada客户端
     Cicada.other  =  require("../other/cicada_client");
+
+
 
     module.exports = Cicada;
 
