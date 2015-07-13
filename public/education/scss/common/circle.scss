@@ -1,0 +1,43 @@
+
+
+//外层圆环
+.wrap-ring-img{
+  background-image: url("../resources/big-circle-01.png");
+  background-size: rem(650) rem(650);
+  width: rem(650);
+  height: rem(650);
+}
+
+//外层透明圆环
+.wrap-ring-opacity-img{
+  background-image: url("../resources/big-circle-02.png");
+  background-size: rem(650) rem(650);
+  width: rem(650);
+  height: rem(650);
+}
+
+
+//白色线环
+.middle-ring-white-img{
+  background-position: rem(0) rem(-450);
+  width: rem(578);
+  height: rem(578);
+}
+
+//红色img
+.middle-ring-red-img{
+  background-position: rem(-610) rem(-450);
+  width: rem(578);
+  height: rem(578);
+}
+
+
+.inner-ring-img{
+  background-image: url("../resources/small-circle.png");
+  background-size: rem(1036) rem(518);
+
+  background-position: rem(-518) rem(0);
+  width : rem(518);
+  height : rem(518);
+
+}

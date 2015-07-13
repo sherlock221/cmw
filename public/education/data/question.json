@@ -1,0 +1,115 @@
+[
+
+  {
+    "questionId"   : 1,
+    "questionTitle" : "QUESTION 1",
+    "questionDesc" : "这年头，不聊聊互联网+都被觉得落伍的火爆。站在互联网风口上，猪都能飞起来，你是打算卖水果，卖铁锹还是卖牛仔裤，亦或是撸起袖管直接加入全通习悦大干一场？辣么问题来了，全通习悦是做什么的呢？",
+    "questionOptions":[
+      {
+        "optionName" : "A",
+        "optionValue":".互联网+水果"
+      },
+      {
+        "optionName" : "B",
+        "optionValue":".互联网+牛仔裤"
+
+      },
+      {
+        "optionName" : "C.=",
+        "optionValue":".互联网+教育"
+
+      },
+      {
+        "optionName" : "D",
+        "optionValue":".互联网+铁锹"
+
+      }
+    ]
+  },
+  {
+
+    "questionId"   : 2,
+    "questionTitle" : "QUESTION 2",
+    "questionDesc" : "有一种痛叫做你的同学都身价千万了，全通教育如此酷炫高端有未来，以下哪一个是你的心动女（gang）神(wei)？",
+    "questionOptions":[
+      {
+        "optionName" : "A",
+        "optionValue":".数据分析狮"
+      },
+      {
+        "optionName" : "B",
+        "optionValue":".大数据研发工程狮"
+
+      },
+      {
+        "optionName" : "C",
+        "optionValue":".客户端开发工程狮"
+
+      },
+      {
+        "optionName" : "D",
+        "optionValue":".前端/后端工程狮"
+
+      },
+      {
+        "optionName" : "E",
+        "optionValue":".程序猿鼓励狮"
+
+      }
+    ]
+  },
+  {
+    "questionId"   : 3,
+    "questionTitle" : "QUESTION 3",
+    "questionDesc" : "技术加分题1：以下哪个技术可以解决小编上面设计的教育场景？",
+    "questionOptions":[
+      {
+        "optionName" : "A",
+        "optionValue":".SIN"
+      },
+      {
+        "optionName" : "B",
+        "optionValue":".COS"
+
+      },
+      {
+        "optionName" : "C",
+        "optionValue":".KVN"
+
+      },
+      {
+        "optionName" : "D",
+        "optionValue":".KTV"
+
+      }
+    ]
+  },
+
+  {
+    "questionId"   : 4,
+    "questionTitle" : "QUESTION 4",
+    "questionDesc" : "技术加分题2：听过智能评测吗？神马，你听过?那告诉我智能评测会用到哪些技术？",
+    "questionOptions":[
+      {
+        "optionName" : "A",
+        "optionValue":".OCR"
+      },
+      {
+        "optionName" : "B",
+        "optionValue":".机器学习"
+
+      },
+      {
+        "optionName" : "C",
+        "optionValue":".语义分析"
+
+      },
+      {
+        "optionName" : "D",
+        "optionValue":".YY"
+
+      }
+    ]
+  }
+
+]

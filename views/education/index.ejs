@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="renderer" content="webkit">
+
+    <!-- seo 优化部分 -->
+    <meta name="title" content="习悦研究院 习悦研究院"/>
+    <meta name="keywords" content="习悦 研究院 习悦研究院"/>
+    <meta name="author" content="sherlock"/>
+    <meta name="email" content="920825209@qq.com"/>
+    <meta name="Description" content="习悦研究院 习悦研究院"/>
+    <title>习悦研究院</title>
+
+    <!-- 防止缓存 -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+    <!-- skin -->
+    <link rel="stylesheet" href="lib/base/module.css"/>
+    <link rel="stylesheet" href="scss/all.css?v=11"/>
+
+    <!-- ani -->
+    <link rel="stylesheet" href="lib/base/cartoon.min.css" />
+
+    <!-- third -->
+    <script type="text/javascript" src="lib/pre/loader.min.js"></script>
+
+
+    <!-- svg -->
+    <script type="text/javascript" src="lib/effect/vivus.min.js"></script>
+
+
+    <script type="text/javascript" src="lib/zp/zepto.js"></script>
+
+</head>
+
+<body>
+
+
+
+
+<div id="container" class="container  bg-default" >
+    <!-- 第一个图片 -->
+    <div  class="indexLayer  hide" id="indexLayer">
+        <ul id="arrow-list" class="arrow-list"  data-friction-x="0.1"
+            data-friction-y="0.1"
+            data-scalar-x="25"
+            data-scalar-y="0">
+
+            <!--<li class="layer" style="width: 110% !important;top: -5% !important ;-->
+  <!--left: -5%  !important;" data-depth="0.20">-->
+                <!--<div class="bg-default" ></div>-->
+            <!--</li>-->
+            <li class="layer " data-depth="0.40"  >
+                <img src="resources/line/L1.png"  class="l1_img" width="320" />
+            </li>
+            <li class="layer" data-depth="0.60">
+                <img src="resources/line/L2.png" class="l2_img" width="320" />
+            </li>
+            <li class="layer" data-depth="0.20">
+                <img src="resources/line/L3.png" class="l3_img" width="106" />
+            </li>
+            <li class="layer" data-depth="0.40">
+                <img src="resources/line/L4.png" class="l4_img" width="106" />
+            </li>
+            <li class="layer" data-depth="0.60">
+                <img src="resources/line/L3.png" class="l5_img" width="106" />
+            </li>
+            <li class="layer" data-depth="0.20">
+                <img src="resources/line/L5.png" class="l6_img" width="200" />
+            </li>
+
+            <li class="layer" data-depth="0.40">
+                <img src="resources/line/R1.png" class="r1_img " width="156" />
+            </li>
+
+            <li class="layer" data-depth="0.20">
+                <img src="resources/line/R1.png" class="r2_img " width="156" />
+            </li>
+
+            <li class="layer" data-depth="0.40">
+                <img src="resources/line/R3.png" class="r3_img " width="320" />
+            </li>
+            <li class="layer" data-depth="0.20">
+                <img src="resources/line/R4.png" class="r4_img " width="320" />
+            </li>
+
+            <li class="layer" data-depth="0.20">
+                <img src="resources/line/R5.png" class="r5_img " width="200" />
+            </li>
+
+            <li class="layer">
+
+            </li>
+
+            <!--<li class="layer" data-depth="0.40">-->
+                <!--<img src="resources/line/R5.png" class="r5_img " width="320" />-->
+            <!--</li>-->
+            <!--<li  data-depth="0.60">-->
+                <!--<div  style="width: 300px; height: 200px;" class="bg-default"></div>-->
+            <!--</li>-->
+        </ul>
+
+        <!-- 文字大小 -->
+        <div class="font-center">
+
+            <%if(agent.iOS){ %>
+                <div class="font-education-ios">
+                     <div id="index-xx-svg"></div>
+                     <span id="font-education" class="ib weilai ">
+                        <img src="resources/svg/weilai.svg" />
+                     </span>
+                </div>
+
+            <%}else{%>
+                 <h5 id="font-education" class="ib font-base-img font-education"></h5>
+            <%}%>
+        </div>
+
+        <!-- 菊花 -->
+        <div class="chrysanthemum-front ">
+            <i class="ib  chrysanthemum-front-img  main-img-other"></i>
+        </div>
+
+        <!-- 菊花 -->
+        <div class="chrysanthemum">
+            <i class="ib chrysanthemum-img main-img-other"></i>
+        </div>
+
+        <!-- 立方体 -->
+        <div class="rect">
+            <i class="ib rect-img main-img-other" ></i>
+        </div>
+
+        <!-- 圆环 -->
+        <div  class="circle-layer">
+            <div class="f1-circle-white-img main-img-other  circle-white  ib">
+            </div>
+            <div class="f1-circle-red-img main-img-other circle-red ib"></div>
+
+        </div>
+
+
+        <!-- 指纹 -->
+
+        <div class="fingerprint hide"  id="fingerprint">
+            <div class="fingerprint-flash" >
+
+                <div class="fingerprint-heart">
+                    <i class="ib  fingerprint-img  main-img-other"></i>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!--style="-webkit-transform: scale(0.95);transform: scale(0.95);"-->
+
+    <!-- 第二个 -->
+    <div id="secondLayer" class="secondLayer hide ">
+
+        <div class="ib tr-center" >
+            <!-- 大圆环 -->
+            <div class="big-ring-out ib " id="big-ring-out" >
+                <section class="big-ring">
+                    <div class=" wrap-ring wrap-ring-img">  </div>
+                    <div class=" wrap-ring-opacity wrap-ring-opacity-img"></div>
+                    <div class="main-img-other middle-ring-white middle-ring-white-img"></div>
+
+                    <div class="main-img-other middle-ring-red middle-ring-red-img"></div>
+
+                    <div class=" inner-ring inner-ring-img"></div>
+
+                    <!--文字 -->
+                    <div class="font-people-layer">
+                        <div class="big-ring-out">
+                            <h5 class="ib font-people font-base-img "></h5>
+                        </div>
+                    </div>
+
+                </section>
+
+              </div>
+        </div>
+
+        <!-- 流星 -->
+        <i class="ib metro-img metro-bottom meteor-ani-bottom main-img"></i>
+        <i class="ib metro-img metro-bottom meteor-ani-center main-img"></i>
+
+
+
+    </div>
+
+    <!-- 新手村 -->
+    <div id="thirdLayer"  class="thirdLayer hide ">
+        <div class="text-center" >
+            <h5 class="font-base-img font-xinshou xinshou  ib"></h5>
+        </div>
+        <div class="puzzle-layer">
+            <div class="main-img iphone-puzzle-img ip-puzzle ib">
+            </div>
+                <span class="ib puzzle-wrap" id="puzzle-wrap">
+                    <i class="puzzle-img puzzle ib main-img"></i>
+                </span>
+
+            <span class="ib point-01 hide" >
+                    <span class="ib  red-point-flash">
+                            <i class="ib circle-point-img main-img red-point-heart"></i>
+                    </span>
+            </span>
+
+        </div>
+
+
+
+    </div>
+
+    <!-- 拜师学艺 -->
+    <div id="fourLayer"  class="fourLayer  ">
+
+        <div class="tr-center">
+            <h5 class="font-base-img font-baishi  ib "></h5>
+
+            <div class="mt30 rel" style="height: 250px;">
+
+
+                <div class="ib bs-red-cr bs-red-cr-img"></div>
+                <div class="ib wg-tree wg-tree-img main-img"></div>
+                <div class="ib wg-xt wg-xt-img main-img"></div>
+
+                <div class="" id="third-main-svg"></div>
+
+            </div>
+
+        </div>
+
+
+        <div>
+
+
+        </div>
+
+    </div>
+
+   <!--武功秘籍-->
+    <div  id="fiveLayer" class="fiveLayer  hide">
+            <div class="tr-center">
+                <div class="text-center">
+                    <h5 class="font-base-img ib font-wugong"></h5>
+                </div>
+
+                <div class="rel sp-content">
+
+                    <div class="ib main-img wg-head-img"></div>
+                    <div class="ib main-img wg-house-img"></div>
+                    <div class="ib main-img wg-red-img"></div>
+                    <div class="ib main-img wg-red-title-img"></div>
+                    <div class="ib main-img wg-cmp-img"></div>
+                    <div class="ib main-img wg-circle-img"></div>
+                    <div class="ib main-img wg-play-img"></div>
+
+                </div>
+
+
+            </div>
+
+
+    </div>
+
+    <!--第6屏-->
+    <div  id="sixLayer" class="sixLayer hide ">
+        <!-- 流星 -->
+        <i class="ib metro-img metro-bottom meteor-ani-bottom main-img"></i>
+        <i class="ib metro-img metro-bottom meteor-ani-center main-img"></i>
+
+        <span class="ib team-info-img team-info font-base-img"></span>
+
+        <div class="text-center head-layer">
+            <section class="ib">
+
+            <div class="mb35">
+                <span class="ib ml10">
+                    <i class="ib head-01 head-img"></i>
+                </span>
+                <div class="ib pl30">
+                    <i class="ib font-base-img font-jiagou "></i>
+                </div>
+
+            </div>
+            <div class="mb35">
+                <div class="ib ml30 ">
+                    <i class="ib font-base-img font-data "></i>
+                </div>
+                  <span class="ib ml30">
+                    <i class="ib head-02 head-img"></i>
+                </span>
+
+            </div>
+            <div class="mb35">
+                <span class="ib ml10">
+                    <i class="ib head-03 head-img"></i>
+                </span>
+                <div class="ib pl30">
+                    <i class="ib font-base-img font-yanfa "></i>
+                </div>
+
+            </div>
+
+            <div class="mb35">
+                <div class="ib ml10 ">
+                    <i class="ib font-base-img font-you "></i>
+                </div>
+                  <span class="ib ml20">
+                    <i class="ib head-04 head-img"></i>
+                </span>
+
+            </div>
+
+        </section>
+        </div>
+
+    </div>
+
+    <!-- 团队介绍-->
+    <div id="sevenLayer" class="sevenLayer hide ">
+
+
+        <span class="ib team-info-img team-info font-base-img"></span>
+
+
+
+        <h5 class="title-style">
+            为什么要加入?
+        </h5>
+
+            <div class="tr-center">
+                <div class="">
+                    <h4 class="font-base-img f7 f7-01"></h4>
+                    <h4 class="font-base-img f7 f7-02"></h4>
+                    <h4 class="font-base-img f7 f7-03"></h4>
+                    <h4 class="font-base-img f7 f7-04"></h4>
+                    <h4 class="font-base-img f7 f7-05"></h4>
+                    <h4 class="font-base-img f7 f7-06"></h4>
+                    <h4 class="font-base-img f7 f7-07"></h4>
+                </div>
+
+                <div class="font-base-img  job-req job-req-img"></div>
+
+
+                <button class="btn light-button-bg  light-button-bg-img  main-img-other ">
+                    快来测测你能在全通习悦拿到多少年薪
+                    <i class="ib light-mover  light-mover-img main-img-other"></i>
+                </button>
+            </div>
+
+
+    </div>
+
+
+
+    <!--答题-->
+    <div class="answerLayer  hide" id="answerLayer">
+        <h3 class="answer-num ib"></h3>
+
+        <div class="answer-title">
+            这年头，不聊聊互联网+都被觉得落伍的火爆。站在互联网风口上，猪都能飞起来，你是打算卖水果，卖铁锹还是卖牛仔裤，亦或是撸起袖管直接加入全通习悦大干一场？辣么问题来了，全通习悦是做什么的呢？
+        </div>
+
+
+        <ul class="answer-select">
+
+        </ul>
+        
+        
+        <div class="answer-bottom ">
+            
+            <div class="ib bg-bottom main-img"></div>
+            <!--<button class="btn btn-submit-ans"></button>-->
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+</body>
+
+
+</html>
+
+<script type="text/javascript" src="lib/effect/parallax.js"></script>
+
+<!-- biz -->
+<script type="text/javascript" src="js/index.js"></script>
+
+
+

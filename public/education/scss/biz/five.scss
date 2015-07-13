@@ -1,0 +1,55 @@
+.fiveLayer{
+
+  .sp-content{
+    width: rem(640);
+    height: rem(614);
+    margin-top: rem(100);
+  }
+  .wg-head-img{
+    position: absolute;
+    left: 67px;
+    top: 13px;
+    z-index: 1;
+  }
+
+  .wg-house-img{
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 2;
+  }
+
+  .wg-red-img{
+    position: absolute;
+    left: 27px;
+    top: -17px;
+    z-index: 3;
+  }
+  .wg-tree-img{
+
+  }
+  .wg-circle-img{
+    position: absolute;
+    left: 147px;
+    top: 162px;
+  }
+  .wg-cmp-img{
+    position: absolute;
+    left: 170px;
+    top: 199px;
+  }
+  .wg-play-img{
+    position: absolute;
+    left: 226px;
+    top: -17px;
+  }
+  .wg-red-title-img{
+    position: absolute;
+    left: 79px;
+    top: 217px;
+  }
+
+  .wg-xt-img{
+  }
+
+}

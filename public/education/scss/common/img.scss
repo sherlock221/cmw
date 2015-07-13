@@ -1,0 +1,225 @@
+//背景
+.bg-default{
+  background-image: url("../resources/bg-default.jpg");
+  height: inherit;
+  background-size: cover;
+}
+
+
+@import "font";
+@import "circle";
+
+
+//所有图片
+.main-img{
+  background-image: url("../resources/main-img.png");
+  background-size: rem(1200) rem(1200);
+}
+
+//主图片02
+.main-img-other{
+  background-image: url("../resources/main-img-02.png");
+  background-size: rem(1200) rem(1200);
+}
+
+//头像
+.head-img{
+  background-image: url("../resources/head.png");
+  background-size: rem(1024) rem(178);
+}
+
+//菊花正面
+.chrysanthemum-front-img{
+  background-position: rem(-234) 0;
+  width: rem(170);
+  height: rem(170);
+}
+
+//菊花
+.chrysanthemum-img{
+  background-position: 0 0;
+  width: rem(234);
+  height: rem(234);
+}
+
+//立方体
+.rect-img{
+  background-position: rem(-684) 0;
+  width: rem(186);
+  height: rem(170);
+}
+
+
+.fingerprint-img{
+  background-position: rem(-944) rem(-234);
+  width: rem(124);
+  height: rem(170);
+}
+
+//小环
+.f1-circle-red-img{
+
+  background-position: rem(-544) 0;
+  width: rem(140);
+  height: rem(140);
+}
+
+.f1-circle-white-img{
+  background-position: rem(-404) 0;
+  width: rem(140);
+  height: rem(140);
+}
+
+
+//流星
+.metro-img{
+  background-position: rem(-490) rem(-465);
+  width: rem(340);
+  height: rem(217);
+}
+
+
+//高光button
+.light-button-bg-img{
+  background-position: rem(-12) rem(-245);
+  width: rem(554);
+  height: rem(104);
+}
+
+.light-mover-img{
+  background-position: rem(-687) rem(-247);
+  width: rem(184);
+  height: rem(100);
+}
+
+
+
+//拜师学艺
+.bs-red-cr-img{
+  background-image: url("../resources/small-circle.png");
+  background-size: rem(1036) rem(518);
+  background-position: rem(0) rem(-0);
+  width: rem(518);
+  height: rem(518);
+}
+
+.bs-sd{
+  background-position: rem(0) rem(-682);
+  width: rem(350);
+  height: rem(408);
+}
+
+
+//武功秘籍图片
+.wg-head-img{
+  background-position: rem(0) rem(-682);
+  width: rem(350);
+  height: rem(408);
+}
+
+.wg-house-img{
+  background-position: rem(-490) rem(0);
+  width: rem(610);
+  height: rem(215);
+}
+
+.wg-red-img{
+  background-position: rem(-1020) rem(-215);
+  width: rem(180);
+  height: rem(420);
+}
+.wg-tree-img{
+  background-position: rem(-490) rem(-682);
+  width: rem(140);
+  height: rem(348);
+}
+.wg-circle-img{
+  background-position: rem(-490) rem(-215);
+  width: rem(250);
+  height: rem(250);
+}
+.wg-cmp-img{
+  background-position: rem(0) rem(-1090);
+  width: rem(165);
+  height: rem(110);
+}
+.wg-play-img{
+  background-position: rem(-165) rem(-1090);
+  width: rem(75);
+  height: rem(75);
+}
+.wg-red-title-img{
+  background-position: rem(-240) rem(-1090);
+  width: rem(155);
+  height: rem(75);
+}
+
+.wg-xt-img{
+  background-position: rem(-909) rem(-682);
+  width: rem(291);
+  height: rem(98)
+}
+
+
+
+//人物头像
+.head-01{
+  background-position: rem(-169) rem(-13);
+  width: rem(152);
+  height: rem(152);
+}
+
+.head-02{
+  background-position: rem(-337) rem(-13);
+  width: rem(152);
+  height: rem(152);
+}
+
+.head-03{
+  background-position: rem(-509) rem(-13);
+  width: rem(152);
+  height: rem(152);
+}
+
+.head-04{
+  background-position: rem(-682) rem(-13);
+  width: rem(152);
+  height: rem(152);
+}
+
+.head-back{
+  background-position: rem(0) rem(-13);
+  width: rem(152);
+  height: rem(152);
+}
+.head-red{
+  background-position: rem(-846) rem(-13);
+  width: rem(178);
+  height: rem(178);
+}
+
+
+
+  //手机
+.iphone-puzzle-img{
+  background-position: rem(0)  rem(0);
+  width: rem(472);
+  height: rem(682);
+}
+
+//pintu
+.puzzle-img{
+  background-position: rem(-740)  rem(-215);
+  width: rem(280);
+  height: rem(250);
+}
+
+
+//红点
+.circle-point-img{
+    background-position:  rem(-1100) 0 ;
+    width: rem(65);
+    height: rem(65);
+}
+
+

@@ -1,0 +1,119 @@
+
+.answerLayer{
+  padding-top: rem(34);
+
+  padding-left: rem(42);
+  padding-right: rem(42);
+
+  .answer-num{
+    background: #ff5f32;
+    color: #000;
+    font-size: rem(28);
+    padding: 7px 21px;
+    margin-top: rem(56);
+    margin-bottom: rem(48);
+  }
+
+  .answer-title{
+    border: 1px dashed;
+    padding: rem(30) rem(35);
+    line-height: 20px;
+    //height: 140px;
+  }
+
+
+  @media screen and (min-height: 500px) {
+    .answer-title{
+      height: 140px;
+    }
+
+  }
+
+  .select-active{
+    width: rem(130);
+    height: rem(77);
+    background-position: rem(-519) rem(-791);
+    position: absolute;
+    left: 14px;
+    top: -13px;
+    display: none;
+
+  }
+
+  .answer-select{
+    clear: both;
+    overflow: hidden;
+    margin-top: rem(30);
+
+    li{
+      &.active{
+        .select-active{
+          display: inline-block;
+        }
+      }
+
+      width: 50%;
+      float: left;
+      position: relative;
+
+      &:nth-child(even) a{
+        padding-left: 5px;
+      }
+
+      a{
+        color: inherit;
+        display: block;
+        font-size: rem(30);
+
+      }
+
+      margin: rem(30) 0;
+    }
+
+  }
+
+  .answer-bottom{
+
+    .bg-bottom{
+      background-position: rem(-1335) rem(-410);
+      width: rem(645);
+      height: rem(322);
+
+      position: absolute;
+      bottom: -45px;
+      left: 50%;
+      @include transform(translateX(-50%));
+    }
+
+    //提交按钮
+    .btn-submit-ans{
+
+    }
+
+  }
+
+}
+
+
+
+//@-webkit-keyframes spin-y {
+//  0% {
+//    -webkit-transform: rotateY(0deg);
+//  }
+//
+//  100% {
+//    -webkit-transform: rotateY(360deg);
+//  }
+//}
+//
+//@-webkit-keyframes spin-inverse {
+//  0% {
+//    -webkit-transform: rotateX(360deg)
+//  }
+//
+//  100% {
+//    -webkit-transform: rotateX(0deg)
+//  }
+//}
+
+

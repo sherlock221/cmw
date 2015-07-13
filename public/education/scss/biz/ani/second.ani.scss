@@ -1,0 +1,81 @@
+@charset "utf-8";
+.secondLayer{
+
+
+  .wrap-ring{
+    @include animation(spin-inverse 5s linear  0s infinite both);
+  }
+
+  .wrap-ring-opacity{
+    @include animation(spin 1s linear  0s infinite both);
+  }
+
+  .middle-ring-white{
+    @include animation(spin 2s linear  0s infinite both);
+  }
+
+  .middle-ring-red{
+    @include animation(spin-inverse 4s linear  0s infinite both);
+  }
+
+  .inner-ring{
+    @include animation(spin-inverse 10s linear  0s infinite both);
+  }
+
+  .big-ring{
+    @include animation(zr3dIn 1.5s ease  0s 1 both);
+  }
+
+  .font-people-layer{
+    @include animation(zoomIn 0.5s ease  1s 1 both);
+  }
+
+  .big-ring-out{
+    @include animation(zoomOut 1.5s ease  4s 1 both);
+  }
+
+
+
+  //&.out{
+  //  .big-ring{
+  //    @include animation(zr3dOut 1.5s ease  0s 1 both);
+  //  }
+  //
+  //  .font-people-layer{
+  //    @include animation(zr3dOut 1.5s ease  0s 1 both);
+  //  }
+  //}
+
+}
+
+//3d旋转
+@include keyframes(zr3dIn){
+  $tem : rotate3d(1,0,1,180deg) scale(0);
+  $temEnd : rotate3d(1,0,2,0deg) scale(1);
+  0%{
+
+    @include transform($tem);
+  }
+  100%{
+    @include transform($temEnd);
+  }
+}
+
+
+@include keyframes(zr3dOut){
+  $tem : rotate3d(1,0,1,0deg) scale(1);
+  $temEnd : rotate3d(1,0,2,180deg) scale(0);
+  0%{
+
+    @include transform($tem);
+  }
+  100%{
+    @include transform($temEnd);
+  }
+}
+
+
+
+
+
+

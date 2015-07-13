@@ -1,0 +1,94 @@
+@charset "utf-8";
+.indexLayer{
+
+  .chrysanthemum-front{
+    @include animation(spin-inverse 4s linear 0s infinite both);
+  }
+
+  .chrysanthemum{
+    @include animation(spin3d 3s linear  0s infinite both);
+  }
+
+  .circle-red{
+    @include animation(spin-inverse 2s linear 0s infinite both);
+  }
+
+  .circle-white{
+    @include animation(spin 2s linear 0s infinite both);
+  }
+
+  .rect-img{
+    @include animation(spin 10s linear 0s infinite both);
+  }
+
+  .font-education{
+    @include animation(fadeIn 2s ease 0s 1 both );
+  }
+
+  .weilai{
+    @include animation(flipInY 1s ease 1.5s 1 both );
+  }
+
+  //指纹
+  .fingerprint{
+
+  }
+  .fingerprint-flash{
+    @include animation(flash-high 2s ease 0s infinite both);
+  }
+
+  .fingerprint-heart{
+    @include animation(pulse 1s linear 0s infinite both);
+  }
+
+
+  //退出动画
+  &.out{
+    .chrysanthemum-front{
+      @include animation(zoomOut 0.4s linear 0s 1 both);
+    }
+
+    .chrysanthemum{
+      @include animation(zoomOut 0.4s linear 0s 1 both);
+    }
+
+    .circle-red{
+      @include animation(zoomOut 0.4s linear 0s 1 both);
+    }
+
+    .circle-white{
+      @include animation(zoomOut 0.4s linear 0s 1 both);
+    }
+
+    .rect-img{
+      @include animation(zoomOut 0.4s linear 0s 1 both);
+    }
+
+    .font-education,.font-education-ios{
+      @include animation(fadeOut 0.5s linear 0s 1 both);
+    }
+
+    //指纹
+    .fingerprint{
+      @include animation(zoomOut 0.4s linear 0s 1 both);
+    }
+
+    //线条
+    .l1_img,.l2_img,.l3_img,.l4_img,.l5_img,.l6_img{
+      @include animation(fadeOutLeft 0.4s ease 0s 1 both);
+    }
+
+    .r1_img,.r2_img,.r3_img,.r4_img,.r5_img{
+      @include animation(fadeOutRight 0.4s ease 0s 1 both);
+    }
+
+
+  }
+
+
+}
+
+
+
+
+
