@@ -37,10 +37,10 @@ app.use(cookieParser());
 
 
 //配置静态资源
-//app.use(express.static(path.join(__dirname, 'public')));
-//app.use(express.static("public"));
+//app.use(express.biz(path.join(__dirname, 'public')));
+//app.use(express.biz("public"));
 app.use("/cmw",express.static("public"));
-//app.use('/cmw', express.static('/public') );
+//app.use('/cmw', express.biz('/public') );
 
 
 //设置跨域访问

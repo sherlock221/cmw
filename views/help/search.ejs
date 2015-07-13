@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta name="format-detection" content="telphone=no, email=no"/>
+
+    <!-- mobile 头部模板 -->
+    <%- include tpl/head-mobile-help.ejs %>
+
+    <link rel="stylesheet" href="/cmw/help/scss/biz/template.css" type="text/css"/>
+    <link rel="stylesheet" href="/cmw/help/scss/biz/init.css" type="text/css"/>
+
+    <script src="/cmw/help/js/search.js"></script>
+    <title>帮助与反馈</title>
+</head>
+<body>
+
+<%- include  tpl/header.ejs %>
+
+<div class="whole">
+    <div class="search-default fx-row">
+        <div class="fx-col-1"><input id="search" type="search"  class="search border-left" onblur="search()"/></div>
+        <div class="search-bar text-center" onclick="compareResult()">搜索</div>
+    </div>
+    <p class="text-default">您可能遇到的问题</p>
+
+    <div id='content' class="content">
+
+        <script id="test" type="text/html">
+
+            <ul class="question-list" id="question-list">
+
+                {{each list as value i}}
+
+                <li class="list-name" id="list-name">
+                    <a class="link-default" href="/cmw/help/detail">
+                        {{value.title}}
+                        <div class="list-mark"></div>
+                    </a>
+
+                </li>
+
+                {{/each}}
+            </ul>
+
+        </script>
+
+    </div>
+
+    <!--<p class="research-result text-center" id="no-result">暂时没有找到，点击搜索试试</p>-->
+    <!--<p class="research-result text-center" id="no-more-question">没有更多相关问题了 您可以点击下方按钮联系客服或留下你的意见反馈</p>-->
+    <!--<p class="research-result text-center no-result" id="no-relate-question">未搜索到相关问题，请重新搜索<br/>您还可以点击下方按钮联系客服或留下您的意见反馈</p>-->
+</div>
+
+<%- include  tpl/footDefault.ejs %>
+</body>
+</html>

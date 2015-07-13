@@ -994,7 +994,7 @@ define(function(require, exports, module){
 
                     this.$element.on('click.dismiss.bs.modal', $.proxy(function (e) {
                         if (e.target !== e.currentTarget) return
-                        this.options.backdrop == 'static'
+                        this.options.backdrop == 'biz'
                             ? this.$element[0].focus.call(this.$element[0])
                             : this.hide.call(this)
                     }, this))

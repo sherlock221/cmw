@@ -1,0 +1,19 @@
+.detail-whole {
+  width: 100%; }
+  .detail-whole .detail-title {
+    width: 100%;
+    margin-top: 12px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    padding-left: 15px;
+    border-top: 2px solid #c6cbce;
+    border-bottom: 2px solid #c6cbce;
+    font-size: 16px; }
+  .detail-whole .detail-txt {
+    padding: 65px 15px 50px 15px;
+    color: #727272;
+    font-size: 16px; }
+    .detail-whole .detail-txt .text-detail {
+      line-height: 30px; }
+
+/*# sourceMappingURL=detail.css.map */

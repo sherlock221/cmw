@@ -554,7 +554,7 @@ define("js/cmd/core/zepto/1.1.6/zepto", [], function(require, exports, module) {
                         top: coords.top - parentOffset.top,
                         left: coords.left - parentOffset.left
                     };
-                    if ($this.css("position") == "static") props["position"] = "relative";
+                    if ($this.css("position") == "biz") props["position"] = "relative";
                     $this.css(props);
                 });
                 if (!this.length) return null;
@@ -679,7 +679,7 @@ define("js/cmd/core/zepto/1.1.6/zepto", [], function(require, exports, module) {
             offsetParent: function() {
                 return this.map(function() {
                     var parent = this.offsetParent || document.body;
-                    while (parent && !rootNodeRE.test(parent.nodeName) && $(parent).css("position") == "static") parent = parent.offsetParent;
+                    while (parent && !rootNodeRE.test(parent.nodeName) && $(parent).css("position") == "biz") parent = parent.offsetParent;
                     return parent;
                 });
             }

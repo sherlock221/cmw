@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta name="format-detection" content="telphone=no, email=no"/>
+
+    <!-- mobile 头部模板 -->
+    <%- include tpl/head-mobile-help.ejs %>
+
+    <link rel="stylesheet" href="/cmw/help/scss/biz/template.css" type="text/css"/>
+    <link rel="stylesheet" href="/cmw/help/scss/biz/init.css" type="text/css"/>
+    <link rel="stylesheet" href="/cmw/help/scss/biz/detail.css" type="text/css"/>
+
+    <script src="/cmw/help/js/detail.js"></script>
+    <title>帮助与反馈</title>
+</head>
+<body>
+
+<%- include  tpl/header.ejs %>
+
+<div class="detail-whole">
+ <div class="detail-title">
+     <%=title%>
+ </div>
+<div class="detail-txt">
+  <p class="text-detail"><%=content%></p>
+</div>
+</div>
+<%- include  tpl/footDefault.ejs %>
+</body>
+</html>
