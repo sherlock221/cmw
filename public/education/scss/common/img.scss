@@ -28,6 +28,14 @@
   background-size: rem(1024) rem(178);
 }
 
+.fruit-img{
+  background-image: url("../resources/fruit.png");
+  background-size: rem(614) rem(236);
+  width: rem(614);
+  height: rem(236);
+}
+
+
 //菊花正面
 .chrysanthemum-front-img{
   background-position: rem(-234) 0;
@@ -193,7 +201,7 @@
   height: rem(152);
 }
 .head-red{
-  background-position: rem(-846) rem(-13);
+  background-position: rem(-846) 0;
   width: rem(178);
   height: rem(178);
 }
@@ -222,4 +230,10 @@
     height: rem(65);
 }
 
+
+.btn-submit-ans-img{
+  background-position:  rem(-490) rem(-1058) ;
+  width: rem(610);
+  height: rem(125)
+}
 

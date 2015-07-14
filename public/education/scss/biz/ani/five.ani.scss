@@ -15,7 +15,6 @@
     @include animation(bounceInDown 1s ease  0.3s 1 both);
   }
 
-
   .wg-head-img{
     @include animation(zoomIn 0.5s ease  1.2s 1 both);
   }
@@ -61,4 +60,8 @@
   .wg-xt-img{
   }
 
+
+  &.out{
+    @include animation(zoomOut 1s ease 0s 1 both);
+  }
 }

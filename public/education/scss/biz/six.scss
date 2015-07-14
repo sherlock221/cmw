@@ -1,5 +1,14 @@
 .sixLayer{
 
+  .head-red{
+
+  }
+
+  .head-red-fade{
+    position: absolute;
+    top: -6px;
+    left: -6px;
+  }
   .head-layer{
     position: absolute;
     top: 50%;
@@ -64,12 +73,13 @@
       }
 
       &.h04{
+        @include animation(zoomIn 1s ease 4s 1 both);
         .bk{
-          @include animation(flipHeadBack 0.8s ease 4.2s 1 both);
+          @include animation(flipHeadBack 0.8s ease 5s 1 both);
           z-index: 2;
         }
         .fo{
-          @include animation(flipHeadFront 0.8s ease 4.2s 1 both);
+          @include animation(flipHeadFront 0.8s ease 5s 1 both);
           z-index: 1;
         }
       }

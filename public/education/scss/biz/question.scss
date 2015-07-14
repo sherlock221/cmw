@@ -1,9 +1,13 @@
 
 .answerLayer{
+
+
+
   padding-top: rem(34);
 
   padding-left: rem(42);
   padding-right: rem(42);
+
 
   .answer-num{
     background: #ff5f32;
@@ -74,20 +78,22 @@
 
   .answer-bottom{
 
-    .bg-bottom{
-      background-position: rem(-1335) rem(-410);
-      width: rem(645);
-      height: rem(322);
-
+    .fruit{
       position: absolute;
-      bottom: -45px;
+      bottom: 0px;
       left: 50%;
       @include transform(translateX(-50%));
     }
 
     //提交按钮
     .btn-submit-ans{
+      margin-top: rem(100);
+      margin-left: -15px;
+      display: none;
+    }
 
+    .btn-submit-ans:active{
+      opacity: 0.7;
     }
 
   }

@@ -1,5 +1,6 @@
 .sixLayer {
 
+
   .font-jiagou{
     @include animation(fadeInRight 0.4s linear 1.2s 1 both);
   }
@@ -12,7 +13,19 @@
   }
 
   .font-you{
-    @include animation(bounceInUp 0.5s ease 4.1s 1 both);
+    @include animation(bounceInUp 0.5s ease 5s 1 both);
+  }
+
+  .head-red-fade{
+    @include animation(fadeIn 1s ease 5.3s both);
+  }
+
+  .head-red{
+    @include animation(spin 1s linear 0s infinite both);
+  }
+
+  &.out{
+    @include animation(zoomOut 1s ease 0s 1 both);
   }
 
 }

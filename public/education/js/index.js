@@ -8,7 +8,6 @@ var  Indicator = 0;
 var  jj = 0;
 var  tb = ["A","B","C","D"];
 
-
 var UI = {
     AnswerLayer : $("#answerLayer"),
     FirstLayer : $("#indexLayer"),
@@ -17,7 +16,9 @@ var UI = {
     FourLayer : $("#fourLayer"),
     FiveLayer : $("#fiveLayer"),
     SixLayer : $("#sixLayer"),
-    SevenLayer : $("#sevenLayer")
+    SevenLayer : $("#sevenLayer"),
+    SubAnswer : $("#subAnswer"),
+    FruitBg  : $("#fruitBg")
 }
 //检测当前浏览器
 var browser = {
@@ -41,7 +42,6 @@ var browser = {
 
 var isIOS = false;
 
-
 var  Event = {
 
     init : function(){
@@ -55,19 +55,26 @@ var  Event = {
         var scene = document.getElementById('arrow-list');
         var parallax = new Parallax(scene);
 
-
         //绑定答题选择
         UI.AnswerLayer.on("click",".answer-select li",function(){
             var $this = $(this);
             var answer  = $this.attr("data-option");
             $this.addClass("active").siblings().removeClass("active");
-
             if(answer == tb[Indicator]){
                 jj++;
             }
             setTimeout(function(){
                 nextAnswer();
+               if(Indicator == 3){
+                   UI.FruitBg.hide();
+                   UI.SubAnswer.show();
+               }
             },600);
+        });
+
+        //结束答题
+        UI.SubAnswer.bind("click",function(){
+            alert("您答对了"+jj);
         });
 
         //1个ui动画
@@ -98,9 +105,7 @@ var  Event = {
         loadAnswerList();
     },
 
-
     firstAni : function(){
-
 
         if(isIOS){
             //主页svg 动画
@@ -117,7 +122,7 @@ var  Event = {
         }, false);
 
         //全部消失
-        $fingerprint.bind("click",function(e){
+        $fingerprint.hammer().bind("tap",function(e){
             UI.FirstLayer.removeClass("out").addClass("out");
             //hide
             setTimeout(function(){
@@ -126,7 +131,6 @@ var  Event = {
             },500);
         });
     },
-
     secondAni : function(){
 
         var $bigringOut =  UI.SecondLayer.find(".big-ring-out");
@@ -136,25 +140,30 @@ var  Event = {
                 UI.ThirdLayer.removeClass("hide");
                 UI.SecondLayer.addClass("hide");
             }
-
         }, false);
 
     },
     thirdAni : function(){
         var $pointPuzzy = UI.ThirdLayer.find(".point-01");
         var $puzzyWrap = UI.ThirdLayer.find(".puzzle-wrap");
+        //var $puzzle = UI.ThirdLayer.find(".puzzle");
         $puzzyWrap[0].addEventListener('webkitAnimationEnd', function(t){
             if(t.animationName == "swing"){
                 $pointPuzzy.removeClass("hide");
             }
         }, false);
 
-    },
+        $pointPuzzy.hammer().bind("tap",function(){
+            UI.ThirdLayer.addClass("hide");
+            UI.FourLayer.removeClass("hide");
 
+        });
+
+    },
     fourAni : function(){
         var $point = UI.FourLayer.find(".point-01");
         //ios显示svg
-        if(isIOS){
+        //if(isIOS){
                 //线条
                 new Vivus('third-earth-svg', {type: 'oneByOne', duration: 100, file: 'resources/svg/earth.svg'}, function(res){
                     //人物
@@ -162,14 +171,21 @@ var  Event = {
                             end();
                     });
                 });
-        }
+        //}
 
         var end = function(){
             $point.removeClass("hide");
         }
 
-    },
+        $point.hammer().bind("tap",function(){
+            console.log("tao..");
+            UI.FourLayer.addClass("hide");
+            UI.SixLayer.removeClass("hide");
+        });
 
+
+
+    },
     fiveAni : function(){
 
         var $point = UI.FiveLayer.find(".point-01");
@@ -179,26 +195,32 @@ var  Event = {
             $point.removeClass("hide");
         }, false);
 
-        $point.bind("click",function(){
-            UI.SixLayer.removeClass("hide");
-            UI.FiveLayer.addClass("hide");
+        $point.hammer().bind("tap",function(){
+            UI.FiveLayer.addClass("out");
+           setTimeout(function(){
+               UI.SixLayer.removeClass("hide");
+               UI.FiveLayer.addClass("hide");
+           },500);
         });
 
     },
-
     sixAni : function(){
+        var sixNext = UI.SixLayer.find("#sixNext");
+        sixNext.hammer().bind("tap",function(){
+            UI.SixLayer.addClass("out");
+            setTimeout(function(){
+                UI.SixLayer.addClass("hide");
+                UI.SevenLayer.removeClass("hide");
+            },500);
+        });
 
     },
-
     sevenAni : function(){
         var lightBtn = UI.SevenLayer.find("#light-button");
-        lightBtn.bind("click",function(){
+        lightBtn.hammer().bind("tap",function(){
                 UI.AnswerLayer.removeClass("hide");
                 UI.SevenLayer.addClass("hide");
         });
-
-
-
     }
 }
 
@@ -246,10 +268,12 @@ var loadAnswerList = function(){
 
 //下个问题
 var nextAnswer = function(){
+
     if( Indicator++ > 2){
-        console.log("您答对了",jj);
+        console.log(jj);
         return;
     }
+
     refreshAnswer(answerList[Indicator]);
 }
 

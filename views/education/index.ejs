@@ -32,11 +32,11 @@
     <!-- third -->
     <script type="text/javascript" src="lib/pre/loader.min.js"></script>
 
-
     <!-- svg -->
     <script type="text/javascript" src="lib/effect/vivus.min.js"></script>
 
 
+    <script type="text/javascript" src="lib/zp/hammer.min.js"></script>
     <script type="text/javascript" src="lib/zp/zepto.js"></script>
 
 </head>
@@ -46,7 +46,7 @@
 
 <div id="container" class="container  bg-default" >
     <!-- 第一个图片 -->
-    <div  class="indexLayer hide " id="indexLayer">
+    <div  class="indexLayer  " id="indexLayer">
         <ul id="arrow-list" class="arrow-list"  data-friction-x="0.1"
             data-friction-y="0.1"
             data-scalar-x="25"
@@ -198,7 +198,7 @@
     </div>
 
     <!-- 新手村 -->
-    <div id="thirdLayer"  class="thirdLayer hide ">
+    <div id="thirdLayer"  class="thirdLayer hide">
         <div class="text-center" >
             <h5 class="font-base-img font-xinshou xinshou  ib"></h5>
         </div>
@@ -254,7 +254,7 @@
     </div>
 
    <!--武功秘籍-->
-    <div  id="fiveLayer" class="fiveLayer  ">
+    <div  id="fiveLayer" class="fiveLayer hide ">
             <div class="tr-center">
                 <div class="text-center">
                     <h5 class="font-base-img ib font-wugong"></h5>
@@ -285,7 +285,7 @@
     </div>
 
     <!--第6屏-->
-    <div  id="sixLayer" class="sixLayer hide ">
+    <div  id="sixLayer" class="sixLayer  hide">
         <!-- 流星 -->
         <i class="ib metro-img metro-bottom meteor-ani-bottom main-img"></i>
         <i class="ib metro-img metro-bottom meteor-ani-center main-img"></i>
@@ -348,12 +348,16 @@
                         <i class="ib font-base-img font-you "></i>
                     </div>
 
-                    <div class="ib head-main h04 ">
+                    <div class="ib head-main h04 " id="sixNext">
                         <span class="ib head-flip-back bk">
                               <i class="ib  head-back head-img"></i>
                         </span>
                          <span class="ib head-flip-back fo">
-                                <i class="ib head-04 head-img"></i>
+                              <span class="head-red-fade">
+                                        <i class="ib head-red head-img"></i>
+                                  </span>
+                                    <i class="ib head-04 head-img"></i>
+
                         </span>
                     </div>
                 </div>
@@ -373,8 +377,6 @@
                 <!--</div>-->
 
             <!--</div>-->
-
-
 
         </section>
         </div>
@@ -413,7 +415,7 @@
     </div>
 
     <!--答题-->
-    <div class="answerLayer  hide" id="answerLayer">
+    <div class="answerLayer hide" id="answerLayer">
         <h3 class="answer-num ib"></h3>
 
         <div class="answer-title">
@@ -427,10 +429,11 @@
         
         
         <div class="answer-bottom ">
-            
-            <div class="ib bg-bottom main-img"></div>
-            <!--<button class="btn btn-submit-ans"></button>-->
 
+            <div class="ib fruit-img fruit" id="fruitBg"></div>
+            <div class="text-center">
+                <button  id="subAnswer" class="btn btn-submit-ans btn-submit-ans-img main-img" ></button>
+            </div>
         </div>
 
     </div>
