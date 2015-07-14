@@ -525,6 +525,14 @@ a {
   right: 12px;
   top: 27px; }
 
+.fourLayer .point-01 {
+  position: absolute;
+  right: 119px;
+  top: 88px; }
+.fourLayer .third-earth-svg {
+  position: absolute;
+  left: 15px;
+  top: 16px; }
 .fourLayer .bs-red-cr {
   position: absolute;
   top: 0;
@@ -543,8 +551,14 @@ a {
   left: 12px; }
 .fourLayer #third-main-svg {
   position: absolute;
-  top: 33px; }
+  top: 33px;
+  z-index: 5; }
 
+.fiveLayer .point-01 {
+  position: absolute;
+  left: 140px;
+  top: 74px;
+  z-index: 30; }
 .fiveLayer .sp-content {
   width: 320px;
   height: 307px;
@@ -581,11 +595,116 @@ a {
   left: 79px;
   top: 217px; }
 
-.head-layer {
+.sixLayer .head-layer {
   position: absolute;
   top: 50%;
   margin-top: -222px;
   width: 100%; }
+.sixLayer .head-flip {
+  /*
+   设置元素被查看位置的视图：
+   perspective 属性定义 3D 元素距视图的距离，以像素计。该属性允许您改变 3D 元素查看 3D 元素的视图。
+   当为元素定义 perspective 属性时，其子元素会获得透视效果，而不是元素本身。
+   */
+  -webkit-perspective: 500px;
+  -moz-perspective: 500px;
+  -ms-perspective: 500px;
+  perspective: 500px; }
+  .sixLayer .head-flip .head-main {
+    position: relative;
+    width: 75px;
+    height: 75px; }
+    .sixLayer .head-flip .head-main.h01 {
+      -webkit-animation: zoomIn 0.8s ease 0.3s 1 both;
+      -ms-animation: zoomIn 0.8s ease 0.3s 1 both;
+      -moz-animation: zoomIn 0.8s ease 0.3s 1 both;
+      -o-animation: zoomIn 0.8s ease 0.3s 1 both;
+      animation: zoomIn 0.8s ease 0.3s 1 both; }
+      .sixLayer .head-flip .head-main.h01 .bk {
+        -webkit-animation: flipHeadBack 0.6s ease 1.2s 1 both;
+        -ms-animation: flipHeadBack 0.6s ease 1.2s 1 both;
+        -moz-animation: flipHeadBack 0.6s ease 1.2s 1 both;
+        -o-animation: flipHeadBack 0.6s ease 1.2s 1 both;
+        animation: flipHeadBack 0.6s ease 1.2s 1 both;
+        z-index: 2; }
+      .sixLayer .head-flip .head-main.h01 .fo {
+        -webkit-animation: flipHeadFront 0.6s ease 1.2s 1 both;
+        -ms-animation: flipHeadFront 0.6s ease 1.2s 1 both;
+        -moz-animation: flipHeadFront 0.6s ease 1.2s 1 both;
+        -o-animation: flipHeadFront 0.6s ease 1.2s 1 both;
+        animation: flipHeadFront 0.6s ease 1.2s 1 both;
+        z-index: 1; }
+    .sixLayer .head-flip .head-main.h02 {
+      -webkit-animation: zoomIn 1s ease 1.6s 1 both;
+      -ms-animation: zoomIn 1s ease 1.6s 1 both;
+      -moz-animation: zoomIn 1s ease 1.6s 1 both;
+      -o-animation: zoomIn 1s ease 1.6s 1 both;
+      animation: zoomIn 1s ease 1.6s 1 both; }
+      .sixLayer .head-flip .head-main.h02 .bk {
+        -webkit-animation: flipHeadBack 0.6s ease 2.3s 1 both;
+        -ms-animation: flipHeadBack 0.6s ease 2.3s 1 both;
+        -moz-animation: flipHeadBack 0.6s ease 2.3s 1 both;
+        -o-animation: flipHeadBack 0.6s ease 2.3s 1 both;
+        animation: flipHeadBack 0.6s ease 2.3s 1 both;
+        z-index: 2; }
+      .sixLayer .head-flip .head-main.h02 .fo {
+        -webkit-animation: flipHeadFront 0.6s ease 2.3s 1 both;
+        -ms-animation: flipHeadFront 0.6s ease 2.3s 1 both;
+        -moz-animation: flipHeadFront 0.6s ease 2.3s 1 both;
+        -o-animation: flipHeadFront 0.6s ease 2.3s 1 both;
+        animation: flipHeadFront 0.6s ease 2.3s 1 both;
+        z-index: 1; }
+    .sixLayer .head-flip .head-main.h03 {
+      -webkit-animation: zoomIn 1s ease 2.7s 1 both;
+      -ms-animation: zoomIn 1s ease 2.7s 1 both;
+      -moz-animation: zoomIn 1s ease 2.7s 1 both;
+      -o-animation: zoomIn 1s ease 2.7s 1 both;
+      animation: zoomIn 1s ease 2.7s 1 both; }
+      .sixLayer .head-flip .head-main.h03 .bk {
+        -webkit-animation: flipHeadBack 0.6s ease 3.7s 1 both;
+        -ms-animation: flipHeadBack 0.6s ease 3.7s 1 both;
+        -moz-animation: flipHeadBack 0.6s ease 3.7s 1 both;
+        -o-animation: flipHeadBack 0.6s ease 3.7s 1 both;
+        animation: flipHeadBack 0.6s ease 3.7s 1 both;
+        z-index: 2; }
+      .sixLayer .head-flip .head-main.h03 .fo {
+        -webkit-animation: flipHeadFront 0.6s ease 3.7s 1 both;
+        -ms-animation: flipHeadFront 0.6s ease 3.7s 1 both;
+        -moz-animation: flipHeadFront 0.6s ease 3.7s 1 both;
+        -o-animation: flipHeadFront 0.6s ease 3.7s 1 both;
+        animation: flipHeadFront 0.6s ease 3.7s 1 both;
+        z-index: 1; }
+    .sixLayer .head-flip .head-main.h04 .bk {
+      -webkit-animation: flipHeadBack 0.8s ease 4.2s 1 both;
+      -ms-animation: flipHeadBack 0.8s ease 4.2s 1 both;
+      -moz-animation: flipHeadBack 0.8s ease 4.2s 1 both;
+      -o-animation: flipHeadBack 0.8s ease 4.2s 1 both;
+      animation: flipHeadBack 0.8s ease 4.2s 1 both;
+      z-index: 2; }
+    .sixLayer .head-flip .head-main.h04 .fo {
+      -webkit-animation: flipHeadFront 0.8s ease 4.2s 1 both;
+      -ms-animation: flipHeadFront 0.8s ease 4.2s 1 both;
+      -moz-animation: flipHeadFront 0.8s ease 4.2s 1 both;
+      -o-animation: flipHeadFront 0.8s ease 4.2s 1 both;
+      animation: flipHeadFront 0.8s ease 4.2s 1 both;
+      z-index: 1; }
+  .sixLayer .head-flip .head-flip-back {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    /*
+      指定嵌套元素如何在3D空间中呈现。
+    */
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    /*
+      隐藏被旋转的 div 元素的背面
+    */
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden; }
 
 .sevenLayer .title-style {
   color: #c6effc;
@@ -627,9 +746,9 @@ a {
     .answerLayer .answer-title {
       height: 140px; } }
   .answerLayer .select-active {
-    width: 65px;
+    width: 65.5px;
     height: 38.5px;
-    background-position: -259.5px -395.5px;
+    background-position: -534.5px -477px;
     position: absolute;
     left: 14px;
     top: -13px;
@@ -1021,30 +1140,193 @@ a {
   -o-animation: bounceInDown 1s ease 0s 1 both;
   animation: bounceInDown 1s ease 0s 1 both; }
 .fourLayer .bs-red-cr {
-  -webkit-animation: zoomIn 1s ease 0.6s 1 both;
-  -ms-animation: zoomIn 1s ease 0.6s 1 both;
-  -moz-animation: zoomIn 1s ease 0.6s 1 both;
-  -o-animation: zoomIn 1s ease 0.6s 1 both;
-  animation: zoomIn 1s ease 0.6s 1 both; }
+  -webkit-animation: zoomIn 1s ease 4s 1 both;
+  -ms-animation: zoomIn 1s ease 4s 1 both;
+  -moz-animation: zoomIn 1s ease 4s 1 both;
+  -o-animation: zoomIn 1s ease 4s 1 both;
+  animation: zoomIn 1s ease 4s 1 both; }
 .fourLayer .wg-tree {
-  -webkit-animation: bounceInUp 1s ease 0.8s 1 both;
-  -ms-animation: bounceInUp 1s ease 0.8s 1 both;
-  -moz-animation: bounceInUp 1s ease 0.8s 1 both;
-  -o-animation: bounceInUp 1s ease 0.8s 1 both;
-  animation: bounceInUp 1s ease 0.8s 1 both; }
+  -webkit-animation: bounceInUp 1s ease 4.4s 1 both;
+  -ms-animation: bounceInUp 1s ease 4.4s 1 both;
+  -moz-animation: bounceInUp 1s ease 4.4s 1 both;
+  -o-animation: bounceInUp 1s ease 4.4s 1 both;
+  animation: bounceInUp 1s ease 4.4s 1 both; }
 .fourLayer .wg-xt {
-  -webkit-animation: fadeInRight 1s ease 0.8s 1 both;
-  -ms-animation: fadeInRight 1s ease 0.8s 1 both;
-  -moz-animation: fadeInRight 1s ease 0.8s 1 both;
-  -o-animation: fadeInRight 1s ease 0.8s 1 both;
-  animation: fadeInRight 1s ease 0.8s 1 both; }
+  -webkit-animation: fadeInRight 1s ease 4.4s 1 both;
+  -ms-animation: fadeInRight 1s ease 4.4s 1 both;
+  -moz-animation: fadeInRight 1s ease 4.4s 1 both;
+  -o-animation: fadeInRight 1s ease 4.4s 1 both;
+  animation: fadeInRight 1s ease 4.4s 1 both; }
+
+.fiveLayer {
+  /*
+    设置元素被查看位置的视图：
+    perspective 属性定义 3D 元素距视图的距离，以像素计。该属性允许您改变 3D 元素查看 3D 元素的视图。
+    当为元素定义 perspective 属性时，其子元素会获得透视效果，而不是元素本身。
+    */
+  -webkit-perspective: 500px;
+  -moz-perspective: 500px;
+  -ms-perspective: 500px;
+  perspective: 500px; }
+  .fiveLayer .font-wugong {
+    -webkit-animation: bounceInDown 1s ease 0.3s 1 both;
+    -ms-animation: bounceInDown 1s ease 0.3s 1 both;
+    -moz-animation: bounceInDown 1s ease 0.3s 1 both;
+    -o-animation: bounceInDown 1s ease 0.3s 1 both;
+    animation: bounceInDown 1s ease 0.3s 1 both; }
+  .fiveLayer .wg-head-img {
+    -webkit-animation: zoomIn 0.5s ease 1.2s 1 both;
+    -ms-animation: zoomIn 0.5s ease 1.2s 1 both;
+    -moz-animation: zoomIn 0.5s ease 1.2s 1 both;
+    -o-animation: zoomIn 0.5s ease 1.2s 1 both;
+    animation: zoomIn 0.5s ease 1.2s 1 both; }
+  .fiveLayer .wg-house-img {
+    -webkit-animation: fadeInLeft 0.5s ease 1s 1 both;
+    -ms-animation: fadeInLeft 0.5s ease 1s 1 both;
+    -moz-animation: fadeInLeft 0.5s ease 1s 1 both;
+    -o-animation: fadeInLeft 0.5s ease 1s 1 both;
+    animation: fadeInLeft 0.5s ease 1s 1 both; }
+  .fiveLayer .wg-red-img {
+    -webkit-animation: zoomIn 0.5s ease 1.2s 1 both;
+    -ms-animation: zoomIn 0.5s ease 1.2s 1 both;
+    -moz-animation: zoomIn 0.5s ease 1.2s 1 both;
+    -o-animation: zoomIn 0.5s ease 1.2s 1 both;
+    animation: zoomIn 0.5s ease 1.2s 1 both; }
+  .fiveLayer .wg-circle-img {
+    -webkit-animation: zoomIn 0.5s ease 1.2s 1 both;
+    -ms-animation: zoomIn 0.5s ease 1.2s 1 both;
+    -moz-animation: zoomIn 0.5s ease 1.2s 1 both;
+    -o-animation: zoomIn 0.5s ease 1.2s 1 both;
+    animation: zoomIn 0.5s ease 1.2s 1 both; }
+  .fiveLayer .wg-cmp-img {
+    /*
+        指定嵌套元素如何在3D空间中呈现。
+      */
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    /*
+      隐藏被旋转的 div 元素的背面
+    */
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -webkit-animation: flipHeadFront 1.5s ease 1.5s 1 both;
+    -ms-animation: flipHeadFront 1.5s ease 1.5s 1 both;
+    -moz-animation: flipHeadFront 1.5s ease 1.5s 1 both;
+    -o-animation: flipHeadFront 1.5s ease 1.5s 1 both;
+    animation: flipHeadFront 1.5s ease 1.5s 1 both; }
+  .fiveLayer .wg-play-img {
+    -webkit-animation: zoomIn 0.5s ease 1.2s 1 both;
+    -ms-animation: zoomIn 0.5s ease 1.2s 1 both;
+    -moz-animation: zoomIn 0.5s ease 1.2s 1 both;
+    -o-animation: zoomIn 0.5s ease 1.2s 1 both;
+    animation: zoomIn 0.5s ease 1.2s 1 both; }
+  .fiveLayer .wg-red-title-img {
+    -webkit-animation: fadeInLeft 0.5s ease 1.2s 1 both;
+    -ms-animation: fadeInLeft 0.5s ease 1.2s 1 both;
+    -moz-animation: fadeInLeft 0.5s ease 1.2s 1 both;
+    -o-animation: fadeInLeft 0.5s ease 1.2s 1 both;
+    animation: fadeInLeft 0.5s ease 1.2s 1 both; }
+
+.sixLayer .font-jiagou {
+  -webkit-animation: fadeInRight 0.4s linear 1.2s 1 both;
+  -ms-animation: fadeInRight 0.4s linear 1.2s 1 both;
+  -moz-animation: fadeInRight 0.4s linear 1.2s 1 both;
+  -o-animation: fadeInRight 0.4s linear 1.2s 1 both;
+  animation: fadeInRight 0.4s linear 1.2s 1 both; }
+.sixLayer .font-data {
+  -webkit-animation: fadeInLeft 0.4s linear 2.3s 1 both;
+  -ms-animation: fadeInLeft 0.4s linear 2.3s 1 both;
+  -moz-animation: fadeInLeft 0.4s linear 2.3s 1 both;
+  -o-animation: fadeInLeft 0.4s linear 2.3s 1 both;
+  animation: fadeInLeft 0.4s linear 2.3s 1 both; }
+.sixLayer .font-yanfa {
+  -webkit-animation: fadeInRight 0.4s linear 3.7s 1 both;
+  -ms-animation: fadeInRight 0.4s linear 3.7s 1 both;
+  -moz-animation: fadeInRight 0.4s linear 3.7s 1 both;
+  -o-animation: fadeInRight 0.4s linear 3.7s 1 both;
+  animation: fadeInRight 0.4s linear 3.7s 1 both; }
+.sixLayer .font-you {
+  -webkit-animation: bounceInUp 0.5s ease 4.1s 1 both;
+  -ms-animation: bounceInUp 0.5s ease 4.1s 1 both;
+  -moz-animation: bounceInUp 0.5s ease 4.1s 1 both;
+  -o-animation: bounceInUp 0.5s ease 4.1s 1 both;
+  animation: bounceInUp 0.5s ease 4.1s 1 both; }
+
+.sevenLayer .salary {
+  -webkit-animation: salary 2s ease 0s infinite both;
+  -ms-animation: salary 2s ease 0s infinite both;
+  -moz-animation: salary 2s ease 0s infinite both;
+  -o-animation: salary 2s ease 0s infinite both;
+  animation: salary 2s ease 0s infinite both; }
+.sevenLayer .title-style {
+  -webkit-animation: bounceInDown 0.5s ease 0.3s 1 both;
+  -ms-animation: bounceInDown 0.5s ease 0.3s 1 both;
+  -moz-animation: bounceInDown 0.5s ease 0.3s 1 both;
+  -o-animation: bounceInDown 0.5s ease 0.3s 1 both;
+  animation: bounceInDown 0.5s ease 0.3s 1 both; }
+.sevenLayer .f7-01 {
+  -webkit-animation: fadeInLeft 0.8s ease 0.8s 1 both;
+  -ms-animation: fadeInLeft 0.8s ease 0.8s 1 both;
+  -moz-animation: fadeInLeft 0.8s ease 0.8s 1 both;
+  -o-animation: fadeInLeft 0.8s ease 0.8s 1 both;
+  animation: fadeInLeft 0.8s ease 0.8s 1 both; }
+.sevenLayer .f7-02 {
+  -webkit-animation: fadeInLeft 0.8s ease 1.1s 1 both;
+  -ms-animation: fadeInLeft 0.8s ease 1.1s 1 both;
+  -moz-animation: fadeInLeft 0.8s ease 1.1s 1 both;
+  -o-animation: fadeInLeft 0.8s ease 1.1s 1 both;
+  animation: fadeInLeft 0.8s ease 1.1s 1 both; }
+.sevenLayer .f7-03 {
+  -webkit-animation: fadeInLeft 0.8s ease 1.4s 1 both;
+  -ms-animation: fadeInLeft 0.8s ease 1.4s 1 both;
+  -moz-animation: fadeInLeft 0.8s ease 1.4s 1 both;
+  -o-animation: fadeInLeft 0.8s ease 1.4s 1 both;
+  animation: fadeInLeft 0.8s ease 1.4s 1 both; }
+.sevenLayer .f7-04 {
+  -webkit-animation: fadeInLeft 0.5s ease 1.7s 1 both;
+  -ms-animation: fadeInLeft 0.5s ease 1.7s 1 both;
+  -moz-animation: fadeInLeft 0.5s ease 1.7s 1 both;
+  -o-animation: fadeInLeft 0.5s ease 1.7s 1 both;
+  animation: fadeInLeft 0.5s ease 1.7s 1 both; }
+.sevenLayer .f7-05 {
+  -webkit-animation: fadeInRight 0.8s ease 2s 1 both;
+  -ms-animation: fadeInRight 0.8s ease 2s 1 both;
+  -moz-animation: fadeInRight 0.8s ease 2s 1 both;
+  -o-animation: fadeInRight 0.8s ease 2s 1 both;
+  animation: fadeInRight 0.8s ease 2s 1 both; }
+.sevenLayer .f7-06 {
+  -webkit-animation: fadeInRight 0.8s ease 2.2s 1 both;
+  -ms-animation: fadeInRight 0.8s ease 2.2s 1 both;
+  -moz-animation: fadeInRight 0.8s ease 2.2s 1 both;
+  -o-animation: fadeInRight 0.8s ease 2.2s 1 both;
+  animation: fadeInRight 0.8s ease 2.2s 1 both; }
+.sevenLayer .f7-07 {
+  -webkit-animation: fadeInRight 0.8s ease 2.4s 1 both;
+  -ms-animation: fadeInRight 0.8s ease 2.4s 1 both;
+  -moz-animation: fadeInRight 0.8s ease 2.4s 1 both;
+  -o-animation: fadeInRight 0.8s ease 2.4s 1 both;
+  animation: fadeInRight 0.8s ease 2.4s 1 both; }
+.sevenLayer .job-req {
+  -webkit-animation: fadeIn 0.8s ease 2.4s 1 both;
+  -ms-animation: fadeIn 0.8s ease 2.4s 1 both;
+  -moz-animation: fadeIn 0.8s ease 2.4s 1 both;
+  -o-animation: fadeIn 0.8s ease 2.4s 1 both;
+  animation: fadeIn 0.8s ease 2.4s 1 both; }
+.sevenLayer .light-button-bg {
+  -webkit-animation: fadeIn 0.8s ease 2.4s 1 both;
+  -ms-animation: fadeIn 0.8s ease 2.4s 1 both;
+  -moz-animation: fadeIn 0.8s ease 2.4s 1 both;
+  -o-animation: fadeIn 0.8s ease 2.4s 1 both;
+  animation: fadeIn 0.8s ease 2.4s 1 both; }
 
 .red-point-flash {
-  -webkit-animation: flash-high 4s linear 0s infinite both;
-  -ms-animation: flash-high 4s linear 0s infinite both;
-  -moz-animation: flash-high 4s linear 0s infinite both;
-  -o-animation: flash-high 4s linear 0s infinite both;
-  animation: flash-high 4s linear 0s infinite both; }
+  -webkit-animation: fadeIn 1s ease 0s 1 both;
+  -ms-animation: fadeIn 1s ease 0s 1 both;
+  -moz-animation: fadeIn 1s ease 0s 1 both;
+  -o-animation: fadeIn 1s ease 0s 1 both;
+  animation: fadeIn 1s ease 0s 1 both; }
 
 .red-point-heart {
   -webkit-animation: rubberBand 1s linear 0s infinite both;
@@ -1067,6 +1349,171 @@ a {
   -o-animation: meteor-ani-bottom-480 4s ease-in 0s infinite both;
   animation: meteor-ani-bottom-480 4s ease-in 0s infinite both; }
 
+@-webkit-keyframes flipHeadBack {
+  0% {
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg); }
+  100% {
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg); } }
+@-moz-keyframes flipHeadBack {
+  0% {
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg); }
+  100% {
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg); } }
+@-o-keyframes flipHeadBack {
+  0% {
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg); }
+  100% {
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg); } }
+@-ms-keyframes flipHeadBack {
+  0% {
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg); }
+  100% {
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg); } }
+@keyframes flipHeadBack {
+  0% {
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg); }
+  100% {
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg); } }
+@-webkit-keyframes flipHeadFront {
+  0% {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg); }
+  100% {
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg); } }
+@-moz-keyframes flipHeadFront {
+  0% {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg); }
+  100% {
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg); } }
+@-o-keyframes flipHeadFront {
+  0% {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg); }
+  100% {
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg); } }
+@-ms-keyframes flipHeadFront {
+  0% {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg); }
+  100% {
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg); } }
+@keyframes flipHeadFront {
+  0% {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg); }
+  100% {
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg); } }
+@-webkit-keyframes salary {
+  0% {
+    -webkit-transform: translateX(100px);
+    transform: translateX(100px);
+    -moz-transform: translateX(100px);
+    -ms-transform: translateX(100px); }
+  100% {
+    -webkit-transform: translateX(-250px);
+    transform: translateX(-250px);
+    -moz-transform: translateX(-250px);
+    -ms-transform: translateX(-250px); } }
+@-moz-keyframes salary {
+  0% {
+    -webkit-transform: translateX(100px);
+    transform: translateX(100px);
+    -moz-transform: translateX(100px);
+    -ms-transform: translateX(100px); }
+  100% {
+    -webkit-transform: translateX(-250px);
+    transform: translateX(-250px);
+    -moz-transform: translateX(-250px);
+    -ms-transform: translateX(-250px); } }
+@-o-keyframes salary {
+  0% {
+    -webkit-transform: translateX(100px);
+    transform: translateX(100px);
+    -moz-transform: translateX(100px);
+    -ms-transform: translateX(100px); }
+  100% {
+    -webkit-transform: translateX(-250px);
+    transform: translateX(-250px);
+    -moz-transform: translateX(-250px);
+    -ms-transform: translateX(-250px); } }
+@-ms-keyframes salary {
+  0% {
+    -webkit-transform: translateX(100px);
+    transform: translateX(100px);
+    -moz-transform: translateX(100px);
+    -ms-transform: translateX(100px); }
+  100% {
+    -webkit-transform: translateX(-250px);
+    transform: translateX(-250px);
+    -moz-transform: translateX(-250px);
+    -ms-transform: translateX(-250px); } }
+@keyframes salary {
+  0% {
+    -webkit-transform: translateX(100px);
+    transform: translateX(100px);
+    -moz-transform: translateX(100px);
+    -ms-transform: translateX(100px); }
+  100% {
+    -webkit-transform: translateX(-250px);
+    transform: translateX(-250px);
+    -moz-transform: translateX(-250px);
+    -ms-transform: translateX(-250px); } }
 @-webkit-keyframes meteor-ani-bottom-268 {
   0% {
     -webkit-transform: translate3d(-170px, 268px, 0);

@@ -1,0 +1,64 @@
+.fiveLayer{
+
+  /*
+    设置元素被查看位置的视图：
+    perspective 属性定义 3D 元素距视图的距离，以像素计。该属性允许您改变 3D 元素查看 3D 元素的视图。
+    当为元素定义 perspective 属性时，其子元素会获得透视效果，而不是元素本身。
+    */
+  -webkit-perspective: 500px;
+  -moz-perspective: 500px;
+  -ms-perspective: 500px;
+  perspective: 500px;
+
+
+  .font-wugong{
+    @include animation(bounceInDown 1s ease  0.3s 1 both);
+  }
+
+
+  .wg-head-img{
+    @include animation(zoomIn 0.5s ease  1.2s 1 both);
+  }
+
+  .wg-house-img{
+    @include animation(fadeInLeft 0.5s ease  1s 1 both);
+  }
+
+  .wg-red-img{
+    @include animation(zoomIn 0.5s ease  1.2s 1 both);
+  }
+  .wg-tree-img{
+
+  }
+  .wg-circle-img{
+    @include animation(zoomIn 0.5s ease  1.2s 1 both);
+  }
+  .wg-cmp-img{
+
+    /*
+        指定嵌套元素如何在3D空间中呈现。
+      */
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+
+    /*
+      隐藏被旋转的 div 元素的背面
+    */
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+
+    @include animation(flipHeadFront 1.5s ease  1.5s 1 both);
+  }
+  .wg-play-img{
+    @include animation(zoomIn 0.5s ease  1.2s 1 both);
+  }
+  .wg-red-title-img{
+    @include animation(fadeInLeft 0.5s ease  1.2s 1 both);
+  }
+
+  .wg-xt-img{
+  }
+
+}

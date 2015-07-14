@@ -3,11 +3,19 @@
 @import "ani/second.ani";
 @import "ani/third.ani";
 @import "ani/four.ani";
+@import "ani/five.ani";
+@import "ani/six.ani";
+@import "ani/seven.ani";
+
+
+
+
 
 
 
 .red-point-flash{
-  @include animation(flash-high 4s linear 0s infinite both);
+  //@include animation(flash-high 4s linear 0s infinite both);
+  @include animation(fadeIn 1s ease 0s 1 both);
 }
 
 .red-point-heart{
@@ -31,6 +39,37 @@
 //    @include animation(meteor-ani-bottom-640 4s ease-in 0s infinite both);
 //  }
 //}
+
+//翻转反面
+@include keyframes(flipHeadBack){
+  0%{
+    @include transform(rotateY(0deg));
+  }
+  100%{
+    @include transform(rotateY(-180deg));
+  }
+}
+
+//翻转正面
+@include keyframes(flipHeadFront){
+  0%{
+    @include transform(rotateY(180deg));
+  }
+  100%{
+    @include transform(rotateY(0deg));
+  }
+}
+
+
+//年薪
+@include keyframes(salary){
+  0%{
+    @include transform(translateX(100px));
+  }
+  100%{
+    @include transform(translateX(-250px));
+  }
+}
 
 
 //流星飞射
@@ -74,6 +113,9 @@
     @include transform(rotate3d(1,0,1,360deg));
   }
 }
+
+
+
 
 
 

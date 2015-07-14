@@ -1,6 +1,107 @@
-.head-layer{
-  position: absolute;
-  top: 50%;
-  margin-top: rem(-444);
-  width: 100%;
+.sixLayer{
+
+  .head-layer{
+    position: absolute;
+    top: 50%;
+    margin-top: rem(-444);
+    width: 100%;
+  }
+
+
+  .head-flip {
+
+    /*
+     设置元素被查看位置的视图：
+     perspective 属性定义 3D 元素距视图的距离，以像素计。该属性允许您改变 3D 元素查看 3D 元素的视图。
+     当为元素定义 perspective 属性时，其子元素会获得透视效果，而不是元素本身。
+     */
+    -webkit-perspective: 500px;
+    -moz-perspective: 500px;
+    -ms-perspective: 500px;
+    perspective: 500px;
+
+
+
+    .head-main{
+      position: relative;
+      width: 75px;
+      height: 75px;
+
+      &.h01{
+        @include animation(zoomIn 0.8s ease 0.3s 1 both);
+        .bk{
+          @include animation(flipHeadBack 0.6s ease 1.2s 1 both);
+          z-index: 2;
+        }
+        .fo{
+          @include animation(flipHeadFront 0.6s ease 1.2s 1 both);
+          z-index: 1;
+        }
+      }
+
+      &.h02{
+        @include animation(zoomIn 1s ease 1.6s 1 both);
+        .bk{
+          @include animation(flipHeadBack 0.6s ease 2.3s 1 both);
+          z-index: 2;
+        }
+        .fo{
+          @include animation(flipHeadFront 0.6s ease 2.3s 1 both);
+          z-index: 1;
+        }
+      }
+
+      &.h03{
+        @include animation(zoomIn 1s ease 2.7s 1 both);
+        .bk{
+          @include animation(flipHeadBack 0.6s ease 3.7s 1 both);
+          z-index: 2;
+        }
+        .fo{
+          @include animation(flipHeadFront 0.6s ease 3.7s 1 both);
+          z-index: 1;
+        }
+      }
+
+      &.h04{
+        .bk{
+          @include animation(flipHeadBack 0.8s ease 4.2s 1 both);
+          z-index: 2;
+        }
+        .fo{
+          @include animation(flipHeadFront 0.8s ease 4.2s 1 both);
+          z-index: 1;
+        }
+      }
+
+    }
+
+
+    .head-flip-back {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+
+
+      /*
+        指定嵌套元素如何在3D空间中呈现。
+      */
+      -webkit-transform-style: preserve-3d;
+      -moz-transform-style: preserve-3d;
+      -ms-transform-style: preserve-3d;
+
+      /*
+        隐藏被旋转的 div 元素的背面
+      */
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      -ms-backface-visibility: hidden;
+
+    }
+
+
+  }
+
 }
+

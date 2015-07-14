@@ -1,0 +1,18 @@
+.sixLayer {
+
+  .font-jiagou{
+    @include animation(fadeInRight 0.4s linear 1.2s 1 both);
+  }
+  .font-data{
+    @include animation(fadeInLeft 0.4s linear 2.3s 1 both);
+  }
+
+  .font-yanfa{
+    @include animation(fadeInRight 0.4s linear 3.7s 1 both);
+  }
+
+  .font-you{
+    @include animation(bounceInUp 0.5s ease 4.1s 1 both);
+  }
+
+}

@@ -13,7 +13,11 @@ var UI = {
     AnswerLayer : $("#answerLayer"),
     FirstLayer : $("#indexLayer"),
     SecondLayer : $("#secondLayer"),
-    ThirdLayer : $("#thirdLayer")
+    ThirdLayer : $("#thirdLayer"),
+    FourLayer : $("#fourLayer"),
+    FiveLayer : $("#fiveLayer"),
+    SixLayer : $("#sixLayer"),
+    SevenLayer : $("#sevenLayer")
 }
 //检测当前浏览器
 var browser = {
@@ -78,6 +82,15 @@ var  Event = {
         //4个ui动画
         Event.fourAni();
 
+        //5个ui动画
+        Event.fiveAni();
+
+        //6个ui动画
+        Event.sixAni();
+
+        //7个ui动画
+        Event.sevenAni();
+
 
 
     },
@@ -139,21 +152,50 @@ var  Event = {
     },
 
     fourAni : function(){
-        var $pointPuzzy = UI.ThirdLayer.find(".point-01");
-        var $puzzyWrap = UI.ThirdLayer.find(".puzzle-wrap");
+        var $point = UI.FourLayer.find(".point-01");
+        //ios显示svg
+        if(isIOS){
+                //线条
+                new Vivus('third-earth-svg', {type: 'oneByOne', duration: 100, file: 'resources/svg/earth.svg'}, function(res){
+                    //人物
+                    new Vivus('third-main-svg', {type: 'delayed', duration: 100, file: 'resources/svg/baishi.svg'}, function(res){
+                            end();
+                    });
+                });
+        }
+
+        var end = function(){
+            $point.removeClass("hide");
+        }
+
+    },
+
+    fiveAni : function(){
+
+        var $point = UI.FiveLayer.find(".point-01");
+        var $puzzyWrap = UI.FiveLayer.find(".wg-cmp-img");
         $puzzyWrap[0].addEventListener('webkitAnimationEnd', function(t){
-            if(t.animationName == "swing"){
-                $pointPuzzy.removeClass("hide");
-            }
+            console.log("five..");
+            $point.removeClass("hide");
         }, false);
 
+        $point.bind("click",function(){
+            UI.SixLayer.removeClass("hide");
+            UI.FiveLayer.addClass("hide");
+        });
 
-        if(isIOS){
-            //主页svg 动画
-            new Vivus('third-main-svg', {type: 'oneByOne', duration: 100, file: 'resources/svg/baishi.svg'}, function(res){
-                console.log(res);
-            });
-        }
+    },
+
+    sixAni : function(){
+
+    },
+
+    sevenAni : function(){
+        var lightBtn = UI.SevenLayer.find("#light-button");
+        lightBtn.bind("click",function(){
+                UI.AnswerLayer.removeClass("hide");
+                UI.SevenLayer.addClass("hide");
+        });
 
 
 

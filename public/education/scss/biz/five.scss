@@ -1,5 +1,12 @@
 .fiveLayer{
 
+  .point-01{
+    position: absolute;
+    left: 140px;
+    top: 74px;
+    z-index: 30;
+  }
+
   .sp-content{
     width: rem(640);
     height: rem(614);

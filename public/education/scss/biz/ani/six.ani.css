@@ -1,0 +1,37 @@
+@charset "UTF-8";
+.sixLayer .head-flip {
+  /*
+   设置元素被查看位置的视图：
+   perspective 属性定义 3D 元素距视图的距离，以像素计。该属性允许您改变 3D 元素查看 3D 元素的视图。
+   当为元素定义 perspective 属性时，其子元素会获得透视效果，而不是元素本身。
+   */
+  -webkit-perspective: 500px;
+  -moz-perspective: 500px;
+  -ms-perspective: 500px;
+  perspective: 500px; }
+  .sixLayer .head-flip .head-flip-back {
+    /*
+      指定嵌套元素如何在3D空间中呈现。
+    */
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    /*
+      隐藏被旋转的 div 元素的背面
+    */
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -webkit-transition: 0.8s ease-in-out;
+    -moz-transition: 0.8s ease-in-out;
+    -ms-transition: 0.8s ease-in-out; }
+    .sixLayer .head-flip .head-flip-back > i {
+      position: absolute; }
+    .sixLayer .head-flip .head-flip-back .head-back {
+      -webkit-transform: rotateY(0deg);
+      z-index: 2; }
+    .sixLayer .head-flip .head-flip-back .head-01 {
+      -webkit-transform: rotateY(180deg);
+      z-index: 1; }
+
+/*# sourceMappingURL=six.ani.css.map */

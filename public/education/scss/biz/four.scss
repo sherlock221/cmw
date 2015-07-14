@@ -1,5 +1,16 @@
 .fourLayer{
 
+  .point-01{
+    position: absolute;
+    right: 119px;
+    top: 88px;
+  }
+
+  .third-earth-svg{
+    position: absolute;
+    left: 15px;
+    top: 16px;
+  }
 
   .bs-red-cr{
     position: absolute;
@@ -27,6 +38,9 @@
 
   #third-main-svg{
     position: absolute;
-    top: 33px
+    top: 33px;
+    z-index: 5;
   }
+
+
 }

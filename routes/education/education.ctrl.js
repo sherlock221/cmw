@@ -18,4 +18,13 @@ router.get("/index",function(req,res){
     });
 });
 
+
+router.get("/test",function(req,res){
+    var agent = ua(req.headers['user-agent']);
+    console.log(agent);
+    res.render("education/test",{
+        agent : agent
+    });
+});
+
 module.exports = router;
