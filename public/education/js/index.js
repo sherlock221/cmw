@@ -3,11 +3,51 @@
  */
 
 
+//配置所有图片列表
+var imgList =
+    [
+        "resources/bg-default.jpg",
+        "resources/big-circle-01.png",
+        "resources/big-circle-02.png",
+        "resources/font.png",
+        "resources/fruit.png",
+        "resources/head.png",
+        "resources/main-img.png",
+        "resources/main-img-02.png",
+
+        "resources/svg/baishi.svg",
+        "resources/svg/circle-org.svg",
+        "resources/svg/earth.svg",
+        "resources/svg/weilai.svg",
+        "resources/svg/xiangxiang.svg",
+
+        "resources/line/L1.png",
+        "resources/line/L2.png",
+        "resources/line/L3.png",
+        "resources/line/L4.png",
+        "resources/line/L5.png",
+        "resources/line/L6.png",
+        "resources/line/R1.png",
+        "resources/line/R3.png",
+        "resources/line/R4.png",
+        "resources/line/R5.png"
+    ];
+
+
+
+new loadermsk(imgList, "#0e79ef", function () {
+    console.log("加载完成...");
+    Event.init();
+
+});
+
+
+
+
 var  answerList  = [];
 var  Indicator = 0;
 var  jj = 0;
 var  tb = ["A","B","C","D"];
-
 var UI = {
     AnswerLayer : $("#answerLayer"),
     FirstLayer : $("#indexLayer"),
@@ -20,6 +60,7 @@ var UI = {
     SubAnswer : $("#subAnswer"),
     FruitBg  : $("#fruitBg")
 }
+
 //检测当前浏览器
 var browser = {
     versions: function() {
@@ -39,13 +80,10 @@ var browser = {
     }(),
     language: (navigator.browserLanguage || navigator.language).toLowerCase()
 }
-
 var isIOS = false;
-
 var  Event = {
 
     init : function(){
-
         isIOS = browser.versions.ios;
 
         //加载数据
@@ -71,7 +109,6 @@ var  Event = {
                }
             },600);
         });
-
         //结束答题
         UI.SubAnswer.bind("click",function(){
             alert("您答对了"+jj);
@@ -98,6 +135,8 @@ var  Event = {
         //7个ui动画
         Event.sevenAni();
 
+
+        UI.FirstLayer.removeClass("hide");
 
 
     },
@@ -146,6 +185,7 @@ var  Event = {
     thirdAni : function(){
         var $pointPuzzy = UI.ThirdLayer.find(".point-01");
         var $puzzyWrap = UI.ThirdLayer.find(".puzzle-wrap");
+        var $py = UI.ThirdLayer.find("#py");
         //var $puzzle = UI.ThirdLayer.find(".puzzle");
         $puzzyWrap[0].addEventListener('webkitAnimationEnd', function(t){
             if(t.animationName == "swing"){
@@ -153,11 +193,66 @@ var  Event = {
             }
         }, false);
 
-        $pointPuzzy.hammer().bind("tap",function(){
+
+        $py[0].addEventListener('webkitTransitionEnd', function(t){
             UI.ThirdLayer.addClass("hide");
             UI.FourLayer.removeClass("hide");
+        }, false);
 
-        });
+        var isEndDrag = false;
+        interact('.draggable')
+            .draggable({
+                // enable inertial throwing
+                inertia: true,
+                // keep the element within the area of it's parent
+                restrict: {
+                    endOnly: true,
+                    elementRect: { top: 0, left: 0, bottom: 1, right: 1 }
+                },
+                onstart:function(){
+                  console.log("start");
+                    $pointPuzzy.addClass("hide");
+                },
+                onmove: dragMoveListener,
+                onend: function (event) {
+                    var target = event.target;
+                    console.log(isEndDrag,target);
+                    target.style.transition =   target.style.webkitTransition = "transform ease 1s";
+                    target.style.transition =   target.style.webkitTransition = "-webkit-transform ease 1s";
+                    target.style.webkitTransform =
+                        target.style.transform =
+                            'rotate(14deg) translate(-76px,193px)'
+
+                }
+            });
+        //  -webkit-transform: rotate(14deg) translate(16px,42px);
+        function dragMoveListener (event) {
+            var target = event.target,
+            // keep the dragged position in the data-x/data-y attributes
+                x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
+                y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
+
+            console.log(x,y);
+
+            if(x < -130 && y > 135){
+                isEndDrag = true;
+                return;
+            }
+
+            if(!isEndDrag){
+                // translate the element
+                target.style.webkitTransform =
+                    target.style.transform =
+                        'translate(' + x + 'px, ' + y + 'px)';
+                // update the posiion attributes
+                target.setAttribute('data-x', x);
+                target.setAttribute('data-y', y);
+            }
+
+
+
+
+        }
 
     },
     fourAni : function(){
@@ -225,7 +320,6 @@ var  Event = {
 }
 
 
-
 //渲染答题
 var refreshAnswer = function(obj){
 
@@ -278,7 +372,3 @@ var nextAnswer = function(){
 }
 
 
-
-
-
-Event.init();

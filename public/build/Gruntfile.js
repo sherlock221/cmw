@@ -64,6 +64,19 @@ module.exports = function(grunt){
                 dest: '../dist/template/mb_base.js'
             },
 
+            //h5宣传
+            "education_effect" :{
+                src: [
+                    '../education/lib/pre/loader.min.js',
+                    '../education/lib/effect/vivus.min.js',
+                    '../education/lib/zp/hammer.min.js',
+                    '../education/lib/zp/interact-1.2.4.min.js',
+                    '../education/lib/zp/zepto.min.js'
+                ],
+                dest: '../dist/education/effect.min.js'
+
+            },
+
             //任务列表
             task_list:{
                 src: [
@@ -107,6 +120,9 @@ module.exports = function(grunt){
 
     //任务列表
     grunt.registerTask('task_list', ['clean', 'transport:lib',"concat:task_list","uglify:task_list"]);
+
+    //教育
+    grunt.registerTask('education', ["concat:education_effect"]);
 
 
 };

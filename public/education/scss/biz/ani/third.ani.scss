@@ -26,6 +26,7 @@
   @include keyframes(puzzle){
     $tem : rotate(-140deg);
     $temEnd : rotate(-16deg);
+
     0%{
 
       @include transform($tem);

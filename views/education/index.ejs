@@ -10,12 +10,12 @@
     <meta name="renderer" content="webkit">
 
     <!-- seo 优化部分 -->
-    <meta name="title" content="习悦研究院 习悦研究院"/>
-    <meta name="keywords" content="习悦 研究院 习悦研究院"/>
+    <meta name="title" content="全通习悦研究院 全通 全通习悦研究院"/>
+    <meta name="keywords" content="全通习悦 研究院 全通习悦研究院"/>
     <meta name="author" content="sherlock"/>
     <meta name="email" content="920825209@qq.com"/>
-    <meta name="Description" content="习悦研究院 习悦研究院"/>
-    <title>习悦研究院</title>
+    <meta name="Description" content="全通习悦研究院 全通习悦研究院"/>
+    <title>全通习悦研究院</title>
 
     <!-- 防止缓存 -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
@@ -25,19 +25,18 @@
     <!-- skin -->
     <link rel="stylesheet" href="lib/base/module.css"/>
     <link rel="stylesheet" href="scss/all.css?v=11"/>
-
     <!-- ani -->
     <link rel="stylesheet" href="lib/base/cartoon.min.css" />
 
-    <!-- third -->
-    <script type="text/javascript" src="lib/pre/loader.min.js"></script>
+    <script type="text/javascript" src="/cmw/dist/education/effect.min.js"></script>
 
-    <!-- svg -->
-    <script type="text/javascript" src="lib/effect/vivus.min.js"></script>
-
-
-    <script type="text/javascript" src="lib/zp/hammer.min.js"></script>
-    <script type="text/javascript" src="lib/zp/zepto.js"></script>
+    <style type="text/css">
+        /** loading 颜色 **/
+        .mp_loading{
+            background-color: #11273b !important;
+            z-index: 999;
+        }
+    </style>
 
 </head>
 
@@ -46,7 +45,7 @@
 
 <div id="container" class="container  bg-default" >
     <!-- 第一个图片 -->
-    <div  class="indexLayer  " id="indexLayer">
+    <div  class="indexLayer hide " id="indexLayer">
         <ul id="arrow-list" class="arrow-list"  data-friction-x="0.1"
             data-friction-y="0.1"
             data-scalar-x="25"
@@ -202,12 +201,14 @@
         <div class="text-center" >
             <h5 class="font-base-img font-xinshou xinshou  ib"></h5>
         </div>
-        <div class="puzzle-layer">
-            <div class="main-img iphone-puzzle-img ip-puzzle ib">
+        <div class="puzzle-layer ">
+            <div class="main-img iphone-puzzle-img ip-puzzle ib"></div>
+
+            <div class=" draggable drag-drop" id="py" >
+                    <span class="ib puzzle-wrap  drag-drop"   >
+                        <i class="puzzle-img puzzle ib main-img" ></i>
+                    </span>
             </div>
-                <span class="ib puzzle-wrap" id="puzzle-wrap">
-                    <i class="puzzle-img puzzle ib main-img"></i>
-                </span>
 
             <span class="ib point-01 hide" >
                     <span class="ib  red-point-flash">
@@ -215,9 +216,11 @@
                     </span>
             </span>
 
+
+
         </div>
 
-
+        <!--<div class="drop-puzzy dropzone" style="background: red;"> </div>-->
 
     </div>
 
@@ -441,15 +444,12 @@
 </div>
 
 
-
-
 </body>
 
 
 </html>
 
-<script type="text/javascript" src="lib/effect/parallax.js"></script>
-
+<script type="text/javascript" src="lib/effect/parallax.min.js"></script>
 <!-- biz -->
 <script type="text/javascript" src="js/index.js"></script>
 
