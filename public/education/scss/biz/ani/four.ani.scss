@@ -9,14 +9,18 @@
   }
 
   .wg-tree{
-    @include animation(bounceInUp 1s ease  4.4s 1 both);
+    @include animation(bounceInUp 1s ease  4s 1 both);
   }
 
   .wg-xt{
-    @include animation(fadeInRight 1s ease  4.4s 1 both);
+    @include animation(fadeInRight 1s ease  4s 1 both);
   }
 
   .point-01{
+    @include animation(fadeIn 1s ease  5s 1 both);
+  }
 
+  &.out{
+    @include animation(zoomOut 1s ease  0s 1 both);
   }
 }

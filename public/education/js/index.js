@@ -34,13 +34,11 @@ var imgList =
     ];
 
 
-
 new loadermsk(imgList, "#0e79ef", function () {
     console.log("加载完成...");
     Event.init();
 
 });
-
 
 
 
@@ -173,11 +171,13 @@ var  Event = {
     secondAni : function(){
 
         var $bigringOut =  UI.SecondLayer.find(".big-ring-out");
-        $bigringOut[0].addEventListener('webkitAnimationEnd', function(t){
+        $bigringOut[0].addEventListener('webkitAnimationStart', function(t){
                 console.log("end...");
             if(t.animationName == "zoomOut"){
-                UI.ThirdLayer.removeClass("hide");
-                UI.SecondLayer.addClass("hide");
+                setTimeout(function(){
+                    UI.ThirdLayer.removeClass("hide");
+                    UI.SecondLayer.addClass("hide");
+                },500);
             }
         }, false);
 
@@ -195,8 +195,13 @@ var  Event = {
 
 
         $py[0].addEventListener('webkitTransitionEnd', function(t){
-            UI.ThirdLayer.addClass("hide");
-            UI.FourLayer.removeClass("hide");
+            UI.ThirdLayer.addClass("out");
+
+            setTimeout(function(){
+                UI.ThirdLayer.addClass("hide");
+                UI.FourLayer.removeClass("hide");
+            },800);
+
         }, false);
 
         var isEndDrag = false;
@@ -269,13 +274,17 @@ var  Event = {
         //}
 
         var end = function(){
-            $point.removeClass("hide");
+
         }
 
         $point.hammer().bind("tap",function(){
             console.log("tao..");
-            UI.FourLayer.addClass("hide");
-            UI.SixLayer.removeClass("hide");
+
+            UI.FourLayer.addClass("out");
+            setTimeout(function(){
+                UI.FourLayer.addClass("hide");
+                UI.FiveLayer.removeClass("hide");
+            },500);
         });
 
 
@@ -313,8 +322,14 @@ var  Event = {
     sevenAni : function(){
         var lightBtn = UI.SevenLayer.find("#light-button");
         lightBtn.hammer().bind("tap",function(){
-                UI.AnswerLayer.removeClass("hide");
-                UI.SevenLayer.addClass("hide");
+
+            UI.SevenLayer.addClass("out");
+
+                setTimeout(function(){
+                    UI.AnswerLayer.removeClass("hide");
+                    UI.SevenLayer.addClass("hide");
+                },500);
+
         });
     }
 }
@@ -370,5 +385,3 @@ var nextAnswer = function(){
 
     refreshAnswer(answerList[Indicator]);
 }
-
-

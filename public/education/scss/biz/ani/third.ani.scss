@@ -2,7 +2,7 @@
 .thirdLayer{
 
   .xinshou{
-    @include animation(bounceInDown 1s ease  0s 1 both);
+    @include animation(bounceInDown 1s ease  0.3s 1 both);
   }
 
   .ip-puzzle{
@@ -13,15 +13,31 @@
     -webkit-transform-origin: right 50%;
     transform-origin: right 50%;
 
-    @include animation(puzzle 1s ease  1s 1 both);
+    @include animation(puzzle 1s ease  1.5s 1 both);
   }
 
   .puzzle-wrap{
     -webkit-transform-origin: right 50%;
     transform-origin: right 50%;
-    @include animation(swing 1s ease  1.8s 1 both);
+    @include animation(swing 1s ease  2.3s 1 both);
+  }
+
+
+  &.out{
+    .xinshou{
+      @include animation(bounceOutUp 1s ease  0s 1 both);
+    }
+
+    .ip-puzzle{
+      @include animation(bounceOutDown 1s ease  0s 1 both);
+    }
+
+    .puzzle-wrap{
+      @include animation(bounceOutDown 1s ease  0s 1 both);
+    }
 
   }
+
 
   @include keyframes(puzzle){
     $tem : rotate(-140deg);

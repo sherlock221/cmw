@@ -43,9 +43,11 @@
 <body>
 
 
+<%if(1==1){%>
+
 <div id="container" class="container  bg-default" >
     <!-- 第一个图片 -->
-    <div  class="indexLayer hide " id="indexLayer">
+    <div  id="indexLayer" class="indexLayer hide " >
         <ul id="arrow-list" class="arrow-list"  data-friction-x="0.1"
             data-friction-y="0.1"
             data-scalar-x="25"
@@ -162,7 +164,7 @@
     <!--style="-webkit-transform: scale(0.95);transform: scale(0.95);"-->
 
     <!-- 第二个 -->
-    <div id="secondLayer" class="secondLayer hide ">
+    <div id="secondLayer" class="secondLayer  hide">
 
         <div class="ib tr-center" >
             <!-- 大圆环 -->
@@ -171,9 +173,7 @@
                     <div class=" wrap-ring wrap-ring-img">  </div>
                     <div class=" wrap-ring-opacity wrap-ring-opacity-img"></div>
                     <div class="main-img-other middle-ring-white middle-ring-white-img"></div>
-
                     <div class="main-img-other middle-ring-red middle-ring-red-img"></div>
-
                     <div class=" inner-ring inner-ring-img"></div>
 
                     <!--文字 -->
@@ -197,7 +197,7 @@
     </div>
 
     <!-- 新手村 -->
-    <div id="thirdLayer"  class="thirdLayer hide">
+    <div id="thirdLayer"  class="thirdLayer hide ">
         <div class="text-center" >
             <h5 class="font-base-img font-xinshou xinshou  ib"></h5>
         </div>
@@ -237,8 +237,7 @@
                 <div class="" id="third-main-svg"></div>
                 <div class="third-earth-svg" id="third-earth-svg"></div>
 
-
-            <span class="ib point-01 hide " >
+            <span class="ib point-01  " >
                     <span class="ib  ">
                             <i class="ib circle-point-img main-img red-point-heart"></i>
                     </span>
@@ -442,6 +441,11 @@
     </div>
 
 </div>
+
+<%}else{%>
+
+     <p class="text-center "  style="margin-top: 40px;">请您使用微信或QQ来访问此链接</p>
+<%}%>
 
 
 </body>

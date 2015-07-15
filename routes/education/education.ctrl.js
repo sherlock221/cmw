@@ -10,12 +10,24 @@ var ua   = require('mobile-agent');
  * h5宣传
  */
 router.get("/index",function(req,res){
+    var o_agent = req.headers['user-agent'];
 
-    var agent = ua(req.headers['user-agent']);
-    console.log(agent);
+    var agent = ua(o_agent);
+
+
+    //检测微信和qq
+    if(/MicroMessenger/.test(o_agent) ||  /QQ/.test(o_agent)){
+        agent.tx = true;
+    }
+    else{
+        agent.tx =false;
+    }
+
     res.render("education/index",{
         agent : agent
     });
+
+    console.log(agent);
 });
 
 

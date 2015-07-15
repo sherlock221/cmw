@@ -6,7 +6,9 @@
   }
 
   .chrysanthemum{
-    @include animation(spin3d 3s linear  0s infinite both);
+    //@include animation(spin3d 5s linear  0s infinite both);
+    -webkit-transform: rotate3d(1,0,0,430deg);
+    transform: rotate3d(1,0,0,430deg);
   }
 
   .circle-red{
@@ -22,7 +24,7 @@
   }
 
   .font-education{
-    @include animation(fadeIn 2s ease 0s 1 both );
+    @include animation(fadeIn 2s ease 0.3s 1 both );
   }
 
   .weilai{

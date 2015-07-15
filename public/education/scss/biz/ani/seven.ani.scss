@@ -44,5 +44,7 @@
     @include animation(fadeIn 0.8s ease 2.4s 1 both);
   }
 
-
+  &.out{
+    @include animation(zoomOut 1s ease 0s 1 both);
+  }
 }
