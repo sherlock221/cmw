@@ -30,6 +30,14 @@
   animation: $animationName;
 }
 
+@mixin  origin($o){
+  transform-origin: $o;
+  -webkit-transform-origin: $o;
+  -moz-transform-origin: $o;
+  -o-transform-origin: $o;
+  -ms-transform-origin: $o;
+}
+
 
 //key frames 兼容
 @mixin keyframes($animationName) {

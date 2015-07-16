@@ -4,6 +4,11 @@
   background-size: rem(1160) rem(1160);
 }
 
+.font-base-img-02{
+  background-image: url("../resources/font-02.png");
+  background-size: rem(800) rem(500);
+}
+
 
 //想象教育未来
 .font-education{
@@ -125,4 +130,43 @@
   background-position: rem(0) rem(-1094);
   width: rem(395);
   height: rem(66);
+}
+
+
+//分享朋友圈
+.font-share{
+  background-position: rem(0) rem(0);
+  width: rem(560);
+  height: rem(49);
+}
+
+.font-nianxin{
+  background-position: rem(0) rem(-49);
+  width: rem(560);
+  height: rem(54);
+}
+
+
+.font-we{
+  background-position: rem(0) rem(-103);
+  width: rem(388);
+  height: rem(53);
+}
+
+.font-important{
+  background-position: rem(0) rem(-156);
+  width: rem(331);
+  height: rem(41);
+}
+
+.font-phone{
+  background-position: rem(0) rem(-247);
+  width: rem(331);
+  height: rem(54);
+}
+
+.font-email{
+  background-position: rem(0) rem(-199);
+  width: rem(447);
+  height: rem(48);
 }

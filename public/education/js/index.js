@@ -64,7 +64,8 @@ var UI = {
     SixLayer : $("#sixLayer"),
     SevenLayer : $("#sevenLayer"),
     SubAnswer : $("#subAnswer"),
-    FruitBg  : $("#fruitBg")
+    FruitBg  : $("#fruitBg"),
+    BOX_LAYER : $("#seq-layer")
 }
 
 //检测当前浏览器
@@ -145,6 +146,8 @@ var  Event = {
         //7个ui动画
         Event.sevenAni();
 
+        //share动画
+        Event.shareAni();
 
         //UI.FirstLayer.removeClass("hide");
 
@@ -342,6 +345,33 @@ var  Event = {
                 },500);
 
         });
+    },
+    shareAni : function(){
+
+        var $box = UI.BOX_LAYER;
+
+        var boxTransform = [
+            'rotateX(-90deg)',
+            'rotateY(-90deg)',
+            'rotateX(90deg)',
+            'rotateY(90deg)'
+        ];
+
+        var boxIndex = 0;
+
+        var  ani = function(){
+            if(boxIndex > boxTransform.length){
+                console.log("完成。。。");
+                clearInterval(boxTimer);
+            }
+            $box[0].style.webkitTransform  =  $box[0].style.transform =   boxTransform[boxIndex];
+            boxIndex++;
+
+        };
+
+
+        var boxTimer = setInterval(ani,2000);
+
     }
 }
 

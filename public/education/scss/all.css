@@ -16,6 +16,10 @@
   background-image: url("../resources/font.png");
   background-size: 580px 580px; }
 
+.font-base-img-02 {
+  background-image: url("../resources/font-02.png");
+  background-size: 400px 250px; }
+
 .font-education {
   background-position: -368px -282.5px;
   width: 213px;
@@ -101,6 +105,36 @@
   background-position: 0px -547px;
   width: 197.5px;
   height: 33px; }
+
+.font-share {
+  background-position: 0px 0px;
+  width: 280px;
+  height: 24.5px; }
+
+.font-nianxin {
+  background-position: 0px -24.5px;
+  width: 280px;
+  height: 27px; }
+
+.font-we {
+  background-position: 0px -51.5px;
+  width: 194px;
+  height: 26.5px; }
+
+.font-important {
+  background-position: 0px -78px;
+  width: 165.5px;
+  height: 20.5px; }
+
+.font-phone {
+  background-position: 0px -123.5px;
+  width: 165.5px;
+  height: 27px; }
+
+.font-email {
+  background-position: 0px -99.5px;
+  width: 223.5px;
+  height: 24px; }
 
 .wrap-ring-img {
   background-image: url("../resources/big-circle-01.png");
@@ -300,6 +334,12 @@
   background-position: -245px -529px;
   width: 305px;
   height: 62.5px; }
+
+.seq-img {
+  background-image: url("../resources/seq.png");
+  background-size: 300px 300px;
+  width: 300px;
+  height: 300px; }
 
 html, body {
   width: 100%;
@@ -819,7 +859,12 @@ a {
       position: relative;
       margin: 15px 0; }
       .answerLayer .answer-select li.active .select-active {
-        display: inline-block; }
+        display: inline-block;
+        -webkit-animation: bounceIn 1s ease 0s 1 both;
+        -ms-animation: bounceIn 1s ease 0s 1 both;
+        -moz-animation: bounceIn 1s ease 0s 1 both;
+        -o-animation: bounceIn 1s ease 0s 1 both;
+        animation: bounceIn 1s ease 0s 1 both; }
       .answerLayer .answer-select li:nth-child(even) a {
         padding-left: 5px; }
       .answerLayer .answer-select li a {
@@ -840,6 +885,128 @@ a {
     display: none; }
   .answerLayer .answer-bottom .btn-submit-ans:active {
     opacity: 0.7; }
+
+.seq-space {
+  -webkit-perspective: 800;
+  -webkit-perspective-origin: 50% 50%;
+  perspective: 800;
+  perspective-origin: 50% 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -150px;
+  margin-top: -150px; }
+
+.tran-box-center {
+  position: absolute;
+  left: 50%;
+  top: 50%; }
+  .tran-box-center.x {
+    -webkit-transform: translate(-50%, -50%) rotateY(180deg) rotateZ(180deg);
+    transform: translate(-50%, -50%) rotateY(180deg) rotateZ(180deg);
+    -moz-transform: translate(-50%, -50%) rotateY(180deg) rotateZ(180deg);
+    -ms-transform: translate(-50%, -50%) rotateY(180deg) rotateZ(180deg); }
+  .tran-box-center.y {
+    -webkit-transform: translate(-50%, -50%) rotateY(180deg);
+    transform: translate(-50%, -50%) rotateY(180deg);
+    -moz-transform: translate(-50%, -50%) rotateY(180deg);
+    -ms-transform: translate(-50%, -50%) rotateY(180deg); }
+
+.seq-layer {
+  /** 3d模式 渲染 **/
+  -moz-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  width: 300px;
+  height: 300px;
+  position: relative;
+  -webkit-transition: -webkit-transform 1s ease;
+  transition: transform 1s ease;
+  -webkit-transform-origin: 50% 50% -150px;
+  transform-origin: 50% 50% -150px; }
+  .seq-layer .seq-before {
+    position: absolute; }
+  .seq-layer .seq-after {
+    position: absolute;
+    -webkit-transform: translateZ(-300px);
+    transform: translateZ(-300px);
+    -moz-transform: translateZ(-300px);
+    -ms-transform: translateZ(-300px); }
+  .seq-layer .seq-bottom {
+    position: absolute;
+    transform-origin: bottom;
+    -webkit-transform-origin: bottom;
+    -moz-transform-origin: bottom;
+    -o-transform-origin: bottom;
+    -ms-transform-origin: bottom;
+    -webkit-transform: rotateX(90deg);
+    transform: rotateX(90deg);
+    -moz-transform: rotateX(90deg);
+    -ms-transform: rotateX(90deg); }
+  .seq-layer .seq-top {
+    position: absolute;
+    transform-origin: top;
+    -webkit-transform-origin: top;
+    -moz-transform-origin: top;
+    -o-transform-origin: top;
+    -ms-transform-origin: top;
+    -webkit-transform: rotateX(-90deg);
+    transform: rotateX(-90deg);
+    -moz-transform: rotateX(-90deg);
+    -ms-transform: rotateX(-90deg); }
+  .seq-layer .seq-right {
+    position: absolute;
+    transform-origin: right;
+    -webkit-transform-origin: right;
+    -moz-transform-origin: right;
+    -o-transform-origin: right;
+    -ms-transform-origin: right;
+    -webkit-transform: rotateY(-90deg);
+    transform: rotateY(-90deg);
+    -moz-transform: rotateY(-90deg);
+    -ms-transform: rotateY(-90deg); }
+  .seq-layer .seq-left {
+    position: absolute;
+    transform-origin: left;
+    -webkit-transform-origin: left;
+    -moz-transform-origin: left;
+    -o-transform-origin: left;
+    -ms-transform-origin: left;
+    -webkit-transform: rotateY(90deg);
+    transform: rotateY(90deg);
+    -moz-transform: rotateY(90deg);
+    -ms-transform: rotateY(90deg); }
+
+.seq-layer-ani .seq-bottom .tran-box-center {
+  -webkit-animation: fadeIn 1s ease 6s 1 both;
+  -ms-animation: fadeIn 1s ease 6s 1 both;
+  -moz-animation: fadeIn 1s ease 6s 1 both;
+  -o-animation: fadeIn 1s ease 6s 1 both;
+  animation: fadeIn 1s ease 6s 1 both; }
+.seq-layer-ani .seq-top .tran-box-center {
+  -webkit-animation: fadeIn 1s ease 2s 1 both;
+  -ms-animation: fadeIn 1s ease 2s 1 both;
+  -moz-animation: fadeIn 1s ease 2s 1 both;
+  -o-animation: fadeIn 1s ease 2s 1 both;
+  animation: fadeIn 1s ease 2s 1 both; }
+.seq-layer-ani .seq-right .tran-box-center {
+  -webkit-animation: fadeIn 1s ease 4s 1 both;
+  -ms-animation: fadeIn 1s ease 4s 1 both;
+  -moz-animation: fadeIn 1s ease 4s 1 both;
+  -o-animation: fadeIn 1s ease 4s 1 both;
+  animation: fadeIn 1s ease 4s 1 both; }
+.seq-layer-ani .seq-left .tran-box-center {
+  -webkit-animation: fadeIn 1s ease 6s 1 both;
+  -ms-animation: fadeIn 1s ease 6s 1 both;
+  -moz-animation: fadeIn 1s ease 6s 1 both;
+  -o-animation: fadeIn 1s ease 6s 1 both;
+  animation: fadeIn 1s ease 6s 1 both; }
+.seq-layer-ani .seq-right-font-out {
+  -webkit-animation: fadeOut 1s ease 6s 1 both;
+  -ms-animation: fadeOut 1s ease 6s 1 both;
+  -moz-animation: fadeOut 1s ease 6s 1 both;
+  -o-animation: fadeOut 1s ease 6s 1 both;
+  animation: fadeOut 1s ease 6s 1 both; }
 
 .red-point-flash {
   -webkit-animation: fadeIn 1s ease 0s 1 both;

@@ -8,7 +8,6 @@
   padding-left: rem(42);
   padding-right: rem(42);
 
-
   .answer-num{
     background: #ff5f32;
     color: #000;
@@ -53,6 +52,7 @@
       &.active{
         .select-active{
           display: inline-block;
+          @include animation(bounceIn 1s ease 0s 1 both);
         }
       }
 
@@ -101,25 +101,134 @@
 }
 
 
+//3d空间
+.seq-space{
+  //视距
+  -webkit-perspective: 800;
+  //视点
+  -webkit-perspective-origin: 50% 50%;
 
-//@-webkit-keyframes spin-y {
-//  0% {
-//    -webkit-transform: rotateY(0deg);
-//  }
-//
-//  100% {
-//    -webkit-transform: rotateY(360deg);
-//  }
-//}
-//
-//@-webkit-keyframes spin-inverse {
-//  0% {
-//    -webkit-transform: rotateX(360deg)
-//  }
-//
-//  100% {
-//    -webkit-transform: rotateX(0deg)
-//  }
-//}
+  perspective: 800;
+  perspective-origin: 50% 50%;
 
+
+
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+  margin-left: -150px;
+  margin-top: -150px;
+}
+
+.tran-box-center{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+
+  &.x{
+    $tmp : translate(-50%, -50%) rotateY(180deg) rotateZ(180deg);
+    @include transform($tmp);
+  }
+
+  &.y{
+    $tmp : translate(-50%, -50%) rotateY(180deg);
+    @include transform($tmp);
+  }
+
+}
+
+.seq-layer{
+
+  /** 3d模式 渲染 **/
+  -moz-transform-style:preserve-3d;
+  -webkit-transform-style:preserve-3d;
+  transform-style:preserve-3d;
+
+  width: rem(600);
+  height: rem(600);
+  position: relative;
+
+  -webkit-transition : -webkit-transform 1s ease;
+  transition : transform 1s ease;
+
+  -webkit-transform-origin:50% 50% rem(-300);
+  transform-origin:50% 50% rem(-300);
+
+  //前面
+  .seq-before{
+    position: absolute;
+  }
+
+  .seq-after{
+    position: absolute;
+    @include transform(translateZ(-300px));
+  }
+
+  .seq-bottom{
+    position: absolute;
+    @include origin(bottom);
+    @include transform(rotateX(90deg));
+  }
+
+  .seq-top{
+    position: absolute;
+    @include origin(top);
+    @include transform(rotateX(-90deg));
+  }
+
+  .seq-right{
+    position: absolute;
+    @include origin(right);
+    @include transform(rotateY(-90deg));
+  }
+
+  .seq-left{
+    position: absolute;
+    @include origin(left);
+    @include transform(rotateY(90deg));
+  }
+
+
+
+}
+
+
+
+
+//动画部分
+.seq-layer-ani{
+
+  .seq-bottom{
+    .tran-box-center{
+      @include animation(fadeIn 1s ease 6s 1 both);
+    }
+  }
+
+
+  .seq-top{
+    .tran-box-center{
+      @include animation(fadeIn 1s ease 2s 1 both);
+    }
+  }
+
+  .seq-right{
+    .tran-box-center{
+      @include animation(fadeIn 1s ease 4s 1 both);
+    }
+
+  }
+
+  .seq-left{
+    .tran-box-center{
+      @include animation(fadeIn 1s ease 6s 1 both);
+    }
+  }
+
+  .seq-right-font-out{
+    @include animation(fadeOut 1s ease 6s 1 both);
+  }
+
+}
 
