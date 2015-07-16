@@ -20,7 +20,7 @@
   }
 
   .head-red{
-    @include animation(spin 1s linear 0s infinite both);
+    @include animation(spin-inverse 1s linear 0s infinite both);
   }
 
   &.out{

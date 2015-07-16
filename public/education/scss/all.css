@@ -378,6 +378,12 @@ ul, li {
 a {
   outline: none; }
 
+.pl25 {
+  padding-left: 25px; }
+
+.ml25 {
+  margin-left: 25px; }
+
 .scene, .layer {
   display: block;
   height: 100%;
@@ -394,38 +400,38 @@ a {
   .arrow-list img {
     position: absolute; }
   .arrow-list .l1_img {
-    left: -70px;
-    top: 0; }
+    left: -78px;
+    top: 20px; }
   .arrow-list .l2_img {
-    left: -96px;
-    top: 16.5px; }
+    left: -110px;
+    top: 31.5px; }
   .arrow-list .l3_img {
-    top: 133px;
+    top: 140px;
     left: -67px; }
   .arrow-list .l4_img {
-    top: 200.5px;
-    left: -72px; }
+    top: 214.5px;
+    left: -104px; }
   .arrow-list .l5_img {
-    top: 238.5px;
+    top: 245.5px;
     left: -71px; }
   .arrow-list .l6_img {
-    bottom: 0px;
-    left: -30px; }
+    bottom: 36px;
+    left: -74px; }
   .arrow-list .r1_img {
     top: 96.5px;
-    right: -120px; }
+    right: -126px; }
   .arrow-list .r2_img {
-    top: 156px;
-    right: -106px; }
+    top: 147px;
+    right: -112px; }
   .arrow-list .r3_img {
-    bottom: 64px;
-    right: -139px; }
+    bottom: 67px;
+    right: -135px; }
   .arrow-list .r4_img {
     bottom: 53px;
-    right: -115px; }
+    right: -116px; }
   .arrow-list .r5_img {
-    bottom: 38px;
-    right: -30px; }
+    bottom: 33px;
+    right: -35px; }
 
 .font-center {
   position: absolute;
@@ -439,7 +445,7 @@ a {
 
 .chrysanthemum-front {
   position: absolute;
-  top: 7%;
+  top: 12%;
   left: -56px; }
 
 .weilai {
@@ -450,7 +456,7 @@ a {
 .chrysanthemum {
   position: absolute;
   bottom: 20%;
-  right: -58px; }
+  right: -67px; }
 
 .circle-layer {
   position: absolute;
@@ -467,7 +473,7 @@ a {
 
 .rect-img {
   position: absolute;
-  right: -40px;
+  right: -54px;
   top: 20px; }
 
 .fingerprint {
@@ -545,6 +551,25 @@ a {
   right: 12px;
   top: 27px; }
 
+.fourLayer .wg-circle-og {
+  width: 13px;
+  height: 13px;
+  border-radius: 65px;
+  background: #ff9520; }
+.fourLayer .wg-circle-og-01 {
+  position: absolute;
+  left: 70px;
+  top: 55px; }
+.fourLayer .wg-circle-rd {
+  width: 13px;
+  height: 13px;
+  border-radius: 65px;
+  background: #ff5e2b; }
+.fourLayer .wg-circle-rd-01 {
+  position: absolute;
+  left: 63px;
+  top: 150px;
+  z-index: 20; }
 .fourLayer .point-01 {
   position: absolute;
   right: 119px;
@@ -560,8 +585,8 @@ a {
   left: 0; }
 .fourLayer .wg-tree {
   position: absolute;
-  left: 0;
-  top: 110px; }
+  left: -13px;
+  top: 102px; }
 .fourLayer .wg-xt {
   position: absolute;
   right: -59px;
@@ -1236,8 +1261,11 @@ a {
   -o-animation: spin-inverse 4s linear 0s infinite both;
   animation: spin-inverse 4s linear 0s infinite both; }
 .indexLayer .chrysanthemum {
-  -webkit-transform: rotate3d(1, 0, 0, 430deg);
-  transform: rotate3d(1, 0, 0, 430deg); }
+  -webkit-animation: spin 8s linear 0s infinite both;
+  -ms-animation: spin 8s linear 0s infinite both;
+  -moz-animation: spin 8s linear 0s infinite both;
+  -o-animation: spin 8s linear 0s infinite both;
+  animation: spin 8s linear 0s infinite both; }
 .indexLayer .circle-red {
   -webkit-animation: spin-inverse 2s linear 0s infinite both;
   -ms-animation: spin-inverse 2s linear 0s infinite both;
@@ -1517,11 +1545,11 @@ a {
 .thirdLayer .puzzle-wrap {
   -webkit-transform-origin: right 50%;
   transform-origin: right 50%;
-  -webkit-animation: swing 1s ease 2.3s 1 both;
-  -ms-animation: swing 1s ease 2.3s 1 both;
-  -moz-animation: swing 1s ease 2.3s 1 both;
-  -o-animation: swing 1s ease 2.3s 1 both;
-  animation: swing 1s ease 2.3s 1 both; }
+  -webkit-animation: swing 1s ease 2.3s 3 both;
+  -ms-animation: swing 1s ease 2.3s 3 both;
+  -moz-animation: swing 1s ease 2.3s 3 both;
+  -o-animation: swing 1s ease 2.3s 3 both;
+  animation: swing 1s ease 2.3s 3 both; }
 .thirdLayer.out .xinshou {
   -webkit-animation: bounceOutUp 1s ease 0s 1 both;
   -ms-animation: bounceOutUp 1s ease 0s 1 both;
@@ -1601,6 +1629,18 @@ a {
   -moz-animation: bounceInDown 1s ease 0s 1 both;
   -o-animation: bounceInDown 1s ease 0s 1 both;
   animation: bounceInDown 1s ease 0s 1 both; }
+.fourLayer .wg-circle-og-01 {
+  -webkit-animation: zoomIn 1s ease 3s 1 both;
+  -ms-animation: zoomIn 1s ease 3s 1 both;
+  -moz-animation: zoomIn 1s ease 3s 1 both;
+  -o-animation: zoomIn 1s ease 3s 1 both;
+  animation: zoomIn 1s ease 3s 1 both; }
+.fourLayer .wg-circle-rd-01 {
+  -webkit-animation: zoomIn 1s ease 3s 1 both;
+  -ms-animation: zoomIn 1s ease 3s 1 both;
+  -moz-animation: zoomIn 1s ease 3s 1 both;
+  -o-animation: zoomIn 1s ease 3s 1 both;
+  animation: zoomIn 1s ease 3s 1 both; }
 .fourLayer .bs-red-cr {
   -webkit-animation: zoomIn 1s ease 4s 1 both;
   -ms-animation: zoomIn 1s ease 4s 1 both;
@@ -1740,11 +1780,11 @@ a {
   -o-animation: fadeIn 1s ease 5.3s both;
   animation: fadeIn 1s ease 5.3s both; }
 .sixLayer .head-red {
-  -webkit-animation: spin 1s linear 0s infinite both;
-  -ms-animation: spin 1s linear 0s infinite both;
-  -moz-animation: spin 1s linear 0s infinite both;
-  -o-animation: spin 1s linear 0s infinite both;
-  animation: spin 1s linear 0s infinite both; }
+  -webkit-animation: spin-inverse 1s linear 0s infinite both;
+  -ms-animation: spin-inverse 1s linear 0s infinite both;
+  -moz-animation: spin-inverse 1s linear 0s infinite both;
+  -o-animation: spin-inverse 1s linear 0s infinite both;
+  animation: spin-inverse 1s linear 0s infinite both; }
 .sixLayer.out {
   -webkit-animation: zoomOut 1s ease 0s 1 both;
   -ms-animation: zoomOut 1s ease 0s 1 both;

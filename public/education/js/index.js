@@ -3,43 +3,51 @@
  */
 
 
+
+
 //配置所有图片列表
-var imgList =
-    [
-        "resources/bg-default.jpg",
-        "resources/big-circle-01.png",
-        "resources/big-circle-02.png",
-        "resources/font.png",
-        "resources/fruit.png",
-        "resources/head.png",
-        "resources/main-img.png",
-        "resources/main-img-02.png",
+//var imgList =
+//    [
+//        "resources/bg-default.jpg",
+//        "resources/big-circle-01.png",
+//        "resources/big-circle-02.png",
+//        "resources/font.png",
+//        "resources/fruit.png",
+//        "resources/head.png",
+//        "resources/main-img.png",
+//        "resources/main-img-02.png",
+//
+//        "resources/svg/baishi.svg",
+//        "resources/svg/circle-org.svg",
+//        "resources/svg/earth.svg",
+//        "resources/svg/weilai.svg",
+//        "resources/svg/xiangxiang.svg",
+//
+//        "resources/line/L1.png",
+//        "resources/line/L2.png",
+//        "resources/line/L3.png",
+//        "resources/line/L4.png",
+//        "resources/line/L5.png",
+//        "resources/line/L6.png",
+//        "resources/line/R1.png",
+//        "resources/line/R3.png",
+//        "resources/line/R4.png",
+//        "resources/line/R5.png"
+//    ];
+//
+//
+//new loadermsk(imgList, "#0e79ef", function () {
+//    console.log("加载完成...");
+//    Event.init();
+//
+//});
 
-        "resources/svg/baishi.svg",
-        "resources/svg/circle-org.svg",
-        "resources/svg/earth.svg",
-        "resources/svg/weilai.svg",
-        "resources/svg/xiangxiang.svg",
 
-        "resources/line/L1.png",
-        "resources/line/L2.png",
-        "resources/line/L3.png",
-        "resources/line/L4.png",
-        "resources/line/L5.png",
-        "resources/line/L6.png",
-        "resources/line/R1.png",
-        "resources/line/R3.png",
-        "resources/line/R4.png",
-        "resources/line/R5.png"
-    ];
-
-
-new loadermsk(imgList, "#0e79ef", function () {
-    console.log("加载完成...");
-    Event.init();
-
-});
-
+var resultMsgArray = [
+    "我在全通·习悦的年薪Hold的住DS，再去4次帕劳，快来看看你的！",
+"我在全通·习悦的年薪Hold的住卡宴，再去5次塞班，快来看看你的！",
+"我在全通·习悦的年薪Hold的住特斯拉，再去6次马尔代夫，快来看看你的！"
+];
 
 
 var  answerList  = [];
@@ -87,6 +95,10 @@ var  Event = {
         //加载数据
         this.data();
 
+        //微信验证
+        //var title = randomMsg();
+        //getSignature(title,title);
+
         //视差滚动
         var scene = document.getElementById('arrow-list');
         var parallax = new Parallax(scene);
@@ -109,7 +121,7 @@ var  Event = {
         });
         //结束答题
         UI.SubAnswer.bind("click",function(){
-            alert("您答对了"+jj);
+            alert("请分享到朋友圈内,查看答案!");
         });
 
         //1个ui动画
@@ -134,7 +146,7 @@ var  Event = {
         Event.sevenAni();
 
 
-        UI.FirstLayer.removeClass("hide");
+        //UI.FirstLayer.removeClass("hide");
 
 
     },
@@ -187,12 +199,11 @@ var  Event = {
         var $puzzyWrap = UI.ThirdLayer.find(".puzzle-wrap");
         var $py = UI.ThirdLayer.find("#py");
         //var $puzzle = UI.ThirdLayer.find(".puzzle");
-        $puzzyWrap[0].addEventListener('webkitAnimationEnd', function(t){
-            if(t.animationName == "swing"){
-                $pointPuzzy.removeClass("hide");
-            }
-        }, false);
-
+        //$puzzyWrap[0].addEventListener('webkitAnimationEnd', function(t){
+        //    //if(t.animationName == "swing"){
+        //        //$pointPuzzy.removeClass("hide");
+        //    //}
+        //}, false);
 
         $py[0].addEventListener('webkitTransitionEnd', function(t){
             UI.ThirdLayer.addClass("out");
@@ -385,3 +396,67 @@ var nextAnswer = function(){
 
     refreshAnswer(answerList[Indicator]);
 }
+
+
+
+//随机获取结果
+var randomMsg = function(){
+   return resultMsgArray[Math.floor(Math.random() * 3)];
+}
+
+
+
+//微信验证
+function getSignature (title,desc){
+
+    var shareUrl  =  window.location.href;
+
+    //注册服务
+    $.post("http://imzhiliao.com:3000/wx/signature",{
+        url : location.href.split('#')[0],
+        c_no : "cicada"
+    },function(res){
+        //微信错误
+        if(res.errcode){
+            alert(res.errcode);
+        }
+        else{
+            wx.config({
+                debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+                appId: res.appid, // 必填，公众号的唯一标识
+                timestamp: res.timestamp, // 必填，生成签名的时间戳
+                nonceStr: res.nonceStr, // 必填，生成签名的随机串
+                signature: res.signature,// 必填，签名，见附录1
+                jsApiList: [
+                    'checkJsApi',
+                    'onMenuShareTimeline',
+                    'onMenuShareAppMessage',
+                    'onMenuShareQQ',
+                    'onMenuShareWeibo',
+                    'hideMenuItems',
+                    'showMenuItems',
+                    'hideAllNonBaseMenuItem',
+                    'showAllNonBaseMenuItem'
+                ] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+            });
+            wx.ready(function () {
+                var link = shareUrl || window.location.href;
+                var shareData = {
+                    "desc": "",
+                    "title": title,
+                    link: desc,
+                    imgUrl: 'http://imzhiliao.com/cicadaShare/share/images/cicada-logo.png'
+                };
+                wx.onMenuShareAppMessage(shareData);
+                wx.onMenuShareTimeline(shareData);
+                wx.onMenuShareQQ(shareData);
+                wx.onMenuShareWeibo(shareData);
+            });
+            wx.error(function (res) {
+                alert(res.errMsg);
+            });
+        }
+    })
+}
+
+Event.init();

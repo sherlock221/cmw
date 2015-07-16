@@ -6,9 +6,7 @@
   }
 
   .chrysanthemum{
-    //@include animation(spin3d 5s linear  0s infinite both);
-    -webkit-transform: rotate3d(1,0,0,430deg);
-    transform: rotate3d(1,0,0,430deg);
+    @include animation(spin 8s linear  0s infinite both);
   }
 
   .circle-red{

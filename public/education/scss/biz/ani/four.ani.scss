@@ -4,9 +4,18 @@
     @include animation(bounceInDown 1s ease  0s 1 both);
   }
 
+  .wg-circle-og-01{
+    @include animation(zoomIn  1s ease  3s 1 both);
+  }
+
+  .wg-circle-rd-01{
+    @include animation(zoomIn  1s ease  3s 1 both);
+  }
+
   .bs-red-cr{
     @include animation(zoomIn 1s ease  4s 1 both);
   }
+
 
   .wg-tree{
     @include animation(bounceInUp 1s ease  4s 1 both);
