@@ -43,24 +43,34 @@
 
 <body>
 
-
 <%if(1==1){%>
 
+
+
 <div id="container" class="container  bg-default" >
+
+    <div class="bg-dot-max"></div>
+
     <!-- 第一个图片 -->
     <div  id="indexLayer" class="indexLayer hide " >
+
+
+
+
+
         <ul id="arrow-list" class="arrow-list"  data-friction-x="0.1"
             data-friction-y="0.1"
             data-scalar-x="25"
             data-scalar-y="0">
 
-            <!--<li class="layer" style="width: 110% !important;top: -5% !important ;-->
-  <!--left: -5%  !important;" data-depth="0.20">-->
-                <!--<div class="bg-default" ></div>-->
-            <!--</li>-->
+            <li class="layer" style="width: 120% !important;
+  left: -10%  !important;" data-depth="0.30">
+                <div class="bg-default" ></div>
+            </li>
             <li class="layer " data-depth="0.40"  >
                 <img src="resources/line/L1.png"  class="l1_img" width="320" />
             </li>
+
             <li class="layer" data-depth="0.60">
                 <img src="resources/line/L2.png" class="l2_img" width="320" />
             </li>
@@ -163,7 +173,6 @@
     </div>
 
     <!--style="-webkit-transform: scale(0.95);transform: scale(0.95);"-->
-
     <!-- 第二个 -->
     <div id="secondLayer" class="secondLayer  hide">
         <div class="ib tr-center" >
@@ -306,11 +315,10 @@
                            <i class="ib head-01 head-img"></i>
                     </span>
                 </div>
-
-
                 <div class="ib pl25">
                     <i class="ib font-base-img font-jiagou "></i>
                 </div>
+
             </div>
 
                 <div class="mb35 ml25 head-flip">
@@ -363,9 +371,6 @@
                         </span>
                     </div>
                 </div>
-
-
-
 
 
 
@@ -440,11 +445,8 @@
 
     </div>
 
-
-
-
     <!-- 分享 -->
-    <div class="shareLayer " id="shareLayer">
+    <div class="shareLayer hide " id="shareLayer">
 
         <ul class="arrow-list">
             <li class="ib">
@@ -456,9 +458,9 @@
         </ul>
 
         <!-- 旋转立方体 -->
-        <div class="seq-space ">
+        <div class="seq-space  " id="seq-space">
 
-         <div class="seq-layer seq-layer-ani" id="seq-layer">
+         <div class="seq-layer seq-layer-ani " id="seq-layer">
             <div class="seq-img seq-before">
                 <h5 class="ib font-base-img-02 font-share   tran-center"></h5>
             </div>
@@ -468,7 +470,7 @@
             <div class="seq-img seq-left ">
 
                 <div class="tran-box-center y">
-                    <h5 class=" font-base-img-02 font-email "></h5>
+                    <h5 class=" font-base-img-02 font-email"></h5>
                     <h5 class=" font-base-img-02 font-phone "></h5>
                 </div>
 
@@ -516,7 +518,6 @@
 </div>
 
 <%}else{%>
-
      <p class="text-center "  style="margin-top: 40px;">请您使用微信或QQ来访问此链接</p>
 <%}%>
 
@@ -524,8 +525,9 @@
 </body>
 
 
-</html>
 
+
+</html>
 <script type="text/javascript" src="lib/effect/parallax.min.js"></script>
 <!-- biz -->
 <script type="text/javascript" src="js/index.js"></script>

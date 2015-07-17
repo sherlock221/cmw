@@ -6,41 +6,41 @@
 
 
 //配置所有图片列表
-//var imgList =
-//    [
-//        "resources/bg-default.jpg",
-//        "resources/big-circle-01.png",
-//        "resources/big-circle-02.png",
-//        "resources/font.png",
-//        "resources/fruit.png",
-//        "resources/head.png",
-//        "resources/main-img.png",
-//        "resources/main-img-02.png",
-//
-//        "resources/svg/baishi.svg",
-//        "resources/svg/circle-org.svg",
-//        "resources/svg/earth.svg",
-//        "resources/svg/weilai.svg",
-//        "resources/svg/xiangxiang.svg",
-//
-//        "resources/line/L1.png",
-//        "resources/line/L2.png",
-//        "resources/line/L3.png",
-//        "resources/line/L4.png",
-//        "resources/line/L5.png",
-//        "resources/line/L6.png",
-//        "resources/line/R1.png",
-//        "resources/line/R3.png",
-//        "resources/line/R4.png",
-//        "resources/line/R5.png"
-//    ];
-//
-//
-//new loadermsk(imgList, "#0e79ef", function () {
-//    console.log("加载完成...");
-//    Event.init();
-//
-//});
+var imgList =
+    [
+        "resources/bg-default.jpg",
+        "resources/big-circle-01.png",
+        "resources/big-circle-02.png",
+        "resources/font.png",
+        "resources/fruit.png",
+        "resources/head.png",
+        "resources/main-img.png",
+        "resources/main-img-02.png",
+
+        "resources/svg/baishi.svg",
+        "resources/svg/circle-org.svg",
+        "resources/svg/earth.svg",
+        "resources/svg/weilai.svg",
+        "resources/svg/xiangxiang.svg",
+
+        "resources/line/L1.png",
+        "resources/line/L2.png",
+        "resources/line/L3.png",
+        "resources/line/L4.png",
+        "resources/line/L5.png",
+        "resources/line/L6.png",
+        "resources/line/R1.png",
+        "resources/line/R3.png",
+        "resources/line/R4.png",
+        "resources/line/R5.png"
+    ];
+
+
+new loadermsk(imgList, "#0e79ef", function () {
+    console.log("加载完成...");
+    Event.init();
+
+});
 
 
 var resultMsgArray = [
@@ -101,9 +101,6 @@ var  Event = {
         //var title = randomMsg();
         //getSignature(title,title);
 
-        //视差滚动
-        var scene = document.getElementById('arrow-list');
-        var parallax = new Parallax(scene);
 
         //绑定答题选择
         UI.AnswerLayer.on("click",".answer-select li",function(){
@@ -123,7 +120,6 @@ var  Event = {
         });
         //结束答题
         UI.SubAnswer.bind("click",function(){
-
             UI.AnswerLayer.addClass("out");
 
             setTimeout(function(){
@@ -132,6 +128,13 @@ var  Event = {
             },500);
 
         });
+
+        UI.AnswerLayer[0].addEventListener('webkitAnimationStart', function(t){
+            if(t.animationName == "zoomOut"){
+                Event.shareAni();
+            }
+        }, false);
+
 
         //1个ui动画
         Event.firstAni();
@@ -154,9 +157,9 @@ var  Event = {
         //7个ui动画
         Event.sevenAni();
 
+        UI.FirstLayer.removeClass("hide");
 
-        //UI.FirstLayer.removeClass("hide");
-
+        //Event.shareAni();
 
     },
     data : function(){
@@ -164,6 +167,13 @@ var  Event = {
     },
 
     firstAni : function(){
+
+
+        //ios开启重力感应
+        if(isIOS){
+            var scene = document.getElementById('arrow-list');
+            var parallax = new Parallax(scene);
+        }
 
         if(isIOS){
             //主页svg 动画
@@ -344,7 +354,6 @@ var  Event = {
         lightBtn.hammer().bind("tap",function(){
 
             UI.SevenLayer.addClass("out");
-
                 setTimeout(function(){
                     UI.AnswerLayer.removeClass("hide");
                     UI.SevenLayer.addClass("hide");
@@ -370,11 +379,11 @@ var  Event = {
                 console.log("完成。。。");
                 clearInterval(boxTimer);
             }
-            $box[0].style.webkitTransform  =  $box[0].style.transform =   boxTransform[boxIndex];
+            $box[0].style.webkitTransform  =   boxTransform[boxIndex];
+            $box[0].style.transform =  boxTransform[boxIndex];
             boxIndex++;
 
         };
-
         var boxTimer = setInterval(ani,2000);
 
     }
@@ -431,7 +440,6 @@ var nextAnswer = function(){
 
     refreshAnswer(answerList[Indicator]);
 }
-
 
 
 //随机获取结果
@@ -494,4 +502,4 @@ function getSignature (title,desc){
     })
 }
 
-Event.init();
+//Event.init();
