@@ -1,7 +1,9 @@
 
 .answerLayer{
 
-
+  .out{
+    @include animation(zoomOut 1s ease 0s 1 both);
+  }
 
   padding-top: rem(34);
 
@@ -194,9 +196,6 @@
 
 }
 
-
-
-
 //动画部分
 .seq-layer-ani{
 
@@ -204,8 +203,8 @@
     .tran-box-center{
       @include animation(fadeIn 1s ease 6s 1 both);
     }
-  }
 
+  }
 
   .seq-top{
     .tran-box-center{
@@ -222,13 +221,54 @@
 
   .seq-left{
     .tran-box-center{
-      @include animation(fadeIn 1s ease 6s 1 both);
+      @include animation(fadeIn 1s ease 8s 1 both);
     }
+  }
+
+
+  .font-share{
+    @include animation(fadeOut 1s ease 2s 1 both);
+  }
+
+  .font-nianxin{
+    @include animation(fadeOut 1s ease 4s 1 both);
   }
 
   .seq-right-font-out{
     @include animation(fadeOut 1s ease 6s 1 both);
   }
+  .seq-bottom-font-out{
+    @include animation(fadeOut 1s ease 8s 1 both);
+  }
 
 }
 
+
+
+//分享部分
+.shareLayer{
+
+
+  .l1_img{
+    @include animation(fadeInLeft 0.5s ease 0s 1  both);
+  }
+
+  .l2_img{
+    @include animation(fadeInLeft 0.5s ease 0s 1  both);
+  }
+
+  .chrysanthemum-front-02{
+    position: absolute;
+    bottom: -43px;
+    right: 38px;
+
+    @include animation(fadeInUp 0.5s ease 0s 1  both);
+  }
+
+  .chrysanthemum-front-img{
+
+
+    @include animation(spin-inverse  8s linear 0s infinite both);
+  }
+
+}

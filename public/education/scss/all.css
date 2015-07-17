@@ -827,6 +827,12 @@ a {
   padding-top: 17px;
   padding-left: 21px;
   padding-right: 21px; }
+  .answerLayer .out {
+    -webkit-animation: zoomOut 1s ease 0s 1 both;
+    -ms-animation: zoomOut 1s ease 0s 1 both;
+    -moz-animation: zoomOut 1s ease 0s 1 both;
+    -o-animation: zoomOut 1s ease 0s 1 both;
+    animation: zoomOut 1s ease 0s 1 both; }
   .answerLayer .answer-num {
     background: #ff5f32;
     color: #000;
@@ -996,17 +1002,63 @@ a {
   -o-animation: fadeIn 1s ease 4s 1 both;
   animation: fadeIn 1s ease 4s 1 both; }
 .seq-layer-ani .seq-left .tran-box-center {
-  -webkit-animation: fadeIn 1s ease 6s 1 both;
-  -ms-animation: fadeIn 1s ease 6s 1 both;
-  -moz-animation: fadeIn 1s ease 6s 1 both;
-  -o-animation: fadeIn 1s ease 6s 1 both;
-  animation: fadeIn 1s ease 6s 1 both; }
+  -webkit-animation: fadeIn 1s ease 8s 1 both;
+  -ms-animation: fadeIn 1s ease 8s 1 both;
+  -moz-animation: fadeIn 1s ease 8s 1 both;
+  -o-animation: fadeIn 1s ease 8s 1 both;
+  animation: fadeIn 1s ease 8s 1 both; }
+.seq-layer-ani .font-share {
+  -webkit-animation: fadeOut 1s ease 2s 1 both;
+  -ms-animation: fadeOut 1s ease 2s 1 both;
+  -moz-animation: fadeOut 1s ease 2s 1 both;
+  -o-animation: fadeOut 1s ease 2s 1 both;
+  animation: fadeOut 1s ease 2s 1 both; }
+.seq-layer-ani .font-nianxin {
+  -webkit-animation: fadeOut 1s ease 4s 1 both;
+  -ms-animation: fadeOut 1s ease 4s 1 both;
+  -moz-animation: fadeOut 1s ease 4s 1 both;
+  -o-animation: fadeOut 1s ease 4s 1 both;
+  animation: fadeOut 1s ease 4s 1 both; }
 .seq-layer-ani .seq-right-font-out {
   -webkit-animation: fadeOut 1s ease 6s 1 both;
   -ms-animation: fadeOut 1s ease 6s 1 both;
   -moz-animation: fadeOut 1s ease 6s 1 both;
   -o-animation: fadeOut 1s ease 6s 1 both;
   animation: fadeOut 1s ease 6s 1 both; }
+.seq-layer-ani .seq-bottom-font-out {
+  -webkit-animation: fadeOut 1s ease 8s 1 both;
+  -ms-animation: fadeOut 1s ease 8s 1 both;
+  -moz-animation: fadeOut 1s ease 8s 1 both;
+  -o-animation: fadeOut 1s ease 8s 1 both;
+  animation: fadeOut 1s ease 8s 1 both; }
+
+.shareLayer .l1_img {
+  -webkit-animation: fadeInLeft 0.5s ease 0s 1 both;
+  -ms-animation: fadeInLeft 0.5s ease 0s 1 both;
+  -moz-animation: fadeInLeft 0.5s ease 0s 1 both;
+  -o-animation: fadeInLeft 0.5s ease 0s 1 both;
+  animation: fadeInLeft 0.5s ease 0s 1 both; }
+.shareLayer .l2_img {
+  -webkit-animation: fadeInLeft 0.5s ease 0s 1 both;
+  -ms-animation: fadeInLeft 0.5s ease 0s 1 both;
+  -moz-animation: fadeInLeft 0.5s ease 0s 1 both;
+  -o-animation: fadeInLeft 0.5s ease 0s 1 both;
+  animation: fadeInLeft 0.5s ease 0s 1 both; }
+.shareLayer .chrysanthemum-front-02 {
+  position: absolute;
+  bottom: -43px;
+  right: 38px;
+  -webkit-animation: fadeInUp 0.5s ease 0s 1 both;
+  -ms-animation: fadeInUp 0.5s ease 0s 1 both;
+  -moz-animation: fadeInUp 0.5s ease 0s 1 both;
+  -o-animation: fadeInUp 0.5s ease 0s 1 both;
+  animation: fadeInUp 0.5s ease 0s 1 both; }
+.shareLayer .chrysanthemum-front-img {
+  -webkit-animation: spin-inverse 8s linear 0s infinite both;
+  -ms-animation: spin-inverse 8s linear 0s infinite both;
+  -moz-animation: spin-inverse 8s linear 0s infinite both;
+  -o-animation: spin-inverse 8s linear 0s infinite both;
+  animation: spin-inverse 8s linear 0s infinite both; }
 
 .red-point-flash {
   -webkit-animation: fadeIn 1s ease 0s 1 both;

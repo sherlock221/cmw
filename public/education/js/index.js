@@ -65,7 +65,8 @@ var UI = {
     SevenLayer : $("#sevenLayer"),
     SubAnswer : $("#subAnswer"),
     FruitBg  : $("#fruitBg"),
-    BOX_LAYER : $("#seq-layer")
+    BOX_LAYER : $("#seq-layer"),
+    ShareLayer : $("#shareLayer")
 }
 
 //检测当前浏览器
@@ -122,7 +123,14 @@ var  Event = {
         });
         //结束答题
         UI.SubAnswer.bind("click",function(){
-            alert("请分享到朋友圈内,查看答案!");
+
+            UI.AnswerLayer.addClass("out");
+
+            setTimeout(function(){
+                UI.AnswerLayer.addClass("hide");
+                UI.ShareLayer.removeClass("hide");
+            },500);
+
         });
 
         //1个ui动画
@@ -146,8 +154,6 @@ var  Event = {
         //7个ui动画
         Event.sevenAni();
 
-        //share动画
-        Event.shareAni();
 
         //UI.FirstLayer.removeClass("hide");
 
@@ -368,7 +374,6 @@ var  Event = {
             boxIndex++;
 
         };
-
 
         var boxTimer = setInterval(ani,2000);
 
