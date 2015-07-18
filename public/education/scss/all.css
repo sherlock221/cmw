@@ -1660,11 +1660,11 @@ a {
   -o-animation: spin 10s linear 0s infinite both;
   animation: spin 10s linear 0s infinite both; }
 .indexLayer .font-education {
-  -webkit-animation: fadeIn 2s ease 0.3s 1 both;
-  -ms-animation: fadeIn 2s ease 0.3s 1 both;
-  -moz-animation: fadeIn 2s ease 0.3s 1 both;
-  -o-animation: fadeIn 2s ease 0.3s 1 both;
-  animation: fadeIn 2s ease 0.3s 1 both; }
+  -webkit-animation: flipInY 1s ease 0.3s 1 both;
+  -ms-animation: flipInY 1s ease 0.3s 1 both;
+  -moz-animation: flipInY 1s ease 0.3s 1 both;
+  -o-animation: flipInY 1s ease 0.3s 1 both;
+  animation: flipInY 1s ease 0.3s 1 both; }
 .indexLayer .weilai {
   -webkit-animation: flipInY 1s ease 1.5s 1 both;
   -ms-animation: flipInY 1s ease 1.5s 1 both;

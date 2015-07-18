@@ -22,7 +22,7 @@
   }
 
   .font-education{
-    @include animation(fadeIn 2s ease 0.3s 1 both );
+    @include animation(flipInY 1s ease 0.3s 1 both );
   }
 
   .weilai{
