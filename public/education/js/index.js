@@ -102,8 +102,9 @@ var  Event = {
         //getSignature(title,title);
 
 
+
         //绑定答题选择
-        UI.AnswerLayer.on("click",".answer-select li",function(){
+        UI.AnswerLayer.hammer().on("click",".answer-select li",function(){
             var $this = $(this);
             var answer  = $this.attr("data-option");
             $this.addClass("active").siblings().removeClass("active");
@@ -116,10 +117,10 @@ var  Event = {
                    UI.FruitBg.hide();
                    UI.SubAnswer.show();
                }
-            },600);
+            },500);
         });
         //结束答题
-        UI.SubAnswer.bind("click",function(){
+        UI.SubAnswer.hammer().bind("tap",function(){
             UI.AnswerLayer.addClass("out");
 
             setTimeout(function(){
@@ -130,8 +131,12 @@ var  Event = {
         });
 
         UI.AnswerLayer[0].addEventListener('webkitAnimationStart', function(t){
+            console.log(t.animationName);
             if(t.animationName == "zoomOut"){
-                Event.shareAni();
+                console.log("end answer");
+                setTimeout(function(){
+                    Event.shareAni();
+                },500);
             }
         }, false);
 
@@ -158,8 +163,6 @@ var  Event = {
         Event.sevenAni();
 
         UI.FirstLayer.removeClass("hide");
-
-        //Event.shareAni();
 
     },
     data : function(){
@@ -382,7 +385,6 @@ var  Event = {
             $box[0].style.webkitTransform  =   boxTransform[boxIndex];
             $box[0].style.transform =  boxTransform[boxIndex];
             boxIndex++;
-
         };
         var boxTimer = setInterval(ani,2000);
 

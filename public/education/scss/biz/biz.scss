@@ -7,12 +7,11 @@
 }
 
 
-.indexLayer,.secondLayer,.thirdLayer,.fourLayer,.fiveLayer,.sixLayer,.sevenLayer{
+.indexLayer,.secondLayer,.thirdLayer,.fourLayer,.fiveLayer,.sixLayer,.sevenLayer,.shareLayer,.answerLayer{
   position: relative;
   //padding: rem(73) 0;
   height: inherit;
 }
-
 
 
 .arrow-list{
@@ -83,7 +82,6 @@
   position: absolute;
   left: 50%;
   top:50%;
-  z-index: 999;
   @include transform(translate(-50% , -50%));
 }
 
@@ -93,11 +91,7 @@
   left: -56px;
 }
 
-.weilai{
-  position: relative;
-  top: -40px;
-  left: -17px;
-}
+
 .chrysanthemum{
   position: absolute;
   bottom: 20%;
@@ -130,11 +124,24 @@
   position: absolute;
   bottom: 30px;
   right: 47px;
+  z-index: 10;
+}
+
+.font-education-ios{
+  position: relative;
+
+  .weilai{
+    position: relative;
+    top: -40px;
+    left: -17px;
+  }
 }
 
 
 //红点
-
+.point-01{
+  z-index: 10;
+}
 
 
 @import "second";

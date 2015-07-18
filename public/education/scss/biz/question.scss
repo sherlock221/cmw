@@ -1,7 +1,7 @@
 
 .answerLayer{
 
-  .out{
+  &.out{
     @include animation(zoomOut 1s ease 0s 1 both);
   }
 
@@ -119,8 +119,8 @@
 
   top: 50%;
   left: 50%;
-  margin-left: -100px;
-  margin-top: -100px;
+  margin-left: -125px;
+  margin-top: -125px;
 }
 
 .tran-box-center{
@@ -147,15 +147,14 @@
   -webkit-transform-style:preserve-3d;
   transform-style:preserve-3d;
 
-  width: rem(400);
-  height: rem(400);
+  width: rem(500);
+  height: rem(500);
   position: relative;
 
-  -webkit-transition : -webkit-transform 1s ease;
-  transition : transform 1s ease;
+  -webkit-transform-origin:50% 50% rem(-250);
+  transform-origin:50% 50% rem(-250);
 
-  -webkit-transform-origin:50% 50% rem(-200);
-  transform-origin:50% 50% rem(-200);
+  @include transition(1s ease 0s);
 
   //前面
   .seq-before{
@@ -164,7 +163,7 @@
 
   .seq-after{
     position: absolute;
-    @include transform(translateZ(-200px));
+    @include transform(translateZ(-250px));
   }
 
   .seq-bottom{
@@ -197,6 +196,8 @@
 
 //动画部分
 .seq-layer-ani{
+
+  //@include animation(box3d 9s linear 0s 1 both);
 
   .seq-bottom{
     .tran-box-center{
@@ -271,5 +272,25 @@
   .seq-space{
     @include animation(zoomIn 1s ease 0.6s 1 both);
   }
+
+}
+
+
+
+//盒子
+@include keyframes(box3d){
+
+  0%, 15.4%{  @include transform(rotateX(0deg));  }
+  21.2%, 36.6%{   @include transform(rotateX(-90deg));  }
+  42.4%, 57.8%{  @include transform(rotateY(-90deg));   }
+  63.6%, 79%{  @include transform(rotateX(90deg));  }
+  84.8%, 100%{ @include transform(rotateY(90deg));   }
+
+
+
+
+
+
+
 
 }

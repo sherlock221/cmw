@@ -15,7 +15,7 @@
 
       },
       {
-        "optionName" : "C.=",
+        "optionName" : "C",
         "optionValue":".互联网+教育"
 
       },
@@ -30,7 +30,7 @@
 
     "questionId"   : 2,
     "questionTitle" : "QUESTION 2",
-    "questionDesc" : "有一种痛叫做你的同学都身价千万了，全通教育如此酷炫高端有未来，以下哪一个是你的心动女（gang）神(wei)？",
+    "questionDesc" : "有一种痛叫做你的同学都身价千万了，全通教育如此酷炫高端有未来，以下哪一个是你的心动女(gang)神(wei)？",
     "questionOptions":[
       {
         "optionName" : "A",

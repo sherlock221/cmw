@@ -17,7 +17,7 @@
   background-size: 580px 580px; }
 
 .font-base-img-02 {
-  background-image: url("../resources/font-02.png");
+  background-image: url("../resources/font-03.png");
   background-size: 400px 250px; }
 
 .font-education {
@@ -108,13 +108,13 @@
 
 .font-share {
   background-position: 0px 0px;
-  width: 280px;
-  height: 24.5px; }
+  width: 187.5px;
+  height: 51.5px; }
 
 .font-nianxin {
-  background-position: 0px -24.5px;
-  width: 280px;
-  height: 27px; }
+  background-position: 0px -150px;
+  width: 175px;
+  height: 55.5px; }
 
 .font-we {
   background-position: 0px -51.5px;
@@ -337,17 +337,21 @@
 
 .seq-img {
   background-image: url("../resources/seq.png");
-  background-size: 200px 200px;
-  width: 200px;
-  height: 200px; }
+  background-size: 250px 250px;
+  width: 250px;
+  height: 250px; }
 
 .bg-dot-max {
   background-image: url("../resources/dot.png");
   background-repeat: repeat;
   width: 100%;
   height: 100%;
+  top: 0;
   position: absolute;
-  z-index: 9999; }
+  z-index: 2;
+  left: 0;
+  right: 0;
+  bottom: 0; }
 
 html, body {
   width: 100%;
@@ -439,7 +443,7 @@ a {
   padding: 0;
   margin: 0; }
 
-.indexLayer, .secondLayer, .thirdLayer, .fourLayer, .fiveLayer, .sixLayer, .sevenLayer {
+.indexLayer, .secondLayer, .thirdLayer, .fourLayer, .fiveLayer, .sixLayer, .sevenLayer, .shareLayer, .answerLayer {
   position: relative;
   height: inherit; }
 
@@ -485,7 +489,6 @@ a {
   position: absolute;
   left: 50%;
   top: 50%;
-  z-index: 999;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
@@ -495,11 +498,6 @@ a {
   position: absolute;
   top: 12%;
   left: -56px; }
-
-.weilai {
-  position: relative;
-  top: -40px;
-  left: -17px; }
 
 .chrysanthemum {
   position: absolute;
@@ -527,7 +525,18 @@ a {
 .fingerprint {
   position: absolute;
   bottom: 30px;
-  right: 47px; }
+  right: 47px;
+  z-index: 10; }
+
+.font-education-ios {
+  position: relative; }
+  .font-education-ios .weilai {
+    position: relative;
+    top: -40px;
+    left: -17px; }
+
+.point-01 {
+  z-index: 10; }
 
 .secondLayer .big-ring {
   position: absolute;
@@ -586,7 +595,8 @@ a {
 .thirdLayer .puzzle-wrap {
   position: absolute;
   top: 0;
-  right: -94px; }
+  right: -94px;
+  z-index: 10; }
 .thirdLayer .puzzle-layer {
   position: absolute;
   bottom: 0px;
@@ -835,7 +845,7 @@ a {
   padding-top: 17px;
   padding-left: 21px;
   padding-right: 21px; }
-  .answerLayer .out {
+  .answerLayer.out {
     -webkit-animation: zoomOut 1s ease 0s 1 both;
     -ms-animation: zoomOut 1s ease 0s 1 both;
     -moz-animation: zoomOut 1s ease 0s 1 both;
@@ -908,8 +918,8 @@ a {
   position: absolute;
   top: 50%;
   left: 50%;
-  margin-left: -100px;
-  margin-top: -100px; }
+  margin-left: -125px;
+  margin-top: -125px; }
 
 .tran-box-center {
   position: absolute;
@@ -931,21 +941,23 @@ a {
   -moz-transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   position: relative;
-  -webkit-transition: -webkit-transform 1s ease;
-  transition: transform 1s ease;
-  -webkit-transform-origin: 50% 50% -100px;
-  transform-origin: 50% 50% -100px; }
+  -webkit-transform-origin: 50% 50% -125px;
+  transform-origin: 50% 50% -125px;
+  -webkit-transition: 1s ease 0s;
+  transition: 1s ease 0s;
+  -moz-transition: 1s ease 0s;
+  -ms-transition: 1s ease 0s; }
   .seq-layer .seq-before {
     position: absolute; }
   .seq-layer .seq-after {
     position: absolute;
-    -webkit-transform: translateZ(-200px);
-    transform: translateZ(-200px);
-    -moz-transform: translateZ(-200px);
-    -ms-transform: translateZ(-200px); }
+    -webkit-transform: translateZ(-250px);
+    transform: translateZ(-250px);
+    -moz-transform: translateZ(-250px);
+    -ms-transform: translateZ(-250px); }
   .seq-layer .seq-bottom {
     position: absolute;
     transform-origin: bottom;
@@ -1074,6 +1086,136 @@ a {
   -o-animation: zoomIn 1s ease 0.6s 1 both;
   animation: zoomIn 1s ease 0.6s 1 both; }
 
+@-webkit-keyframes box3d {
+  0%, 15.4% {
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+    -ms-transform: rotateX(0deg); }
+  21.2%, 36.6% {
+    -webkit-transform: rotateX(-90deg);
+    transform: rotateX(-90deg);
+    -moz-transform: rotateX(-90deg);
+    -ms-transform: rotateX(-90deg); }
+  42.4%, 57.8% {
+    -webkit-transform: rotateY(-90deg);
+    transform: rotateY(-90deg);
+    -moz-transform: rotateY(-90deg);
+    -ms-transform: rotateY(-90deg); }
+  63.6%, 79% {
+    -webkit-transform: rotateX(90deg);
+    transform: rotateX(90deg);
+    -moz-transform: rotateX(90deg);
+    -ms-transform: rotateX(90deg); }
+  84.8%, 100% {
+    -webkit-transform: rotateY(90deg);
+    transform: rotateY(90deg);
+    -moz-transform: rotateY(90deg);
+    -ms-transform: rotateY(90deg); } }
+@-moz-keyframes box3d {
+  0%, 15.4% {
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+    -ms-transform: rotateX(0deg); }
+  21.2%, 36.6% {
+    -webkit-transform: rotateX(-90deg);
+    transform: rotateX(-90deg);
+    -moz-transform: rotateX(-90deg);
+    -ms-transform: rotateX(-90deg); }
+  42.4%, 57.8% {
+    -webkit-transform: rotateY(-90deg);
+    transform: rotateY(-90deg);
+    -moz-transform: rotateY(-90deg);
+    -ms-transform: rotateY(-90deg); }
+  63.6%, 79% {
+    -webkit-transform: rotateX(90deg);
+    transform: rotateX(90deg);
+    -moz-transform: rotateX(90deg);
+    -ms-transform: rotateX(90deg); }
+  84.8%, 100% {
+    -webkit-transform: rotateY(90deg);
+    transform: rotateY(90deg);
+    -moz-transform: rotateY(90deg);
+    -ms-transform: rotateY(90deg); } }
+@-o-keyframes box3d {
+  0%, 15.4% {
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+    -ms-transform: rotateX(0deg); }
+  21.2%, 36.6% {
+    -webkit-transform: rotateX(-90deg);
+    transform: rotateX(-90deg);
+    -moz-transform: rotateX(-90deg);
+    -ms-transform: rotateX(-90deg); }
+  42.4%, 57.8% {
+    -webkit-transform: rotateY(-90deg);
+    transform: rotateY(-90deg);
+    -moz-transform: rotateY(-90deg);
+    -ms-transform: rotateY(-90deg); }
+  63.6%, 79% {
+    -webkit-transform: rotateX(90deg);
+    transform: rotateX(90deg);
+    -moz-transform: rotateX(90deg);
+    -ms-transform: rotateX(90deg); }
+  84.8%, 100% {
+    -webkit-transform: rotateY(90deg);
+    transform: rotateY(90deg);
+    -moz-transform: rotateY(90deg);
+    -ms-transform: rotateY(90deg); } }
+@-ms-keyframes box3d {
+  0%, 15.4% {
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+    -ms-transform: rotateX(0deg); }
+  21.2%, 36.6% {
+    -webkit-transform: rotateX(-90deg);
+    transform: rotateX(-90deg);
+    -moz-transform: rotateX(-90deg);
+    -ms-transform: rotateX(-90deg); }
+  42.4%, 57.8% {
+    -webkit-transform: rotateY(-90deg);
+    transform: rotateY(-90deg);
+    -moz-transform: rotateY(-90deg);
+    -ms-transform: rotateY(-90deg); }
+  63.6%, 79% {
+    -webkit-transform: rotateX(90deg);
+    transform: rotateX(90deg);
+    -moz-transform: rotateX(90deg);
+    -ms-transform: rotateX(90deg); }
+  84.8%, 100% {
+    -webkit-transform: rotateY(90deg);
+    transform: rotateY(90deg);
+    -moz-transform: rotateY(90deg);
+    -ms-transform: rotateY(90deg); } }
+@keyframes box3d {
+  0%, 15.4% {
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+    -ms-transform: rotateX(0deg); }
+  21.2%, 36.6% {
+    -webkit-transform: rotateX(-90deg);
+    transform: rotateX(-90deg);
+    -moz-transform: rotateX(-90deg);
+    -ms-transform: rotateX(-90deg); }
+  42.4%, 57.8% {
+    -webkit-transform: rotateY(-90deg);
+    transform: rotateY(-90deg);
+    -moz-transform: rotateY(-90deg);
+    -ms-transform: rotateY(-90deg); }
+  63.6%, 79% {
+    -webkit-transform: rotateX(90deg);
+    transform: rotateX(90deg);
+    -moz-transform: rotateX(90deg);
+    -ms-transform: rotateX(90deg); }
+  84.8%, 100% {
+    -webkit-transform: rotateY(90deg);
+    transform: rotateY(90deg);
+    -moz-transform: rotateY(90deg);
+    -ms-transform: rotateY(90deg); } }
 .red-point-flash {
   -webkit-animation: fadeIn 1s ease 0s 1 both;
   -ms-animation: fadeIn 1s ease 0s 1 both;
@@ -1541,6 +1683,12 @@ a {
   -moz-animation: pulse 1s linear 0s infinite both;
   -o-animation: pulse 1s linear 0s infinite both;
   animation: pulse 1s linear 0s infinite both; }
+.indexLayer.out .bg-default-wrap {
+  -webkit-animation: fadeOut 0.4s linear 0s 1 both;
+  -ms-animation: fadeOut 0.4s linear 0s 1 both;
+  -moz-animation: fadeOut 0.4s linear 0s 1 both;
+  -o-animation: fadeOut 0.4s linear 0s 1 both;
+  animation: fadeOut 0.4s linear 0s 1 both; }
 .indexLayer.out .chrysanthemum-front {
   -webkit-animation: zoomOut 0.4s linear 0s 1 both;
   -ms-animation: zoomOut 0.4s linear 0s 1 both;
@@ -1778,11 +1926,11 @@ a {
 .thirdLayer .puzzle-wrap {
   -webkit-transform-origin: right 50%;
   transform-origin: right 50%;
-  -webkit-animation: swing 1s ease 2.3s 3 both;
-  -ms-animation: swing 1s ease 2.3s 3 both;
-  -moz-animation: swing 1s ease 2.3s 3 both;
-  -o-animation: swing 1s ease 2.3s 3 both;
-  animation: swing 1s ease 2.3s 3 both; }
+  -webkit-animation: swing 1s ease 2.3s 2 both;
+  -ms-animation: swing 1s ease 2.3s 2 both;
+  -moz-animation: swing 1s ease 2.3s 2 both;
+  -o-animation: swing 1s ease 2.3s 2 both;
+  animation: swing 1s ease 2.3s 2 both; }
 .thirdLayer.out .xinshou {
   -webkit-animation: bounceOutUp 1s ease 0s 1 both;
   -ms-animation: bounceOutUp 1s ease 0s 1 both;

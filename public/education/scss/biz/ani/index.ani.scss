@@ -44,6 +44,11 @@
 
   //退出动画
   &.out{
+
+    .bg-default-wrap{
+      @include animation(fadeOut 0.4s linear 0s 1 both);
+    }
+
     .chrysanthemum-front{
       @include animation(zoomOut 0.4s linear 0s 1 both);
     }
