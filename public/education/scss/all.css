@@ -873,8 +873,8 @@ a {
     height: 38.5px;
     background-position: -534.5px -477px;
     position: absolute;
-    left: 14px;
-    top: -13px;
+    left: 8px;
+    top: 0px;
     display: none; }
   .answerLayer .answer-select {
     clear: both;
@@ -884,7 +884,7 @@ a {
       width: 50%;
       float: left;
       position: relative;
-      margin: 15px 0; }
+      padding: 15px 0; }
       .answerLayer .answer-select li.active .select-active {
         display: inline-block;
         -webkit-animation: bounceIn 1s ease 0s 1 both;
