@@ -13,6 +13,9 @@ var imgList =
         "resources/big-circle-02.png",
         "resources/font.png",
         "resources/fruit.png",
+        "resources/people.png",
+        "resources/light.png",
+
         "resources/head.png",
         "resources/main-img.png",
         "resources/main-img-02.png",
@@ -40,6 +43,13 @@ new loadermsk(imgList, "#0e79ef", function () {
     console.log("加载完成...");
     Event.init();
 
+});
+
+
+
+$(function(){
+    //加载fastclick
+    FastClick.attach(document.body);
 });
 
 
@@ -104,7 +114,7 @@ var  Event = {
 
 
         //绑定答题选择
-        UI.AnswerLayer.hammer().on("click",".answer-select li",function(){
+        UI.AnswerLayer.on("click",".answer-select li",function(){
             var $this = $(this);
             var answer  = $this.attr("data-option");
             $this.addClass("active").siblings().removeClass("active");
@@ -121,7 +131,7 @@ var  Event = {
             },500);
         });
         //结束答题
-        UI.SubAnswer.hammer().bind("tap",function(){
+        UI.SubAnswer.bind("click",function(){
             UI.AnswerLayer.addClass("out");
 
             setTimeout(function(){
@@ -195,7 +205,7 @@ var  Event = {
         }, false);
 
         //全部消失
-        $fingerprint.hammer().bind("tap",function(e){
+        $fingerprint.bind("click",function(e){
             UI.FirstLayer.removeClass("out").addClass("out");
             //hide
             setTimeout(function(){
@@ -312,7 +322,7 @@ var  Event = {
 
         }
 
-        $point.hammer().bind("tap",function(){
+        $point.bind("click",function(){
             console.log("tao..");
 
             UI.FourLayer.addClass("out");
@@ -334,7 +344,7 @@ var  Event = {
             $point.removeClass("hide");
         }, false);
 
-        $point.hammer().bind("tap",function(){
+        $point.bind("click",function(){
             UI.FiveLayer.addClass("out");
            setTimeout(function(){
                UI.SixLayer.removeClass("hide");
@@ -345,7 +355,7 @@ var  Event = {
     },
     sixAni : function(){
         var sixNext = UI.SixLayer.find("#sixNext");
-        sixNext.hammer().bind("tap",function(){
+        sixNext.bind("click",function(){
             UI.SixLayer.addClass("out");
             setTimeout(function(){
                 UI.SixLayer.addClass("hide");
@@ -356,7 +366,7 @@ var  Event = {
     },
     sevenAni : function(){
         var lightBtn = UI.SevenLayer.find("#light-button");
-        lightBtn.hammer().bind("tap",function(){
+        lightBtn.bind("click",function(){
 
             UI.SevenLayer.addClass("out");
                 setTimeout(function(){

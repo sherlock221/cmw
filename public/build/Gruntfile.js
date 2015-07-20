@@ -69,7 +69,7 @@ module.exports = function(grunt){
                 src: [
                     '../education/lib/pre/loader.min.js',
                     '../education/lib/effect/vivus.min.js',
-                    '../education/lib/zp/hammer.min.js',
+                    '../education/lib/zp/fastclick.min.js',
                     '../education/lib/zp/interact-1.2.4.min.js',
                     '../education/lib/zp/zepto.min.js'
                 ],
