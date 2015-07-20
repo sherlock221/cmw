@@ -5,22 +5,22 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <meta name="format-detection" content="telphone=no, email=no"/>
 
+    <!-- mobile 头部模板 -->
+    <%- include  ../template/header/header-mobile-share.ejs %>
 
+    <!--css 部分 -->
     <link rel="stylesheet" href="/cmw/help/scss/biz/template.css" type="text/css"/>
     <link rel="stylesheet" href="/cmw/help/scss/biz/init.css" type="text/css"/>
 
-    <!-- mobile 头部模板 -->
-    <%- include tpl/head-mobile-help.ejs %>
-
-    <script src="/cmw/help/js/index.js"></script>
-    <script src="/cmw/help/js/basic.js"></script>
+    <!-- 配置 -->
+    <script src="/cmw/config.js"></script>
 
     <title>帮助与反馈</title>
 
 </head>
 <body>
 <%- include tpl/header.ejs %>
-<div class="whole">
+<div class="whole marginFooter">
     <div class="search-default" style="" id="searchInit">
        <a href="/cmw/help/search" style="width: 100%;height: 100%;"><input type="search" placeholder="遇到问题搜一搜~" class="search text-center border-default" /></a>
         <div class="search-icon" id="serch-icon"></div>
@@ -28,24 +28,21 @@
 
  <p class="text-default">您可能遇到的问题</p>
 
- <div id='content' class="content">
+ <div id='helpList' class="content">
 
-    <script id="test" type="text/html">
+     <script id="helpListTmp" type="text/html">
+        <ul class="question-list" id="question-list">
 
-    <ul class="question-list" id="question-list">
+            <@for(var i=0; i<list.length;i++){ @>
+            <li class="list-name" id="list-name">
+                <a id="goDetail" class="link-default" href="/cmw/help/detail?id=<@=list[i].id @>" >
+                    <@=list[i].title @>
+                    <div class="list-mark"></div>
+                </a>
+            </li>
+            <@}@>
 
-        {{each list as value i}}
-
-        <li class="list-name" id="list-name">
-            <a id="goDetail" class="link-default" href="/cmw/help/detail?id={{value.id}}" >
-                {{value.title}}
-                <div class="list-mark"></div>
-            </a>
-
-        </li>
-
-        {{/each}}
-    </ul>
+        </ul>
 
     </script>
 
@@ -53,5 +50,10 @@
 </div>
 <%- include tpl/foot.ejs %>
 </body>
+
+<!-- 业务 -->
+<script type="text/javascript">
+    seajs.use("/cmw/help/js/index.js");
+</script>
 
 </html>

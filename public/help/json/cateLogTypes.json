@@ -1,0 +1,35 @@
+[
+  {
+    "name" : "账号管理",
+    "icon"    : "/cmw/imgs/help/icon_small/class_manage.png",
+    "type"    : 1,
+    "url" : "",
+    "desc" : "个人、学校信息等"
+  },
+
+  {
+    "name" : "操作指南",
+    "icon"    : "/cmw/imgs/help/icon_small/settings_small.png",
+    "type"    : 2,
+    "url" : "",
+    "desc" : "添加班级等"
+  },
+
+  {
+    "name" : "知了商城",
+    "icon"    : "/cmw/imgs/help/icon_small/house_small.png",
+    "type"    : 3,
+    "url" : "",
+    "desc" : "活跃值换礼品等"
+  },
+
+  {
+    "name" : "智能硬件",
+    "icon"    : "/cmw/imgs/help/icon_small/user-group_small.png",
+    "type"    : 4,
+    "url" : "",
+    "desc" : "接送卡等"
+  }
+
+
+]

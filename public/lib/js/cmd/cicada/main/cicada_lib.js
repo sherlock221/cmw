@@ -23,6 +23,10 @@ define(function(require,exports,module){
     Cicada.os  =  require("../os/cicada_os");
 
 
+    //ajax系统
+    Cicada.ax   = require("../ajax/cicada_ajax");
+
+
     //字符相关
     Cicada.val = {};
     Cicada.val.jstring =  require("../val/cicada_jstring");

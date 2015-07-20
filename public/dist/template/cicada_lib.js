@@ -1,4 +1,30 @@
 /**
+ * ajax  相关操作
+ * @param key
+ */
+define("js/cmd/cicada/ajax/cicada_ajax", [], function(require, exports, module) {
+    var Ajax = {
+        /**
+         * @复杂请求 post 发送json数据
+         * @param time
+         *            等待毫秒数
+         */
+        postJSON: function(url, data, successCallback, errorCallBack) {
+            return jQuery.ajax({
+                type: "POST",
+                url: url,
+                contentType: "application/json",
+                data: JSON.stringify(data),
+                dataType: "json",
+                success: successCallback,
+                error: errorCallBack
+            });
+        }
+    };
+    module.exports = Ajax;
+});
+
+/**
  * 动画  相关操作
  */
 define("js/cmd/cicada/animation/cicada_animation", [], function(require, exports, module) {
@@ -89,7 +115,7 @@ define("js/cmd/cicada/animation/cicada_animation", [], function(require, exports
  * Created by sherlock on 15/4/26.
  * cicada 常用类库整合
  */
-define("js/cmd/cicada/main/cicada_lib", [ "../storage/cicada_sg", "../storage/cicada_ck", "../storage/cicada_websql", "../animation/cicada_animation", "../template/cicada_tmp", "../web/cicada_location", "../web/cicada_page", "../os/cicada_os", "../val/cicada_jstring", "../val/cicada_jvalidate", "../other/cicada_client" ], function(require, exports, module) {
+define("js/cmd/cicada/main/cicada_lib", [ "../storage/cicada_sg", "../storage/cicada_ck", "../storage/cicada_websql", "../animation/cicada_animation", "../template/cicada_tmp", "../web/cicada_location", "../web/cicada_page", "../os/cicada_os", "../ajax/cicada_ajax", "../val/cicada_jstring", "../val/cicada_jvalidate", "../other/cicada_client" ], function(require, exports, module) {
     var Cicada = {};
     //本地存储
     Cicada.lg = $.extend({}, require("../storage/cicada_sg"), require("../storage/cicada_ck"), require("../storage/cicada_websql"));
@@ -101,6 +127,8 @@ define("js/cmd/cicada/main/cicada_lib", [ "../storage/cicada_sg", "../storage/ci
     Cicada.web = $.extend({}, require("../web/cicada_location"), require("../web/cicada_page"));
     //os系统
     Cicada.os = require("../os/cicada_os");
+    //ajax系统
+    Cicada.ax = require("../ajax/cicada_ajax");
     //字符相关
     Cicada.val = {};
     Cicada.val.jstring = require("../val/cicada_jstring");
@@ -284,7 +312,8 @@ define("js/cmd/cicada/os/cicada_os", [ "../storage/cicada_sg" ], function(requir
  * cicada client
  * @param key
  */
-define("js/cmd/cicada/other/cicada_client", [], function(require, exports, module) {
+define("js/cmd/cicada/other/cicada_client", [ "../web/cicada_location" ], function(require, exports, module) {
+    var Location = require("../web/cicada_location");
     var Client = {
         openCiacada: function() {
             //            var isrefresh =  Util.location.getParams().refresh;
@@ -312,7 +341,7 @@ define("js/cmd/cicada/other/cicada_client", [], function(require, exports, modul
                 value: viewName
             } ];
             if (type == "iOS") {
-                var params = Util.location.encodeParam(params);
+                var params = Location.encodeParam(params);
                 console.log("ios", "cicada://cicada/page/goPage" + params);
                 window.location.href = "cicada://cicada/page/goPage" + params;
             } else {

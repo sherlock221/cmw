@@ -36,6 +36,16 @@
     z-index: 20;
   }
 
+
+  @media only screen
+    and (min-device-height: 569px){
+        .font-baishi{
+          margin-bottom: 30px;
+        }
+    }
+
+
+
   .third-earth-svg{
     position: absolute;
     left: 15px;

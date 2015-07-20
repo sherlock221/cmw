@@ -1,6 +1,8 @@
 
 .answerLayer{
 
+
+
   &.out{
     @include animation(zoomOut 1s ease 0s 1 both);
   }
@@ -63,7 +65,7 @@
       position: relative;
 
       &:nth-child(even) a{
-        padding-left: 5px;
+        //padding-left: 5px;
       }
 
       a{
@@ -81,11 +83,20 @@
   .answer-bottom{
 
     .fruit{
+      bottom: 15px;
+    }
+
+    .light{
+      bottom: 25px;
+    }
+
+    .img-bt{
       position: absolute;
-      bottom: 0px;
       left: 50%;
       @include transform(translateX(-50%));
+      width: 100%;
     }
+
 
     //提交按钮
     .btn-submit-ans{
@@ -100,7 +111,23 @@
 
   }
 
+
+
+  @media only screen
+  and (max-device-height: 569px){
+    .answer-bottom-layer{
+      display: none !important;
+    }
+
+    .btn-submit-ans{
+      margin-top: rem(60) !important;
+    }
+  }
+
 }
+
+
+
 
 
 //3d空间
@@ -241,6 +268,9 @@
     @include animation(fadeOut 1s ease 8s 1 both);
   }
 
+
+
+
 }
 
 
@@ -272,6 +302,8 @@
   .seq-space{
     @include animation(zoomIn 1s ease 0.6s 1 both);
   }
+
+
 
 }
 

@@ -21,8 +21,10 @@ router.get("/search",function(req,res){
 });
 
 router.get("/basic",function(req,res){
-
-    res.render("help/basic");
+    var cateLogId = req.query.cateLogId;
+    res.render("help/basic",{
+        cateLogId : cateLogId
+    });
 });
 
 router.get("/detail",function(req,res){

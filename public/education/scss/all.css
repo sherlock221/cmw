@@ -45,10 +45,10 @@
   width: 259.5px;
   height: 93px; }
 
-.team-info-img {
-  background-position: -376px -522px;
+.font-jiaru {
+  background-position: -376px -535.5px;
   width: 204px;
-  height: 25px; }
+  height: 20.5px; }
 
 .f7 {
   width: 255.5px; }
@@ -633,6 +633,9 @@ a {
   right: 119px;
   top: 88px;
   z-index: 20; }
+@media only screen and (min-device-height: 569px) {
+  .fourLayer .font-baishi {
+    margin-bottom: 30px; } }
 .fourLayer .third-earth-svg {
   position: absolute;
   left: 15px;
@@ -823,10 +826,10 @@ a {
 .sevenLayer .title-style {
   color: #c6effc;
   font-size: 25px;
-  margin-top: 30px;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
   text-align: left;
-  padding-left: 28px; }
+  /* padding-left: 28px; */
+  margin-left: -7px; }
 .sevenLayer .job-req {
   margin-top: 39px;
   margin-bottom: 31.5px; }
@@ -889,26 +892,33 @@ a {
         -moz-animation: bounceIn 1s ease 0s 1 both;
         -o-animation: bounceIn 1s ease 0s 1 both;
         animation: bounceIn 1s ease 0s 1 both; }
-      .answerLayer .answer-select li:nth-child(even) a {
-        padding-left: 5px; }
       .answerLayer .answer-select li a {
         color: inherit;
         display: block;
         font-size: 15px; }
   .answerLayer .answer-bottom .fruit {
+    bottom: 15px; }
+  .answerLayer .answer-bottom .light {
+    bottom: 25px; }
+  .answerLayer .answer-bottom .img-bt {
     position: absolute;
-    bottom: 0px;
     left: 50%;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
     -moz-transform: translateX(-50%);
-    -ms-transform: translateX(-50%); }
+    -ms-transform: translateX(-50%);
+    width: 100%; }
   .answerLayer .answer-bottom .btn-submit-ans {
     margin-top: 50px;
     margin-left: -15px;
     display: none; }
   .answerLayer .answer-bottom .btn-submit-ans:active {
     opacity: 0.7; }
+  @media only screen and (max-device-height: 569px) {
+    .answerLayer .answer-bottom-layer {
+      display: none !important; }
+    .answerLayer .btn-submit-ans {
+      margin-top: 30px !important; } }
 
 .seq-space {
   -webkit-perspective: 800;

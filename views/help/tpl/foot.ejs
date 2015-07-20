@@ -1,41 +1,17 @@
 
-<div class="flex" id="flex" style="display: none;">
-    <div class="fx-wrap font-bule">
-        <img src="/cmw/imgs/help/pull.png" class="pull" id="pull" onclick="change()"/>
 
-        <div class="fx-row border-default-bottom" onclick="account()">
-            <div class="fx-col-1 border-default-right  icon-whole text-center" id="account">
-                <a href="/cmw/help/basic" style="width: 100%;height: 100%">
-                <img src="/cmw/imgs/help/icon_small/class_manage.png" class="img-big"/>
-                <p class="icon-whole-text">账户管理</p>
-                 <p class="icon-whole-text-bottom">个人、学校信息等</p>
-                </a>
-        </div>
-            <div class="fx-col-1  text-center icon-whole" id="setting" onclick="setting()">
-                <a href="/cmw/help/basic" style="width: 100%;height: 100%">
-                <img src="/cmw/imgs/help/icon_small/settings_small.png"  class="img-big"/>
-                <p class="icon-whole-text">操作指南</p>
-                <p class="icon-whole-text-bottom">添加班级等</p>
-                </a>
-            </div>
+
+
+<div class="flex" id="cateTypeListSpread" >
+        <div class="fx-wrap font-bule">
+                <img src="/cmw/imgs/help/pull.png" class="pull" id="pull" onclick="changeFooter()"/>
+
+            <section id="cateTypeListSpreadInner">
+
+            </section>
+
         </div>
 
-        <div class="fx-row">
-            <div class="fx-col-1 border-default-right text-center icon-whole" style="padding-top: 35px;" id="zhiliaoStore" onclick="store()">
-                <a href="/cmw/help/basic" style="width: 100%;height: 100%">
-                <img src="/cmw/imgs/help/icon_small/house_small.png"  class="img-big"/>
-                <p class="icon-whole-text">知了商城</p>
-                <p class="icon-whole-text-bottom">活跃值换礼品等</p>
-                    </a>
-            </div>
-            <div class="fx-col-1 text-center icon-whole"  style="padding-top: 35px;" id="hardCard" onclick="card()">
-                <a href="/cmw/help/basic" style="width: 100%;height: 100%">
-                <img src="/cmw/imgs/help/icon_small/user-group_small.png"  class="img-big"/>
-                <p class="icon-whole-text">智能硬件</p>
-                <p class="icon-whole-text-bottom">接送卡等</p>
-                    </a>
-            </div>
-        </div>
 
         <div class="fx-row foot">
             <div class="fx-col-1 border-default-right text-center foot-col ">
@@ -47,37 +23,65 @@
                 <p class="foot-text ib">意见反馈</p>
             </div>
         </div>
+
     </div>
 
 </div>
 
 
-<div class="fx-row bottom-bar" id="bottom-bar" style=""  onclick="account()">
-    <img src="/cmw/imgs/help/push.png" class="push" id="push" onclick="change()"/>
+<!-- 展开 -->
+<script type="text/html" id="cateTypeListSpreadTmp">
+    <@for(var i=0; i<list.length;i++){ @>
+        <@if(i%2 == 0){ @>
+        <div class="fx-row border-default-bottom" onclick="account()">
+        <@}@>
+            <div class="fx-col-1 border-default-right  icon-whole text-center" id="account">
+                <a href="/cmw/help/basic?cateLog=<@=list[i].type @>" class="block">
+                    <img src="<@=list[i].icon @>" class="img-big"/>
+                    <p class="icon-whole-text"><@=list[i].name  @></p>
+                    <p class="icon-whole-text-bottom"><@=list[i].desc @></p>
+                </a>
+            </div>
+        <@if(i%2 != 0){ @>
+            </div>
+        <@}@>
+
+    <@}@>
+
+</script>
+
+
+
+<!-- 缩进 -->
+<script type="text/html" id="cateTypeListIndentTmp">
+    <@for(var i=0; i<list.length;i++){ @>
+
     <div class=" text-center bottom-icon fx-col-1">
-        <a href="/cmw/help/basic" style="width: 100%;height: 100%">
-        <img src="/cmw/imgs/help/icon_small/class_manage.png" class="icon-img"/>
-        <p class="bottom-icon-text">账户管理</p>
+        <a ref="/cmw/help/basic?cateLog=<@=list[i].type @>"  class="block">
+            <img src="<@=list[i].icon  @>" class="icon-img"/>
+            <p class="bottom-icon-text"><@=list[i].name  @></p>
         </a>
     </div>
-    <div class=" text-center bottom-icon fx-col-1" onclick="setting()">
-        <a href="/cmw/help/basic" style="width: 100%;height: 100%">
-        <img src="/cmw/imgs/help/icon_small/settings_small.png" class="icon-img"/>
-        <p class="bottom-icon-text">操作指南</p>
-        </a>
-    </div>
-    <div class=" text-center bottom-icon fx-col-1" onclick="store()">
-        <a href="/cmw/help/basic" style="width: 100%;height: 100%">
-        <img src="/cmw/imgs/help/icon_small/house_small.png" class="icon-img"/>
-        <p class="bottom-icon-text">知了商城</p>
-       </a>
-    </div>
-    <div class=" text-center bottom-icon fx-col-1" onclick="card()">
-        <a href="/cmw/help/basic" style="width: 100%;height: 100%">
-        <img src="/cmw/imgs/help/icon_small/user-group_small.png" class="icon-img"/>
-        <p class="bottom-icon-text">智能硬件</p>
-        </a>
-    </div>
+
+    <@}@>
+
+</script>
+
+
+
+
+<div class="bottom-bar" id="cateTypeListIndent" style="display: none;"   >
+    <img src="/cmw/imgs/help/push.png" class="push" id="push" onclick="changeFooter()"/>
+
+    <section class="fx-row" id="cateTypeListIndentInner">
+
+    </section>
+
+
+</div>
+
+
+<script type="text/html" id="cateTypeListIndentRenGong">
     <div class=" text-center bottom-icon fx-col-1">
         <img src="/cmw/imgs/help/icon_small/message_feedback.png" class="icon-img"/>
         <p class="bottom-icon-text">意见反馈</p>
@@ -86,4 +90,4 @@
         <img src="/cmw/imgs/help/icon_small/online_feedback.png" class="icon-img"/>
         <p class="bottom-icon-text">人工客服</p>
     </div>
-</div>
+</script>

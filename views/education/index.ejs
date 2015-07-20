@@ -60,7 +60,6 @@
             data-scalar-x="25"
             data-scalar-y="0">
 
-
             <%if(agent.iOS){ %>
             <li class="layer bg-default-wrap" style="width: 120% !important;
   left: -10%  !important;" data-depth="0.30">
@@ -304,7 +303,7 @@
         <i class="ib metro-img metro-bottom meteor-ani-bottom main-img"></i>
         <i class="ib metro-img metro-bottom meteor-ani-center main-img"></i>
 
-        <span class="ib team-info-img team-info font-base-img"></span>
+        <!--<span class="ib team-info-img team-info font-base-img"></span>-->
 
         <div class="text-center head-layer">
             <section class="ib">
@@ -397,12 +396,13 @@
     <!-- 团队介绍-->
     <div id="sevenLayer" class="sevenLayer hide ">
 
-        <span class="ib team-info-img team-info font-base-img"></span>
+        <!--<span class="ib team-info-img team-info font-base-img"></span>-->
 
-        <h5 class="title-style">
-            为什么要加入?
-        </h5>
+
             <div class="tr-center">
+                <h5 class="title-style ">
+                    <i class="ib font-jiaru font-base-img"></i>
+                </h5>
                 <div class="">
                     <h4 class="font-base-img f7 f7-01"></h4>
                     <h4 class="font-base-img f7 f7-02"></h4>
@@ -416,7 +416,7 @@
                 <div class="font-base-img  job-req job-req-img"></div>
 
 
-                <button class="btn light-button-bg  light-button-bg-img  main-img-other " id="light-button">
+                <button class="btn light-button-bg  light-button-bg-img  main-img-other " id="light-button" style="color: #a9e0ff;">
                     快来测测你能在全通习悦拿到多少年薪
                     <i class="ib light-mover salary light-mover-img main-img-other"></i>
                 </button>
@@ -426,7 +426,7 @@
     </div>
 
     <!--答题-->
-    <div class="answerLayer hide " id="answerLayer">
+    <div class="answerLayer  hide" id="answerLayer">
         <h3 class="answer-num ib"></h3>
 
         <div class="answer-title">
@@ -439,9 +439,15 @@
         </ul>
 
 
-        <div class="answer-bottom ">
+        <div class="answer-bottom " id="answer-bottom">
 
-            <div class="ib fruit-img fruit" id="fruitBg"></div>
+
+            <div class="answer-bottom-layer">
+                <img src="resources/fruit.png" class="fruit img-bt"  data="0"/>
+                <img src="resources/people.png" class="img-bt fruit hide"  data="1"/>
+                <img src="resources/light.png" class="img-bt light hide"data="2" />
+            </div>
+
             <div class="text-center">
                 <button  id="subAnswer" class="btn btn-submit-ans btn-submit-ans-img main-img" ></button>
             </div>

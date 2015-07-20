@@ -2,7 +2,7 @@
  * Created by sherlock on 15/4/26.
  * cicada 常用类库整合
  */
-define("js/cmd/cicada/main/cicada_lib", [ "../storage/cicada_sg", "../storage/cicada_ck", "../storage/cicada_websql", "../animation/cicada_animation", "../template/cicada_tmp", "../web/cicada_location", "../web/cicada_page", "../os/cicada_os", "../val/cicada_jstring", "../val/cicada_jvalidate", "../other/cicada_client" ], function(require, exports, module) {
+define("js/cmd/cicada/main/cicada_lib", [ "../storage/cicada_sg", "../storage/cicada_ck", "../storage/cicada_websql", "../animation/cicada_animation", "../template/cicada_tmp", "../web/cicada_location", "../web/cicada_page", "../os/cicada_os", "../ajax/cicada_ajax", "../val/cicada_jstring", "../val/cicada_jvalidate", "../other/cicada_client" ], function(require, exports, module) {
     var Cicada = {};
     //本地存储
     Cicada.lg = $.extend({}, require("../storage/cicada_sg"), require("../storage/cicada_ck"), require("../storage/cicada_websql"));
@@ -14,6 +14,8 @@ define("js/cmd/cicada/main/cicada_lib", [ "../storage/cicada_sg", "../storage/ci
     Cicada.web = $.extend({}, require("../web/cicada_location"), require("../web/cicada_page"));
     //os系统
     Cicada.os = require("../os/cicada_os");
+    //ajax系统
+    Cicada.ax = require("../ajax/cicada_ajax");
     //字符相关
     Cicada.val = {};
     Cicada.val.jstring = require("../val/cicada_jstring");

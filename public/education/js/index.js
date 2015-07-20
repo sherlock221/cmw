@@ -66,7 +66,8 @@ var UI = {
     SubAnswer : $("#subAnswer"),
     FruitBg  : $("#fruitBg"),
     BOX_LAYER : $("#seq-layer"),
-    ShareLayer : $("#shareLayer")
+    ShareLayer : $("#shareLayer"),
+    AnswerBottom : $("#answer-bottom")
 }
 
 //检测当前浏览器
@@ -98,9 +99,8 @@ var  Event = {
         this.data();
 
         //微信验证
-        //var title = randomMsg();
-        //getSignature(title,title);
-
+        var title = randomMsg();
+        getSignature(title);
 
 
         //绑定答题选择
@@ -111,10 +111,11 @@ var  Event = {
             if(answer == tb[Indicator]){
                 jj++;
             }
+
             setTimeout(function(){
-                nextAnswer();
+                nextAnswer(Indicator);
                if(Indicator == 3){
-                   UI.FruitBg.hide();
+                   UI.AnswerBottom.find(".answer-bottom-layer").hide();
                    UI.SubAnswer.show();
                }
             },500);
@@ -126,6 +127,7 @@ var  Event = {
             setTimeout(function(){
                 UI.AnswerLayer.addClass("hide");
                 UI.ShareLayer.removeClass("hide");
+
             },500);
 
         });
@@ -440,6 +442,12 @@ var nextAnswer = function(){
         return;
     }
 
+    var img = UI.AnswerBottom.find("[data='"+Indicator+"']");
+    img.removeClass("hide").siblings().addClass("hide");
+
+    console.log(img);
+
+
     refreshAnswer(answerList[Indicator]);
 }
 
@@ -455,6 +463,7 @@ var randomMsg = function(){
 function getSignature (title,desc){
 
     var shareUrl  =  window.location.href;
+    desc = desc || "";
 
     //注册服务
     $.post("http://imzhiliao.com:3000/wx/signature",{
