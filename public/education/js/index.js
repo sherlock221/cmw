@@ -110,7 +110,7 @@ var  Event = {
 
         //微信验证
         var title = randomMsg();
-        getSignature(title);
+        //getSignature(title);
 
 
         //绑定答题选择
