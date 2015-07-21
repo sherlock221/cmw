@@ -30,6 +30,7 @@
 
     <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
     <script type="text/javascript" src="/cmw/dist/education/effect.min.js"></script>
+    <!--<script type="text/javascript" src="/cmw/education/lib/zp/fastclick.min.js"></script>-->
 
     <style type="text/css">
         /** loading 颜色 **/
@@ -43,17 +44,12 @@
 
 <body>
 
-<%if(1==1){%>
-
-
+<%if(agent.tx){%>
 
 <div id="container" class="container  bg-default" >
 
-
-
     <!-- 第一个图片 -->
     <div  id="indexLayer" class="indexLayer hide" >
-
 
         <ul id="arrow-list" class="arrow-list"  data-friction-x="0.1"
             data-friction-y="0.1"
@@ -107,10 +103,9 @@
                 <img src="resources/line/R5.png" class="r5_img " width="200" />
             </li>
 
-            <li class="layer">
-
+            <li class="layer" >
                 <!-- 文字大小 -->
-                <div class="font-center">
+                <div class="font-center"   >
 
                     <%if(agent.iOS){ %>
                     <div class="font-education-ios">
@@ -161,6 +156,9 @@
         </div>
 
 
+        <!-- 流星 -->
+        <i class="ib metro-img metro-bottom meteor-ani-bottom main-img"></i>
+        <i class="ib metro-img metro-bottom meteor-ani-center main-img"></i>
         <!-- 指纹 -->
 
         <div class="fingerprint hide"  id="fingerprint">
@@ -480,8 +478,8 @@
             <div class="seq-img seq-left ">
 
                 <div class="tran-box-center y">
-                    <a href="tel:02988601321" class="font-base-img-02 font-email block mb10" ></a>
-                    <a href="mailto:zhaopin@thinkjoy.cn" class="font-base-img-02 font-phone block"></a>
+                    <a href="mailto:zhaopin@thinkjoy.cn" class="font-base-img-02 font-email block mb10" ></a>
+                    <a href="tel:02988601321"  class="font-base-img-02 font-phone block"></a>
                 </div>
 
             </div>
@@ -527,6 +525,11 @@
 
     <!--<div class="bg-dot-max"></div>-->
 
+    <audio src="http://cicadafile.qiniudn.com/836.mp3"  id="audioEffect"></audio>
+
+   <!--背景全部音乐-->
+    <audio src="http://7qnd84.com2.z0.glb.qiniucdn.com/aodojia.mp3"  id="audioEffectBg" autoplay loop></audio>
+
 </div>
 
 
@@ -543,7 +546,15 @@
 </html>
 <script type="text/javascript" src="lib/effect/parallax.min.js"></script>
 <!-- biz -->
-<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/index.min.js"></script>
 
+
+<%if(agent.iOS){%>
+<script type="text/javascript">
+    //ios开启重力感应
+    var scene = document.getElementById('arrow-list');
+    var parallax = new Parallax(scene);
+</script>
+<%}%>
 
 

@@ -20,7 +20,7 @@
 </head>
 <body>
 <%- include tpl/header.ejs %>
-<div class="whole marginFooter">
+<div class="whole">
     <div class="search-default" style="" id="searchInit">
        <a href="/cmw/help/search" style="width: 100%;height: 100%;"><input type="search" placeholder="遇到问题搜一搜~" class="search text-center border-default" /></a>
         <div class="search-icon" id="serch-icon"></div>
@@ -32,7 +32,6 @@
 
      <script id="helpListTmp" type="text/html">
         <ul class="question-list" id="question-list">
-
             <@for(var i=0; i<list.length;i++){ @>
             <li class="list-name" id="list-name">
                 <a id="goDetail" class="link-default" href="/cmw/help/detail?id=<@=list[i].id @>" >
@@ -41,7 +40,6 @@
                 </a>
             </li>
             <@}@>
-
         </ul>
 
     </script>

@@ -25,6 +25,7 @@ var imgList =
         "resources/svg/earth.svg",
         "resources/svg/weilai.svg",
         "resources/svg/xiangxiang.svg",
+        "resources/seq.png",
 
         "resources/line/L1.png",
         "resources/line/L2.png",
@@ -47,10 +48,10 @@ new loadermsk(imgList, "#0e79ef", function () {
 
 
 
-$(function(){
-    //加载fastclick
-    FastClick.attach(document.body);
-});
+//$(function(){
+//    //加载fastclick
+//    FastClick.attach(document.body);
+//});
 
 
 var resultMsgArray = [
@@ -77,7 +78,9 @@ var UI = {
     FruitBg  : $("#fruitBg"),
     BOX_LAYER : $("#seq-layer"),
     ShareLayer : $("#shareLayer"),
-    AnswerBottom : $("#answer-bottom")
+    AnswerBottom : $("#answer-bottom"),
+    AudioEffect : document.getElementById("audioEffect"),
+    AudioEffectBg : document.getElementById("audioEffectBg")
 }
 
 //检测当前浏览器
@@ -100,6 +103,11 @@ var browser = {
     language: (navigator.browserLanguage || navigator.language).toLowerCase()
 }
 var isIOS = false;
+
+
+//UI.AudioEffect.play();
+
+
 var  Event = {
 
     init : function(){
@@ -108,13 +116,9 @@ var  Event = {
         //加载数据
         this.data();
 
-        //微信验证
-        var title = randomMsg();
-        //getSignature(title);
-
 
         //绑定答题选择
-        UI.AnswerLayer.on("click",".answer-select li",function(){
+        UI.AnswerLayer.on("tap",".answer-select li",function(){
             var $this = $(this);
             var answer  = $this.attr("data-option");
             $this.addClass("active").siblings().removeClass("active");
@@ -131,9 +135,9 @@ var  Event = {
             },500);
         });
         //结束答题
-        UI.SubAnswer.bind("click",function(){
+        UI.SubAnswer.bind("tap",function(){
+            UI.AudioEffect.play();
             UI.AnswerLayer.addClass("out");
-
             setTimeout(function(){
                 UI.AnswerLayer.addClass("hide");
                 UI.ShareLayer.removeClass("hide");
@@ -174,6 +178,12 @@ var  Event = {
         //7个ui动画
         Event.sevenAni();
 
+
+        //微信验证
+        var title = randomMsg();
+        getSignature(title);
+
+
         UI.FirstLayer.removeClass("hide");
 
     },
@@ -183,20 +193,12 @@ var  Event = {
 
     firstAni : function(){
 
-
-        //ios开启重力感应
-        if(isIOS){
-            var scene = document.getElementById('arrow-list');
-            var parallax = new Parallax(scene);
-        }
-
         if(isIOS){
             //主页svg 动画
             new Vivus('index-xx-svg', {type: 'oneByOne', duration: 100, file: 'resources/svg/xiangxiang.svg'}, function(res){
                 console.log(res);
             });
         }
-
 
         var $fontEdu = $("#font-education");
         var $fingerprint = $("#fingerprint");
@@ -205,10 +207,16 @@ var  Event = {
         }, false);
 
         //全部消失
-        $fingerprint.bind("click",function(e){
+        $fingerprint.bind("tap",function(e){
+            UI.AudioEffect.play();
+
+            UI.AudioEffectBg.pause();
+
             UI.FirstLayer.removeClass("out").addClass("out");
+
             //hide
             setTimeout(function(){
+
                 UI.FirstLayer.addClass("hide");
                 UI.SecondLayer.removeClass("hide");
             },500);
@@ -241,7 +249,7 @@ var  Event = {
 
         $py[0].addEventListener('webkitTransitionEnd', function(t){
             UI.ThirdLayer.addClass("out");
-
+            UI.AudioEffect.play();
             setTimeout(function(){
                 UI.ThirdLayer.addClass("hide");
                 UI.FourLayer.removeClass("hide");
@@ -322,9 +330,10 @@ var  Event = {
 
         }
 
-        $point.bind("click",function(){
-            console.log("tao..");
 
+        $point.bind("tap",function(){
+            console.log("tao..");
+            UI.AudioEffect.play();
             UI.FourLayer.addClass("out");
             setTimeout(function(){
                 UI.FourLayer.addClass("hide");
@@ -344,7 +353,8 @@ var  Event = {
             $point.removeClass("hide");
         }, false);
 
-        $point.bind("click",function(){
+        $point.bind("tap",function(){
+            UI.AudioEffect.play();
             UI.FiveLayer.addClass("out");
            setTimeout(function(){
                UI.SixLayer.removeClass("hide");
@@ -355,7 +365,8 @@ var  Event = {
     },
     sixAni : function(){
         var sixNext = UI.SixLayer.find("#sixNext");
-        sixNext.bind("click",function(){
+        sixNext.bind("tap",function(){
+            UI.AudioEffect.play();
             UI.SixLayer.addClass("out");
             setTimeout(function(){
                 UI.SixLayer.addClass("hide");
@@ -366,8 +377,8 @@ var  Event = {
     },
     sevenAni : function(){
         var lightBtn = UI.SevenLayer.find("#light-button");
-        lightBtn.bind("click",function(){
-
+        lightBtn.bind("tap",function(){
+            UI.AudioEffect.play();
             UI.SevenLayer.addClass("out");
                 setTimeout(function(){
                     UI.AnswerLayer.removeClass("hide");
@@ -509,7 +520,8 @@ function getSignature (title,desc){
                     "desc": "",
                     "title": title,
                     link: desc,
-                    imgUrl: 'http://imzhiliao.com/cicadaShare/share/images/cicada-logo.png'
+                    //imgUrl: 'http://cicadafile.qiniudn.com/14374463467177638jXYx6C.jpg'
+                    imgUrl: 'http://cicadafile.qiniudn.com/1437448622422U0zVbGsA5T.png'
                 };
                 wx.onMenuShareAppMessage(shareData);
                 wx.onMenuShareTimeline(shareData);

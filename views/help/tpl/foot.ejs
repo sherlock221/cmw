@@ -4,7 +4,7 @@
 
 <div class="flex" id="cateTypeListSpread" >
         <div class="fx-wrap font-bule">
-                <img src="/cmw/imgs/help/pull.png" class="pull" id="pull" onclick="changeFooter()"/>
+                <img src="/cmw/imgs/help/pull.png" class="pull" id="pull" onclick="changeFooter(0)"/>
 
             <section id="cateTypeListSpreadInner">
 
@@ -57,7 +57,7 @@
     <@for(var i=0; i<list.length;i++){ @>
 
     <div class=" text-center bottom-icon fx-col-1">
-        <a ref="/cmw/help/basic?cateLog=<@=list[i].type @>"  class="block">
+        <a href="/cmw/help/basic?cateLog=<@=list[i].type @>"  class="block">
             <img src="<@=list[i].icon  @>" class="icon-img"/>
             <p class="bottom-icon-text"><@=list[i].name  @></p>
         </a>
@@ -71,7 +71,7 @@
 
 
 <div class="bottom-bar" id="cateTypeListIndent" style="display: none;"   >
-    <img src="/cmw/imgs/help/push.png" class="push" id="push" onclick="changeFooter()"/>
+    <img src="/cmw/imgs/help/push.png" class="push" id="push" onclick="changeFooter(1)"/>
 
     <section class="fx-row" id="cateTypeListIndentInner">
 

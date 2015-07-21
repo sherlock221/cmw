@@ -3,7 +3,6 @@ define(function (require, exports, module) {
     //uc需要token
     var token =  "4e10b388-d2a0-4e59-baf0-3b503425e032";
 
-
     //模板引擎
     var template  = require("artTemplate");
     var  cicada  = require("cicada");
@@ -22,7 +21,8 @@ define(function (require, exports, module) {
         cicada.ax.postJSON(CONSTANT_ENV.local+"/helpDoc/getHelpDocInfoByCatalog",{
             "style": "",
             "data": {
-                "token": "4e10b388-d2a0-4e59-baf0-3b503425e032"
+                "token": "4e10b388-d2a0-4e59-baf0-3b503425e032",
+                "cateLogType" : cateLog
             },
             "clientInfo": {}
         },function (res) {

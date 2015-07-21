@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var route = require("./routes/route");
 var log4js = require('log4js');
 var log = require('./log');
+var compression = require('compression')
 
 //设置根
 var app = express();
@@ -31,6 +32,7 @@ app.set('view engine', 'ejs');
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
+app.use(compression());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());

@@ -78,27 +78,29 @@ define(function (require, exports, module) {
 
         init : function(){
 
-            var state = true;
 
             //底部切换
-            window.changeFooter = function(){
-                if(state == true){
-                    UI.CateTypeListIndent.show();
-                    UI.CateTypeListSpread.hide();
-                    state = false;
-                }
-                else{
-
+            window.changeFooter = function(state){
+                if(state == "1"){
                     UI.CateTypeListIndent.hide();
                     UI.CateTypeListSpread.show();
-                    state = true;
                 }
+                else{
+                    UI.CateTypeListIndent.show();
+                    UI.CateTypeListSpread.hide();
+
+                }
+                //存储本地
+                cicada.lg.setLg("state",state);
             };
 
             $("#searchInit").toggle(function(){
                 window.location.href="/cmw/views/help/search";
             });
 
+
+            var state = cicada.lg.getLg("state");
+            changeFooter(state);
 
             //首次加载
             loadList();
