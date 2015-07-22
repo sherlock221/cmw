@@ -31,7 +31,7 @@
         <ul class="question-list">
             <@for(var i=0; i<list.length;i++){ @>
             <li class="list-name" id="list-name">
-                <a id="goDetail" class="link-default" href="/cmw/help/detail?id=<@=list[i].id @>" >
+                <a  class="link-default" href="/cmw/help/detail?id=<@=list[i].id @>" >
                     <@=list[i].title @>
                     <div class="list-mark"></div>
                 </a>
@@ -52,7 +52,7 @@
 
 <!-- 业务 -->
 <script type="text/javascript">
-    seajs.use("/cmw/help/js/basic.js");
+    seajs.use(["/cmw/help/js/template.js","/cmw/help/js/basic.js"]);
 </script>
 
 </html>

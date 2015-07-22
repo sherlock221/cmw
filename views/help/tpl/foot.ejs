@@ -2,7 +2,7 @@
 
 
 
-<div class="flex" id="cateTypeListSpread" >
+<div class="flex" id="cateTypeListSpread" style="display: none;"  >
         <div class="fx-wrap font-bule">
                 <img src="/cmw/imgs/help/pull.png" class="pull" id="pull" onclick="changeFooter(0)"/>
 
@@ -30,7 +30,7 @@
 
 
 <!-- 展开 -->
-<script type="text/html" id="cateTypeListSpreadTmp">
+<script type="text/html" id="cateTypeListSpreadTmp" >
     <@for(var i=0; i<list.length;i++){ @>
         <@if(i%2 == 0){ @>
         <div class="fx-row border-default-bottom" onclick="account()">
@@ -53,7 +53,7 @@
 
 
 <!-- 缩进 -->
-<script type="text/html" id="cateTypeListIndentTmp">
+<script type="text/html" id="cateTypeListIndentTmp" >
     <@for(var i=0; i<list.length;i++){ @>
 
     <div class=" text-center bottom-icon fx-col-1">
@@ -69,14 +69,12 @@
 
 
 
-
-<div class="bottom-bar" id="cateTypeListIndent" style="display: none;"   >
+<div class="bottom-bar" id="cateTypeListIndent"  style="display: none;" >
     <img src="/cmw/imgs/help/push.png" class="push" id="push" onclick="changeFooter(1)"/>
 
     <section class="fx-row" id="cateTypeListIndentInner">
 
     </section>
-
 
 </div>
 

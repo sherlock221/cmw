@@ -6,12 +6,15 @@
     <meta name="format-detection" content="telphone=no, email=no"/>
 
     <!-- mobile 头部模板 -->
-    <%- include tpl/head-mobile-help.ejs %>
+    <%- include  ../template/header/header-mobile-share.ejs %>
 
+    <!--css 部分 -->
     <link rel="stylesheet" href="/cmw/help/scss/biz/template.css" type="text/css"/>
     <link rel="stylesheet" href="/cmw/help/scss/biz/init.css" type="text/css"/>
 
-    <script src="/cmw/help/js/search.js"></script>
+    <!-- 配置 -->
+    <script src="/cmw/config.js"></script>
+
     <title>帮助与反馈</title>
 </head>
 <body>
@@ -20,28 +23,24 @@
 
 <div class="whole">
     <div class="search-default fx-row">
-        <div class="fx-col-1"><input id="search" type="search"  class="search border-left" onblur="search()"/></div>
-        <div class="search-bar text-center" onclick="compareResult()">搜索</div>
+        <div class="fx-col-1"><input id="search" type="search"  class="search border-left" /></div>
+        <div class="search-bar text-center" id="searchBar">搜索</div>
     </div>
     <p class="text-default">您可能遇到的问题</p>
 
-    <div id='content' class="content">
+    <div id='searchList' class="content">
 
-        <script id="test" type="text/html">
+        <script id="searchListTmp" type="text/html">
 
-            <ul class="question-list" id="question-list">
-
-                {{each list as value i}}
-
+            <ul class="question-list">
+                <@for(var i=0; i<list.length;i++){ @>
                 <li class="list-name" id="list-name">
-                    <a class="link-default" href="/cmw/help/detail">
-                        {{value.title}}
+                    <a  class="link-default" href="/cmw/help/detail?id=<@=list[i].id @>" >
+                        <@=list[i].title @>
                         <div class="list-mark"></div>
                     </a>
-
                 </li>
-
-                {{/each}}
+                <@}@>
             </ul>
 
         </script>
@@ -56,3 +55,8 @@
 <%- include  tpl/footDefault.ejs %>
 </body>
 </html>
+
+<!-- 业务 -->
+<script type="text/javascript">
+    seajs.use(["/cmw/help/js/template.js","/cmw/help/js/search.js"]);
+</script>

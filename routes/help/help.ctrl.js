@@ -16,7 +16,6 @@ router.get("/index",function(req,res){
 });
 
 router.get("/search",function(req,res){
-
     res.render("help/search");
 });
 
@@ -29,11 +28,8 @@ router.get("/basic",function(req,res){
 
 router.get("/detail",function(req,res){
     var id = req.query.id;
-
-
     res.render("help/detail",{
         id :id
-
     });
 });
 module.exports = router;

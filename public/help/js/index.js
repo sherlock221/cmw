@@ -15,13 +15,12 @@ define(function (require, exports, module) {
         CateTypeListIndentRenGong : $("#cateTypeListIndentRenGong")
     }
 
-
-
-    var loadList = function(){
+        var loadList = function(){
         cicada.ax.postJSON(CONSTANT_ENV.local+"/helpDoc/getDefaultHelpDocInfo",{
             "style": "",
             "data": {
-                "token": token
+                "token": token,
+                "clientType" : window.isIOS
             },
             "clientInfo": {}
         },function (res) {
@@ -77,7 +76,6 @@ define(function (require, exports, module) {
     var Event = {
 
         init : function(){
-
 
             //底部切换
             window.changeFooter = function(state){

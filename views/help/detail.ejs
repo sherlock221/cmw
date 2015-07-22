@@ -6,13 +6,17 @@
     <meta name="format-detection" content="telphone=no, email=no"/>
 
     <!-- mobile 头部模板 -->
-    <%- include tpl/head-mobile-help.ejs %>
+    <%- include  ../template/header/header-mobile-share.ejs %>
 
+    <!--css 部分 -->
     <link rel="stylesheet" href="/cmw/help/scss/biz/template.css" type="text/css"/>
     <link rel="stylesheet" href="/cmw/help/scss/biz/init.css" type="text/css"/>
+
+    <!-- 配置 -->
+    <script src="/cmw/config.js"></script>
+
     <link rel="stylesheet" href="/cmw/help/scss/biz/detail.css" type="text/css"/>
 
-    <script src="/cmw/help/js/detail.js"></script>
     <title>帮助与反馈</title>
 </head>
 <body>
@@ -20,13 +24,16 @@
 <%- include  tpl/header.ejs %>
 
 <div class="detail-whole">
- <div class="detail-title">
-     <%=title%>
+ <div class="detail-title" id="detail-title">
+
  </div>
 <div class="detail-txt">
-  <p class="text-detail"><%=content%></p>
+  <div class="text-detail" id="detail-content"></div>
 </div>
 </div>
 <%- include  tpl/footDefault.ejs %>
 </body>
 </html>
+<script type="text/javascript">
+    seajs.use(["/cmw/help/js/template.js","/cmw/help/js/detail.js"]);
+</script>
