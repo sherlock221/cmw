@@ -39,7 +39,7 @@ define(function (require, exports, module) {
 
     //加载帮助类型
     var loadCateLogTypes = function(){
-            $.getJSON("http://imzhiliao.com:3001/cmw/help/json/cateLogTypes.json"
+            $.getJSON("/cmw/help/json/cateLogTypes.json"
             ,function (res) {
                     var tp = template('cateTypeListIndentTmp', {list: res});
                     var tp2 = template('cateTypeListSpreadTmp', {list: res});
