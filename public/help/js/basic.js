@@ -29,7 +29,7 @@ define(function (require, exports, module) {
             "style": "",
             "data": {
                 "token": token,
-                "cateLogType" : cateLog,
+                "catalogType" : cateLog,
                 "clientType" : window.isIOS,
                 "pageIndex" : pageIndex,
                 "pageSize" : pageSize
@@ -47,7 +47,6 @@ define(function (require, exports, module) {
                     isFirst = false;
                 }
 
-                pageTotal = res.bizData.total;
                 var data = template('BasicListTmp', {list: res.bizData.helpDocList});
                 UI.BasicList.append(data);
 
@@ -55,6 +54,9 @@ define(function (require, exports, module) {
                     //超过分页
                     UI.moreQues.hide();
                     return;
+                }
+                else{
+                    UI.moreQues.show();
                 }
             }
             else{
