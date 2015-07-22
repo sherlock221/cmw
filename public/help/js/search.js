@@ -15,7 +15,10 @@ define(function (require, exports, module) {
         searchListTmp : $("#searchListTmp"),
         searchList : $("#searchList"),
         search : $("#search"),
-        searchBar : $("#searchBar")
+        searchBar : $("#searchBar"),
+        noResult:$("#noResult"),
+        noMoreQuestion:$("#noMoreQuestion"),
+        noRelateQuestion:$("#noRelateQuestion")
     }
 
     var loadListByLike = function(searchTitle){
@@ -35,6 +38,7 @@ define(function (require, exports, module) {
             }
             else{
                 alert(res.msg);
+                UI.noResult.show();
             }
         });
     }
@@ -43,14 +47,16 @@ define(function (require, exports, module) {
 
         init : function(){
 
-            //按钮查询
+            //模糊查询
             UI.search.on("input",function(){
                 var val  = UI.search.val().trim();
                 console.log("模糊",val);
                 loadListByLike(val);
+
+
             });
 
-            //深度查询
+            //按钮查询
             UI.searchBar.hammer().bind("tap",function(){
                 var val  = UI.search.val().trim();
                 console.log("深度",val);
