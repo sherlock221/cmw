@@ -27,8 +27,8 @@ var CONSTANT_ENV ={
         //node服务
         RES : "http://10.10.68.11:3000/cmw",
         credit : "http://10.10.68.11:10000/credit",
-        local:  "http://10.10.68.11:10000/uc"
-        //local:  "http://172.16.130.104:8080/uc"
+        //local:  "http://10.10.68.11:10000/uc"
+        local:  "http://172.16.130.90:8083/uc"
 };
 
 //资源地址
