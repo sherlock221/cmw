@@ -52,7 +52,6 @@ define(function(require,exports,module){
             else {
                 window.cicada.goPage(viewName);
             }
-
         },
         back : function(type){
             if(type == "iOS"){

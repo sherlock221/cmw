@@ -10,7 +10,8 @@ var  routes =
         "/share/invite": require("./share/invite.ctrl"),
         "/task" : require("./task/task.ctrl"),
         "/help" : require("./help/help.ctrl"),
-        "/education" : require("./education/education.ctrl")
+        "/education" : require("./education/education.ctrl"),
+        "/other" : require("./other/view.ctrl")
     }
 
 var init  = function(app){

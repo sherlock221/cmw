@@ -1,11 +1,11 @@
 
 define(function (require, exports, module) {
 
-    window.goBack = function(){
-        window.history.back();
-    }
-
     var  cicada  = require("cicada");
+
+
+
+
 
     window.goPage = cicada.other.goPage;
 
@@ -31,18 +31,25 @@ define(function (require, exports, module) {
 
 
     window.isIOS = browser.versions.ios  ? 2 : 1;
+    window.isIOSStr = browser.versions.ios ? "iOS" : "Android";
+
+
     console.log("当前系统",window.isIOS);
+
+    window.goBack = function(){
+        cicada.other.back(window.isIOSStr);
+    }
+
 
     var $bdoy  =   $("body");
 
     $bdoy.on("click",'.feedBack',function(){
-        window.goPage("feedback");
+        window.goPage(window.isIOSStr,"feedback");
 
     });
 
     $bdoy.on("click",'.cicada',function(){
-        window.goPage("cicada");
-
+        window.goPage(window.isIOSStr,"cicada");
     });
 
 
