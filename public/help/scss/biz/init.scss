@@ -4,6 +4,7 @@ body{
   padding-top: 47px;
   padding-bottom: 120px;
 }
+
 .whole{
   box-sizing: border-box;
   margin: 12.5px 10px 7.5px 10px;
@@ -11,12 +12,12 @@ body{
   .text-default{
     font-size:16px;
     color:#b2b2b2;
-    margin-top: 25px;
+    margin-top: 10px;
   }
 }
   .icon-whole{
     padding-top:12px ;
-    padding-bottom: 20px;
+    padding-bottom: 5px;
     .icon-whole-text{
       color:white;
       font-size:16px;
@@ -34,8 +35,8 @@ body{
   }
 
 .foot{
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   bottom: 0;
   background-color: white;
   .foot-col{
