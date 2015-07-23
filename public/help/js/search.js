@@ -7,7 +7,7 @@ define(function (require, exports, module) {
     var template  = require("artTemplate");
     var  cicada  = require("cicada");
 
-
+    var searchType = "byLike";
 
     var limitCount = 7;
 
@@ -32,10 +32,24 @@ define(function (require, exports, module) {
             },
             "clientInfo": {}
         },function (res) {
-            if(res.rtnCode == "0000000"){
+            if(res.rtnCode == "0000000") {
                 var data = template('searchListTmp', {list: res.bizData});
                 UI.searchList.html(data);
-            }
+                    if (res.bizData.length <= 0) {
+                        if(searchType=="byLike"){
+                            UI.noResult.show();
+                            UI.noRelateQuestion.hide();
+                        }
+                        else{
+                            UI.noResult.hide();
+                            UI.noRelateQuestion.show();
+                        }
+                    }
+                    else {
+                        UI.noResult.hide();
+                        UI.noRelateQuestion.hide();
+                    }
+                }
             else{
                 alert(res.msg);
                 UI.noResult.show();
@@ -49,6 +63,7 @@ define(function (require, exports, module) {
 
             //模糊查询
             UI.search.on("input",function(){
+                searchType="byLike";
                 var val  = UI.search.val().trim();
                 console.log("模糊",val);
                 loadListByLike(val);
@@ -58,9 +73,11 @@ define(function (require, exports, module) {
 
             //按钮查询
             UI.searchBar.hammer().bind("tap",function(){
+                searchType="byButton";
                 var val  = UI.search.val().trim();
                 console.log("深度",val);
                 loadListByLike(val);
+
             });
 
         }

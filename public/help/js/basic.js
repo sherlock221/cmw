@@ -15,7 +15,8 @@ define(function (require, exports, module) {
     var UI = {
         BasicListTmp : $("#BasicListTmp"),
         BasicList : $("#BasicList"),
-        moreQues : $("#moreQues")
+        moreQues : $("#moreQues"),
+        TitleName : $("#titleName")
     }
 
     var pageSize = 9;
@@ -37,6 +38,8 @@ define(function (require, exports, module) {
             "clientInfo": {}
         },function (res) {
             if(res.rtnCode == "0000000"){
+
+                //UI.TitleName.html(res.bizData.helpDocList.catalogType);
 
                 if(isFirst){
                     if(res.bizData.total % pageSize == 0)

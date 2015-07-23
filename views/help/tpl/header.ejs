@@ -1,5 +1,22 @@
 
-<div class="title " >
-    <div class="text-center title-text"  id="titleName">帮助与反馈</div>
+<div class="title " id="title">
+    <div class="text-center title-text"  id="titleName">
+
+
+
+
+        <%if(cateLogId=='1'){%>
+          账户管理
+        <%}else if(cateLogId==2){%>
+            操作指南
+        <%}else if( cateLogId=='3'){%>
+            知了商城
+        <%}else if(cateLogId=='4'){%>
+            智能硬件
+        <%}else{%>
+            帮助反馈
+       <%}%>
+
+    </div>
     <img src="/cmw/imgs/help/arrow-left.png" class="arrow-left" onclick="goBack()"/>
 </div>

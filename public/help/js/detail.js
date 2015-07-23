@@ -10,7 +10,9 @@ define(function (require, exports, module) {
 
     var UI = {
         DetailContent : $("#detail-content"),
-        DetailTitle : $("#detail-title")
+        DetailTitle : $("#detail-title"),
+        TitleName : $("#titleName"),
+        Title:$("#title")
     }
     var loadDetail = function(id){
         cicada.ax.postJSON(CONSTANT_ENV.local+"/helpDoc/getHelpDocInfoDetail",{
@@ -24,6 +26,8 @@ define(function (require, exports, module) {
             if(res.rtnCode == "0000000"){
                 UI.DetailContent.html(res.bizData.content);
                 UI.DetailTitle.html(res.bizData.title);
+                UI.Title.css("background-color","#557bc4");
+
             }
             else{
                 alert(res.msg);
