@@ -5,6 +5,10 @@ define(function (require, exports, module) {
         window.history.back();
     }
 
+    var  cicada  = require("cicada");
+
+    window.goPage = cicada.other.goPage;
+
     //检测当前浏览器
     var browser = {
         versions: function() {
@@ -28,6 +32,22 @@ define(function (require, exports, module) {
 
     window.isIOS = browser.versions.ios  ? 2 : 1;
     console.log("当前系统",window.isIOS);
+
+    var $bdoy  =   $("body");
+
+    $bdoy.on("click",'.feedBack',function(){
+        window.goPage("feedback");
+
+    });
+
+    $bdoy.on("click",'.cicada',function(){
+        window.goPage("cicada");
+
+    });
+
+
+
+
 });
 
 
