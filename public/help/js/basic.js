@@ -38,6 +38,7 @@ define(function (require, exports, module) {
             "clientInfo": {}
         },function (res) {
             if(res.rtnCode == "0000000"){
+
                 //UI.TitleName.html(res.bizData.helpDocList.catalogType);
 
                 if(isFirst){
