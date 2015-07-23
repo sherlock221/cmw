@@ -26,7 +26,7 @@ define(function (require, exports, module) {
             if(res.rtnCode == "0000000"){
                 UI.DetailContent.html(res.bizData.content);
                 UI.DetailTitle.html(res.bizData.title);
-                UI.Title.css("background-color","#557bc4");
+                //UI.Title.css("background-color","#557bc4");
 
             }
             else{
