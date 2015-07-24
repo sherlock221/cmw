@@ -42,16 +42,28 @@ define(function (require, exports, module) {
 
 
     var $bdoy  =   $("body");
+    //$bdoy.on("click",'.feedBack',function(){
+    //
+    //
+    //});
+    //$bdoy.on("click",'.cicada',function(){
+    //    window.goPage(window.isIOSStr,"cicada");
+    //});
 
-    $bdoy.on("click",'.feedBack',function(){
+    window.goFeedBack = function(){
         window.goPage(window.isIOSStr,"feedback");
+    }
 
-    });
-
-    $bdoy.on("click",'.cicada',function(){
+    window.goCicada = function(){
         window.goPage(window.isIOSStr,"cicada");
-    });
+    }
 
+
+
+
+    $(function(){
+        FastClick.attach(document.body);
+    });
 
 
 
