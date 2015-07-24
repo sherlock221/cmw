@@ -97,8 +97,8 @@ define(function (require, exports, module) {
             });
 
 
-            var state = cicada.lg.getLg("state");
-            changeFooter(state);
+            //var state = cicada.lg.getLg("state");
+            changeFooter(1);
 
             //首次加载
             loadList();
