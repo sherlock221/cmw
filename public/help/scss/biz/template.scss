@@ -12,14 +12,19 @@
     font-size: 18px;
     line-height: 17px;
   }
-  .arrow-left{
+  .arrow-whole{
     position: absolute;
     top: 0;
-    margin-top:15px;
-    margin-left: 10px;
-    width: 9.5px;
-    height: 17px;
+    width: 50px;
+    height: 47px;
+    .arrow-left{
+      margin-top:15px;
+      margin-left: 10px;
+      width: 9.5px;
+      height: 17px;
+    }
   }
+
 }
 .text-center{
   text-align: center;

@@ -18,9 +18,33 @@ define(function (require, exports, module) {
         searchBar : $("#searchBar"),
         noResult:$("#noResult"),
         noMoreQuestion:$("#noMoreQuestion"),
-        noRelateQuestion:$("#noRelateQuestion")
+        noRelateQuestion:$("#noRelateQuestion"),
+        metQue:$("#metQue"),
+        search:$("#search")
     }
+    UI.search.focus();
 
+    var loadList = function(){
+        cicada.ax.postJSON(CONSTANT_ENV.local+"/helpDoc/getDefaultHelpDocInfo",{
+            "style": "",
+            "data": {
+                "token": token,
+                "clientType" : window.isIOS
+            },
+            "clientInfo": {}
+        },function (res) {
+            if(res.rtnCode == "0000000"){
+                var html = template('searchListTmp', {list: res.bizData});
+                document.getElementById('searchList').innerHTML = html;
+                console.log("data");
+            }
+            else{
+                alert(res.msg);
+            }
+        });
+
+    }
+    loadList();
     var loadListByLike = function(searchTitle){
         cicada.ax.postJSON(CONSTANT_ENV.local+"/helpDoc/getHelpDocInfo",{
             "style": "",
@@ -36,9 +60,11 @@ define(function (require, exports, module) {
                 var data = template('searchListTmp', {list: res.bizData});
                 UI.searchList.html(data);
                     if (res.bizData.length <= 0) {
+                        UI.metQue.hide();
                         if(searchType=="byLike"){
                             UI.noResult.show();
                             UI.noRelateQuestion.hide();
+
                         }
                         else{
                             UI.noResult.hide();
@@ -46,6 +72,7 @@ define(function (require, exports, module) {
                         }
                     }
                     else {
+                        UI.metQue.show();
                         UI.noResult.hide();
                         UI.noRelateQuestion.hide();
                     }
