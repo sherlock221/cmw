@@ -27,12 +27,13 @@ define(function(require,exports,module){
                  if(res.rtnCode == "0000000"){
 
                      var messageInfo  = res.bizData.messageInfo;
-                     var senderInfo = res.bizData.senderInfo
-                     var sendTime = new Date(messageInfo.sendTime).Format("yyyy-MM-dd HH:mm:ss");
+                     var senderInfo = res.bizData.senderInfo;
+                     console.log(messageInfo.sendTime);
+                     var sendTime = new Date(messageInfo.sendTime).Format("yyyy-MM-dd hh:mm:ss");
 
                      UI.detailTitle.html(messageInfo.title);
                      UI.detailHeader.find(".timer").html(sendTime);
-                     UI.detailHeader.find("a").html(senderInfo.senderName);
+                     UI.detailHeader.find("a").html(senderInfo.userName);
                      UI.detailContent.html(messageInfo.content);
 
                  }
