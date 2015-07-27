@@ -1,0 +1,36 @@
+@charset "UTF-8";
+/**
+ * sherlock221b
+ * rem常用设计函数
+ */
+/**
+ * sherlock221b
+ * 动画部分常用
+ */
+.kidMain {
+  color: #3a3e4a;
+  font-size: 14px;
+  background: #fff; }
+  .kidMain .kidMainLayer {
+    padding: 15px; }
+    .kidMain .kidMainLayer .kidMainHeader {
+      margin-bottom: 12.5px; }
+      .kidMain .kidMainLayer .kidMainHeader a {
+        color: #6b81b0;
+        font-size: 12px;
+        margin: 0 8px; }
+      .kidMain .kidMainLayer .kidMainHeader h3 {
+        color: #3a3e4a;
+        font-size: 17px;
+        margin-bottom: 9px; }
+      .kidMain .kidMainLayer .kidMainHeader .timer {
+        color: #909090;
+        font-size: 12px; }
+
+.icon-kid {
+  background-image: url("/cmw/imgs/kidClass/cat.png");
+  background-size: 17px 17px;
+  width: 17px;
+  height: 17px; }
+
+/*# sourceMappingURL=kidclass.css.map */

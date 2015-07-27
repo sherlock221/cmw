@@ -3,10 +3,6 @@ define(function (require, exports, module) {
 
     var  cicada  = require("cicada");
 
-
-
-
-
     window.goPage = cicada.other.goPage;
 
     //检测当前浏览器
@@ -57,7 +53,6 @@ define(function (require, exports, module) {
     window.goCicada = function(){
         window.goPage(window.isIOSStr,"cicada");
     }
-
 
 
 

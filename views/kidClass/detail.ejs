@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-cn">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta content="
+        width=device-width,
+        initial-scale=1.0,
+        minimum-scale=1.0,
+        maximum-scale=1.0,user-scalable=no" name="viewport" id="viewport">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="renderer" content="webkit">
+    <title>知了-理解源自沟通</title>
+
+    <!-- mobile 头部模板 -->
+    <%- include  ../template/header/header-mobile-share.ejs %>
+
+    <!-- 讲堂信息 相关业务 -->
+    <link rel="stylesheet" href="/cmw/kidClass/css/kidclass.css">
+
+    <!-- 配置 -->
+    <script src="/cmw/config.js"></script>
+
+
+</head>
+<body>
+
+
+<div class="kidMain">
+    <div class="kidMainLayer">
+
+        <div class="kidMainHeader">
+            <h3 class="text-ellipsis" id="detailTitle"></h3>
+            <div class="fx-row fx-row-center" id="detailHeader">
+                <i class="ib icon-kid"></i>
+                <a  href="javascript:void(0);" class="block">知了讲堂</a>
+                <span class="timer"></span>
+                <div class="fx-col-1"></div>
+            </div>
+        </div>
+        <div class="kidMainContent" id="kidMainContent">
+
+        </div>
+        <div class="kidMainBottom"></div>
+
+    </div>
+
+</div>
+
+<script type="text/javascript">
+    seajs.use(["/cmw/kidClass/js/detail.js"]);
+</script>
+
+
+</body>
+</html>

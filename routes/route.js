@@ -11,6 +11,7 @@ var  routes =
         "/task" : require("./task/task.ctrl"),
         "/help" : require("./help/help.ctrl"),
         "/education" : require("./education/education.ctrl"),
+        "/kidClass" : require("./kidClass/kidClass.ctrl"),
         "/other" : require("./other/view.ctrl")
     }
 

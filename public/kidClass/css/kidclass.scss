@@ -1,0 +1,52 @@
+@charset "utf-8";
+@import '../../lib/scss/fun/fun';
+
+
+
+.kidMain{
+
+  color: #3a3e4a;
+  font-size: rem(28);
+
+  background: #fff;
+
+  .kidMainLayer{
+    padding: rem(30);
+
+    .kidMainHeader{
+      margin-bottom: rem(25);
+
+     a{
+        color: #6b81b0;
+        font-size: rem(24);
+        margin: 0 rem(16);
+      }
+
+      h3{
+        color: #3a3e4a;
+        font-size: rem(34);
+        margin-bottom: rem(18);
+      }
+
+      .timer{
+        color: #909090;
+        font-size: rem(24);
+      }
+    }
+
+
+
+  }
+
+}
+
+.icon-img{
+   
+}
+
+.icon-kid{
+    background-image: url("/cmw/imgs/kidClass/cat.png");
+    background-size: rem(34) rem(34);
+    width: rem(34);
+    height: rem(34);
+}
