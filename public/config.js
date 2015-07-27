@@ -17,7 +17,8 @@ var CONSTANT_TASK = {
 //var CONSTANT_ENV ={
 //    RES : "http://imzhiliao.com:3000/cmw",
 //    credit : "http://imzhiliao.com:9000/credit",
-//    local:  "http://imzhiliao.com:9000/uc"
+//    local:  "http://imzhiliao.com:9000/uc",
+//    op : "http://10.10.68.11:10000/op"
 //};
 
 
