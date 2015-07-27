@@ -13,6 +13,7 @@ define(function(require,exports,module){
     var messageId = cicada.web.getParamByName("messageId");
 
 
+
     var Ajax = {
 
          findMessageById: function(messageId){
@@ -25,10 +26,14 @@ define(function(require,exports,module){
              },function (res) {
                  if(res.rtnCode == "0000000"){
 
-                     UI.detailTitle.html(res.bizData.title);
-                     UI.detailHeader.find(".timer").html(res.bizData.sendTime);
-                     UI.detailHeader.find("a").html(res.bizData.senderInfo.senderName);
-                     UI.detailContent.html(res.bizData.content);
+                     var messageInfo  = res.bizData.messageInfo;
+                     var senderInfo = res.bizData.senderInfo
+                     var sendTime = new Date(messageInfo.sendTime).Format("yyyy-MM-dd HH:mm:ss");
+
+                     UI.detailTitle.html(messageInfo.title);
+                     UI.detailHeader.find(".timer").html(sendTime);
+                     UI.detailHeader.find("a").html(senderInfo.senderName);
+                     UI.detailContent.html(messageInfo.content);
 
                  }
                  else{

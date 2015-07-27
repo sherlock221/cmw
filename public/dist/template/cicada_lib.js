@@ -10,7 +10,7 @@ define("js/cmd/cicada/ajax/cicada_ajax", [], function(require, exports, module) 
          *            等待毫秒数
          */
         postJSON: function(url, data, successCallback, errorCallBack) {
-            return jQuery.ajax({
+            return $.ajax({
                 type: "POST",
                 url: url,
                 contentType: "application/json",

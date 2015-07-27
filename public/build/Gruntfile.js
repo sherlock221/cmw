@@ -59,7 +59,8 @@ module.exports = function(grunt){
                     'tmp/core/zepto/1.1.6/zepto.js',
                     'tmp/core/hammer/hammer.min.js',
                     'tmp/core/hammer/jquery.hammer.js',
-                    'tmp/cicada/**/*.js'
+                    'tmp/cicada/**/*.js',
+                    '../lib/js/other/extended/**/*.js',
                 ],
                 dest: '../dist/template/mb_base.js'
             },
