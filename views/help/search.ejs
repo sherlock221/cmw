@@ -28,7 +28,7 @@
 
 <div class="whole">
     <div class="search-default fx-row">
-        <div class="fx-col-1"><input id="search" type="search" autofocus="autofocus"  class="search border-left" /></div>
+        <div class="fx-col-1"><input maxlength="50" id="search" type="search" autofocus="autofocus"  class="search border-left" /></div>
         <div class="search-bar text-center" id="searchBar">搜索</div>
     </div>
     <p class="text-default" id="metQue">您可能遇到的问题</p>
@@ -40,7 +40,7 @@
             <ul class="question-list">
                 <@for(var i=0; i<list.length;i++){ @>
                 <li class="list-name" id="list-name">
-                    <a  class="link-default" href="/cmw/help/detail?id=<@=list[i].id @>" >
+                    <a  class="link-default" href="/cmw/help/detail?id=<@=list[i].id @>&cateLogId=<@=list[i].catalogType@>" >
                         <@=list[i].title @>
                         <div class="list-mark"></div>
                     </a>

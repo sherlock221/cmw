@@ -33,7 +33,7 @@
         <ul class="question-list">
             <@for(var i=0; i<list.length;i++){ @>
             <li class="list-name" id="list-name">
-                <a  class="link-default" href="/cmw/help/detail?id=<@=list[i].id @>" >
+                <a  class="link-default" href="/cmw/help/detail?id=<@=list[i].id @>&cateLogId=<@=list[i].catalogType@>" >
                     <@=list[i].title @>
                     <div class="list-mark"></div>
                 </a>
@@ -46,6 +46,7 @@
     </div>
     <div class="text-center basic" id="moreQues" style="display: none">更多基础操作问题
     </div>
+    <p class="text-default text-center" id="noMoreQue" style="margin-top: 20px;">没有更多相关的问题了<br/>您可以点击底部按钮联系客服或者留下您的意见反馈</p>
 </div>
 
 <div class="foot-default">

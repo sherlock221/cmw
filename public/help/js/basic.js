@@ -16,7 +16,8 @@ define(function (require, exports, module) {
         BasicListTmp : $("#BasicListTmp"),
         BasicList : $("#BasicList"),
         moreQues : $("#moreQues"),
-        TitleName : $("#titleName")
+        TitleName : $("#titleName"),
+        noMoreQue:$("#noMoreQue")
     }
 
     var pageSize = 9;
@@ -56,10 +57,12 @@ define(function (require, exports, module) {
                 if(pageIndex+1 > pageTotal){
                     //超过分页
                     UI.moreQues.hide();
+                    UI.noMoreQue.show();
                     return;
                 }
                 else{
                     UI.moreQues.show();
+                    UI.noMoreQue.hide();
                 }
             }
             else{

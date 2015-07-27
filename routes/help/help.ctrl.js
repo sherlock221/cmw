@@ -34,7 +34,8 @@ router.get("/basic",function(req,res){
 
 router.get("/detail",function(req,res){
     var id = req.query.id;
-    var cateLogId = 0;
+    var cateLogId =  req.query.cateLogId || 0;
+
     res.render("help/detail",{
         id :id,
         cateLogId : cateLogId

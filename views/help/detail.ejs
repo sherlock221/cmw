@@ -33,6 +33,26 @@
   <div class="text-detail" id="detail-content"></div>
 </div>
 </div>
+<div class="whole">
+<p class="text-default">您可能遇到的问题</p>
+    <div id='relateList' class="content">
+
+        <script id="relateListTmp" type="text/html">
+            <ul class="question-list" id="question-list">
+                <@for(var i=0; i<list.length;i++){ @>
+                <li class="list-name" id="list-name">
+                    <a  class="link-default" href="/cmw/help/detail?id=<@=list[i].id @>&cateLogId=<@=list[i].catalogType@>" >
+                        <@=list[i].title @>
+                        <div class="list-mark"></div>
+                    </a>
+                </li>
+                <@}@>
+            </ul>
+
+        </script>
+
+    </div>
+</div>
 <div class="foot-default">
     <%- include  tpl/footDefault.ejs %>
 </div>
