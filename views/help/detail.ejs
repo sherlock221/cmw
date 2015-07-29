@@ -41,7 +41,7 @@
             <ul class="question-list" id="question-list">
                 <@for(var i=0; i<list.length;i++){ @>
                 <li class="list-name" id="list-name">
-                    <a  class="link-default" href="/cmw/help/detail?id=<@=list[i].id @>&cateLogId=<@=list[i].catalogType@>" >
+                    <a  class="link-default text-ellipsis" href="/cmw/help/detail?id=<@=list[i].id @>&cateLogId=<@=list[i].catalogType@>" >
                         <@=list[i].title @>
                         <div class="list-mark"></div>
                     </a>

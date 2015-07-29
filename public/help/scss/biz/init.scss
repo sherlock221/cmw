@@ -1,3 +1,5 @@
+@import "../fun/fun";
+
 body{
   background-color: #ebeced;
 
@@ -51,7 +53,10 @@ body{
 
 
 
+
 .bottom-bar{
+  //@include transition(all 5s ease 0s);
+  //@include transform(translateY(93px));
   position: fixed;
   bottom:0;
   width: 100%;

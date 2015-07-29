@@ -9,6 +9,9 @@ define(function (require, exports, module) {
     var  cicada  = require("cicada");
 
 
+
+
+
     var UI = {
         CateTypeListSpread : $("#cateTypeListSpread"),
         CateTypeListIndent : $("#cateTypeListIndent"),
@@ -80,10 +83,15 @@ define(function (require, exports, module) {
             //底部切换
             window.changeFooter = function(state){
                 if(state == "1"){
+                    document.body.addEventListener('touchmove',function(event){event.preventDefault();} , false);
+
                     UI.CateTypeListIndent.hide();
                     UI.CateTypeListSpread.show();
                 }
                 else{
+                    document.body.removeEventListener('touchmove',function(event){event.preventDefault();} , false);
+
+                    //document.body.returnValue = false;
                     UI.CateTypeListIndent.show();
                     UI.CateTypeListSpread.hide();
 
