@@ -1,3 +1,4 @@
+
 /**
  * 路由配置列表
  * sherlock221b
@@ -12,7 +13,9 @@ var  routes =
         "/help" : require("./help/help.ctrl"),
         "/education" : require("./education/education.ctrl"),
         "/kidClass" : require("./kidClass/kidClass.ctrl"),
-        "/other" : require("./other/view.ctrl")
+        "/other" : require("./other/view.ctrl"),
+        "/upload" : require("./upload/file.ctrl"),
+        "/zhiliao" : require("./zhiliao/zhiliao.ctrl.js")
     }
 
 var init  = function(app){
