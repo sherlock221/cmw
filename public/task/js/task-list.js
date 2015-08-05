@@ -53,6 +53,9 @@ define(function(require,exports,module){
             case CONSTANT_TASK.cicada_url.inverte_parent  :
                 Util.other.sharePgaeByUserId(window.clientType,h5_share,window.shareJson);
                 break;
+            case CONSTANT_TASK.cicada_url.my_credit  :
+                Util.other.sharePgaeByUserId(window.clientType,h5_share,window.shareJson);
+                break;
         }
     };
     window.goBack =function(){

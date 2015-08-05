@@ -47,7 +47,7 @@
         <div class="right">
             <@if(bizData[i].url) {@>
 
-                <@if(bizData[i].maxNum == bizData[i].completedNum  && bizData[i].maxNum != 0) {@>
+                <@if(bizData[i].maxNum != 0 && bizData[i].maxNum == bizData[i].completedNum ) {@>
 
                 <@}else{@>
                         <a href="javascript:goPage('<@=bizData[i].url @>')" class="btn btn-goto ntp">前往</a>

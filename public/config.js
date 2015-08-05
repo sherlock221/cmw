@@ -6,19 +6,20 @@ var CONSTANT_TASK = {
     cicada_url: {
         inverte_teacher: 'cicada://inverte/teacher',
         inverte_parent: 'cicada://inverte/parent',
-        inverte_publish: 'cicada://page/publish'
+        inverte_publish: 'cicada://page/publish',
+        my_credit: "cicada://page/myCredit"
     },
     cicada_share_url:{
         ios_share_url:'cicada://cicada/sharePageByUserId'
     }
 };
 
-////正式
+//正式
 //var CONSTANT_ENV ={
 //    RES : "http://imzhiliao.com:3000/cmw",
 //    credit : "http://imzhiliao.com:9000/credit",
 //    local:  "http://imzhiliao.com:9000/uc",
-//    op : "http://10.10.68.11:10000/op"
+//    op : "http:/imzhiliao.com:10000/op"
 //};
 
 
