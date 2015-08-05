@@ -29,7 +29,8 @@ define(function (require, exports, module) {
             "style": "",
             "data": {
                 "token": token,
-                "clientType" : window.isIOS
+                "clientType" : window.isIOS,
+                "limitCount":9
             },
             "clientInfo": {}
         },function (res) {
