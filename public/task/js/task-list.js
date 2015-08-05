@@ -54,7 +54,7 @@ define(function(require,exports,module){
                 Util.other.sharePgaeByUserId(window.clientType,h5_share,window.shareJson);
                 break;
             case CONSTANT_TASK.cicada_url.my_credit  :
-                Util.other.sharePgaeByUserId(window.clientType,h5_share,window.shareJson);
+                Util.other.goPage(window.clientType,"myCredit")
                 break;
         }
     };
