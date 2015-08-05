@@ -4,7 +4,8 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 30; }
+  z-index: 30;
+  height: 44px; }
   .title .title-text {
     padding-top: 15px;
     padding-bottom: 15px;
@@ -91,12 +92,11 @@
 .research-result {
   font-size: 15px;
   color: #b2b2b2;
-  line-height: 25px;
-  width: 100%; }
+  line-height: 25px; }
 
 .no-result {
-  position: absolute;
-  top: 50%; }
+  margin-top: 20px;
+  padding: 15px; }
 
 .basic {
   font-size: 15px;
