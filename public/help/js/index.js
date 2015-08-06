@@ -84,25 +84,14 @@ define(function (require, exports, module) {
             //底部切换
             window.changeFooter = function(state){
                 if(state == "1"){
-                    (function(event){
-                        document.body.style.overflowX=document.body.style.overflowY="hidden";
 
-                    })();
+                    console.log( $('.whole').css("overflowY"));
                     console.log(window.event.returnValue);
                     UI.CateTypeListIndent.hide();
                     UI.CateTypeListSpread.show();
                 }
                 else{
 
-                    (function(event){
-                        //解绑事件
-                        document.body.style.overflowX=document.body.style.overflowY="auto";
-
-
-                    })();
-                    console.log(window.event.returnValue);
-
-                    //document.body.returnValue = false;
                     UI.CateTypeListIndent.show();
                     UI.CateTypeListSpread.hide();
 
