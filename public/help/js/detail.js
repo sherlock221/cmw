@@ -10,6 +10,8 @@ define(function (require, exports, module) {
     //获得分类
     var id = cicada.web.getParamByName("id");
     var cateLogId = cicada.web.getParamByName("cateLogId");
+    //获得login
+    var login = cicada.web.getParamByName("login");
 
 
 
@@ -18,8 +20,14 @@ define(function (require, exports, module) {
         DetailContent : $("#detail-content"),
         DetailTitle : $("#detail-title"),
         TitleName : $("#titleName"),
-        Title:$("#title")
+        Title:$("#title"),
+        Foot:$("#foot")
     }
+
+    if(login && login == 0){
+        UI.Foot.hide();
+    }
+
     var loadDetail = function(id){
         cicada.ax.postJSON(CONSTANT_ENV.local+"/helpDoc/getHelpDocInfoDetail",{
             "style": "",
