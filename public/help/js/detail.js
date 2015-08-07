@@ -21,11 +21,13 @@ define(function (require, exports, module) {
         DetailTitle : $("#detail-title"),
         TitleName : $("#titleName"),
         Title:$("#title"),
-        Foot:$("#foot")
+        Foot:$("#foot"),
+        TextQue:$("#textQue")
     }
 
     if(login && login == 0){
         UI.Foot.hide();
+        UI.TextQue.hide();
     }
 
     var loadDetail = function(id){
