@@ -2,10 +2,17 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
+    <script type="text/javascript" src=""></script>
     <title>测试seajs</title>
 
 </head>
 <body>
+
+
+    <video src="" controls="controls" id="video">
+
+
+    </video>
 
     <button type="button" onclick="toDownload('');">下载视频</button>
 
@@ -13,20 +20,25 @@
 
 
         window.toDownload = function(){
-            var url = "http://imzhiliao.com/video/media/zhiliao.mp4";
+            var url = "http://imzhiliao.com/video/media/VIDEO0022.mp4";
             var type = "video";
             var ova  = "1";
 
             //开始下载
-            window.download(url,ova,type);
-
-
+            window.kc.download(url,ova,type);
         }
 
 
         window.downloadCallBack = function(state,message,url){
             alert(message);
             console.log(url);
+
+           var video =  document.querySelector("#video");
+            url = url.substring(1);
+//            url="file://"+url;
+            video.src = url;
+
+            video.play();
         };
 
 

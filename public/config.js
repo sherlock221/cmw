@@ -29,7 +29,7 @@ var CONSTANT_ENV ={
         RES : "http://10.10.68.11:3000/cmw",
         credit : "http://10.10.68.11:10000/credit",
         local:  "http://10.10.68.11:10000/uc",
-        op : "http://10.10.68.11:10000/op",
+        op : "http://10.10.68.11:10000/op"
         //local:  "http://172.16.170.198:8083/uc"
 };
 
