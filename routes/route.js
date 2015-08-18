@@ -15,7 +15,8 @@ var  routes =
         "/kidClass" : require("./kidClass/kidClass.ctrl"),
         "/other" : require("./other/view.ctrl"),
         "/upload" : require("./upload/file.ctrl"),
-        "/zhiliao" : require("./zhiliao/zhiliao.ctrl.js")
+        "/zhiliao" : require("./zhiliao/zhiliao.ctrl.js"),
+        "/activity" : require("./activity/activity.ctrl")
     }
 
 var init  = function(app){
