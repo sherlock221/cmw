@@ -12,8 +12,8 @@ var formstream = require('formstream');
 //缓存目录
 var UPLOAD_DIR = "public/upload/";
 //post给 file
-var url = "http://imzhiliao.com:10000/file/upload/savefile.shtml";
-
+//var url = "http://imzhiliao.com:10000/file/upload/savefile.shtml";
+var url = "http://123.59.108.126:8080/file/upload/saveKsFile.shtml";
 
 
 /**

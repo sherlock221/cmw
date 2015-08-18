@@ -15,23 +15,24 @@ var CONSTANT_TASK = {
 };
 
 //正式
-//var CONSTANT_ENV ={
-//    RES : "http://imzhiliao.com:3000/cmw",
-//    credit : "http://imzhiliao.com:9000/credit",
-//    local:  "http://imzhiliao.com:9000/uc",
-//    op : "http:/imzhiliao.com:10000/op"
-//};
+var CONSTANT_ENV ={
+    RES : "http://imzhiliao.com:3000/cmw",
+    credit : "http://imzhiliao.com:9000/credit",
+    local:  "http://imzhiliao.com:9000/uc",
+    op : "http://imzhiliao.com:9000/op"
+};
+
 
 
 //测试
-var CONSTANT_ENV ={
-        //node服务
-        RES : "http://10.10.68.11:3000/cmw",
-        credit : "http://10.10.68.11:10000/credit",
-        local:  "http://10.10.68.11:10000/uc",
-        op : "http://10.10.68.11:10000/op",
-        //local:  "http://172.16.170.198:8083/uc"
-};
+//var CONSTANT_ENV ={
+//        //node服务
+//        RES : "http://10.10.68.11:3000/cmw",
+//        credit : "http://10.10.68.11:10000/credit",
+//        local:  "http://10.10.68.11:10000/uc",
+//        op : "http://10.10.68.11:10000/op"
+//        //local:  "http://172.16.170.198:8083/uc"
+//};
 
 //资源地址
 var CONSTANT_RES = {

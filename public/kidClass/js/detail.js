@@ -17,7 +17,18 @@ define(function(require,exports,module){
     var Ajax = {
 
          findMessageById: function(messageId){
-             cicada.ax.postJSON(CONSTANT_ENV.op+"/message/findMessageByMId",{
+
+             var url = CONSTANT_ENV.op+"/message/findMessageByMId";
+             console.log(url);
+             var data = {
+                 "style": "",
+                 "data": {
+                     "messageId": messageId
+                 },
+                 "clientInfo": {}
+             };
+
+             cicada.ax.postJSON(url,{
                  "style": "",
                  "data": {
                      "messageId": messageId
