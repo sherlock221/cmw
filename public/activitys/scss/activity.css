@@ -1,0 +1,100 @@
+body {
+  background-color: #fbffff; }
+
+.img-default {
+  width: 100%; }
+
+.content {
+  box-sizing: border-box;
+  margin: 15px; }
+
+.content-whole {
+  margin-bottom: 15px; }
+
+.font-og {
+  font-size: 18px;
+  color: #f7864f; }
+
+.detail-text {
+  color: #686969;
+  font-size: 16px;
+  margin-left: 15px; }
+
+.zhiliao-class {
+  background-color: #03bbbe;
+  color: #ffffff;
+  border-radius: 10px;
+  letter-spacing: 1px;
+  width: 82px;
+  padding: 3px; }
+
+.ib {
+  display: inline-block; }
+
+.value {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  line-height: 30px;
+  color: #686969;
+  font-size: 16px; }
+
+.circle-og {
+  width: 9px;
+  height: 9px;
+  border-radius: 9px;
+  background-color: #f7864f; }
+
+.count {
+  margin-left: 10px; }
+
+.text-center {
+  text-align: center; }
+
+.text-bottom {
+  color: #686969;
+  font-size: 10px;
+  margin-top: 25px; }
+
+.relate {
+  padding-top: 15px;
+  padding-bottom: 20px; }
+
+.top-bar {
+  width: 152px;
+  height: 30px; }
+
+.pic-default {
+  margin-top: 16px; }
+
+.relate-pic {
+  width: 150px;
+  height: 150px; }
+
+.bottom-bar {
+  margin-top: 20px;
+  width: 298px;
+  height: 13px;
+  margin-left: 20px; }
+
+.attend {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 70px;
+  height: 70px; }
+
+.message {
+  color: #b3b3b3;
+  font-size: 18px;
+  margin-top: 15px; }
+
+.message-pic {
+  width: 136px;
+  height: 245px; }
+
+.message-bottom-text {
+  color: #686969;
+  font-size: 16px;
+  margin-top: 10px; }
+
+/*# sourceMappingURL=activity.css.map */
