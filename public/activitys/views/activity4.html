@@ -6,6 +6,7 @@
     <meta name="format-detection" content="telphone=no, email=no"/>
     <link rel="stylesheet" href="../scss/module.css"/>
     <link rel="stylesheet" href="../scss/activity.css" type="text/css"/>
+    <script type="text/javascript" src="../index.js"></script>
 </head>
 <body>
 <img src="../imgs/activity4/activity4.png" class="img-default"/>
@@ -62,12 +63,27 @@
 <div class="relate">
     <img src="../imgs/common/top-bar.png" class="top-bar">
     <div class="pic-default text-center">
-        <img src="../imgs/activity4/act4-left.png" class="ib relate-pic"/>
+        <a href="javascript:void(0)" onclick="goCicadaStore()">
+            <img src="../imgs/activity4/act4-left.png" class="ib relate-pic"/>
+            </a>
+        <a href="javascript:void(0)" onclick="goCicadaStore()">
         <img src="../imgs/activity4/act4-right.png" class="ib relate-pic"/>
+            </a>
     </div>
     <img src="../imgs/common/bottom-bar.png" class="bottom-bar"/>
 </div>
 
-<img src="../imgs/common/attend.png" class="attend"/>
+<a href="javascript:void(0)" onclick="jump()">
+    <img src="../imgs/common/attend.png" class="attend"/>
+</a>
 </body>
+
+<script type="text/javascript">
+
+    function jump(){
+        goPage(mb.type,"publish");
+
+    }
+
+</script>
 </html>
