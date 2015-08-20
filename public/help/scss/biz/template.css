@@ -1,3 +1,6 @@
+input::input-placeholder {
+  text-align: center; }
+
 .title {
   background-color: #f7f7f7;
   width: 100%;
@@ -131,7 +134,7 @@
     height: 16.5px;
     position: relative;
     top: -32px;
-    left: 25%;
+    left: 23%;
     background: url("/cmw/imgs/help/search.png") no-repeat center;
     background-size: contain; }
 
@@ -149,6 +152,7 @@
     margin-top: 8px;
     border-radius: 5px; }
     .question-list .list-name .link-default {
+      width: 82%;
       text-decoration: none;
       margin-left: 15px;
       line-height: 45px;

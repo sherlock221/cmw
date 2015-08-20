@@ -21,9 +21,9 @@ define(function (require, exports, module) {
         noRelateQuestion:$("#noRelateQuestion"),
         metQue:$("#metQue"),
         search:$("#search")
-    }
-    UI.search.focus();
-
+    };
+         UI.search.focus();
+        //UI.search.complete = false;
     var loadList = function(){
         cicada.ax.postJSON(CONSTANT_ENV.local+"/helpDoc/getDefaultHelpDocInfo",{
             "style": "",
